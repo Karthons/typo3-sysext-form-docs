@@ -12,7 +12,7 @@ Form
    form
 
 :Version:
-   8
+   latest (9-dev)
 
 :Language:
    en
@@ -39,14 +39,12 @@ Form
 
 The content of this document is related to TYPO3,
 
-a GNU/GPL CMS/Framework available from `www.typo3.org
-<https://www.typo3.org/>`_
+a GNU/GPL CMS/Framework available from https://typo3.org/
 
 
-
-**Table of Contents**
 
 .. toctree::
+   :hidden:
 
    Introduction/Index
    Concepts/Index
