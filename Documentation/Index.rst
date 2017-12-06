@@ -46,8 +46,10 @@ a GNU/GPL CMS/Framework available from https://typo3.org/
 .. toctree::
    :hidden:
 
+   Sitemap/Index
    Introduction/Index
    Concepts/Index
    Config/Index
    ApiReference/Index
    FAQ/Index
+   Targets
