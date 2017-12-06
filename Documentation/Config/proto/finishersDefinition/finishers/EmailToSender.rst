@@ -42,7 +42,7 @@ implementationClassName
       - :ref:`"Custom finisher implementations"<concepts-frontendrendering-codecomponents-customfinisherimplementations>`
 
 :aspect:`Description`
-      .. include:: ../properties/implementationClassName.rst
+      .. include:: ../properties/implementationClassName.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtosender.options.subject:
@@ -560,7 +560,7 @@ formeditor.iconIdentifier
       ToDo
 
 :aspect:`Description`
-      .. include:: ../properties/iconIdentifier.rst
+      .. include:: ../properties/iconIdentifier.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtosender.formeditor.label:
@@ -608,7 +608,7 @@ formeditor.label
       - :ref:`"Translate form editor settings"<concepts-formeditor-translation-formeditor>`
 
 :aspect:`Description`
-      .. include:: ../properties/label.rst
+      .. include:: ../properties/label.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtosender.formeditor.predefineddefaults:
@@ -656,7 +656,7 @@ formeditor.predefinedDefaults
       ToDo
 
 :aspect:`Description`
-      .. include:: ../properties/predefinedDefaults.rst
+      .. include:: ../properties/predefinedDefaults.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtosender.formengine.label:
@@ -689,7 +689,7 @@ FormEngine.label
       - :ref:`"Translate form plugin settings"<concepts-formplugin-translation-formengine>`
 
 :aspect:`Description`
-      .. include:: ../properties/formEngine/label.rst
+      .. include:: ../properties/formEngine/label.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtosender.formengine.elements:
@@ -785,4 +785,4 @@ FormEngine.elements
       - :ref:`"Translate form plugin settings"<concepts-formplugin-translation-formengine>`
 
 :aspect:`Description`
-      .. include:: ../properties/formEngine/elements.rst
+      .. include:: ../properties/formEngine/elements.txt

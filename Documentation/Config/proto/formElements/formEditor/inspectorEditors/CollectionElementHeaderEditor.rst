@@ -46,12 +46,12 @@ templateName
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      .. include:: properties/TemplateName.rst
+      .. include:: properties/TemplateName.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.identifier-collectionelementheadereditor:
-.. include:: properties/Identifier.rst
+.. include:: properties/Identifier.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.label-collectionelementheadereditor:
-.. include:: properties/Label.rst
+.. include:: properties/Label.txt

@@ -44,19 +44,19 @@ templateName
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      .. include:: properties/TemplateName.rst
+      .. include:: properties/TemplateName.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.identifier-multiselecteditor:
-.. include:: properties/Identifier.rst
+.. include:: properties/Identifier.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.label-multiselecteditor:
-.. include:: properties/Label.rst
+.. include:: properties/Label.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.propertypath-multiselecteditor:
-.. include:: properties/PropertyPath.rst
+.. include:: properties/PropertyPath.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.selectoptions.*.value-multiselecteditor:

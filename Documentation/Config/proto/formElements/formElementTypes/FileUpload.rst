@@ -13,58 +13,58 @@ Properties
 ==========
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.implementationclassname:
-.. include:: FileUpload/implementationClassName.rst
+.. include:: FileUpload/implementationClassName.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.properties.containerclassattribute:
-.. include:: FileUpload/properties/containerClassAttribute.rst
+.. include:: FileUpload/properties/containerClassAttribute.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.properties.elementclassattribute:
-.. include:: FileUpload/properties/elementClassAttribute.rst
+.. include:: FileUpload/properties/elementClassAttribute.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.properties.elementerrorclassattribute:
-.. include:: FileUpload/properties/elementErrorClassAttribute.rst
+.. include:: FileUpload/properties/elementErrorClassAttribute.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.properties.savetofilemount:
-.. include:: FileUpload/properties/saveToFileMount.rst
+.. include:: FileUpload/properties/saveToFileMount.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.properties.allowedmimetypes:
-.. include:: FileUpload/properties/allowedMimeTypes.rst
+.. include:: FileUpload/properties/allowedMimeTypes.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor:
-.. include:: FileUpload/formEditor.rst
+.. include:: FileUpload/formEditor.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.editors.100:
-.. include:: FileUpload/formEditor/editors/100.rst
+.. include:: FileUpload/formEditor/editors/100.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.editors.200:
-.. include:: FileUpload/formEditor/editors/200.rst
+.. include:: FileUpload/formEditor/editors/200.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.editors.300:
-.. include:: FileUpload/formEditor/editors/300.rst
+.. include:: FileUpload/formEditor/editors/300.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.editors.400:
-.. include:: FileUpload/formEditor/editors/400.rst
+.. include:: FileUpload/formEditor/editors/400.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.editors.700:
-.. include:: FileUpload/formEditor/editors/700.rst
+.. include:: FileUpload/formEditor/editors/700.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.editors.800:
-.. include:: FileUpload/formEditor/editors/800.rst
+.. include:: FileUpload/formEditor/editors/800.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.editors.9999:
-.. include:: FileUpload/formEditor/editors/9999.rst
+.. include:: FileUpload/formEditor/editors/9999.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.predefineddefaults:
-.. include:: FileUpload/formEditor/predefinedDefaults.rst
+.. include:: FileUpload/formEditor/predefinedDefaults.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.label:
-.. include:: FileUpload/formEditor/label.rst
+.. include:: FileUpload/formEditor/label.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.group:
-.. include:: FileUpload/formEditor/group.rst
+.. include:: FileUpload/formEditor/group.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.groupsorting:
-.. include:: FileUpload/formEditor/groupSorting.rst
+.. include:: FileUpload/formEditor/groupSorting.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.fileupload.formeditor.iconidentifier:
-.. include:: FileUpload/formEditor/iconIdentifier.rst
+.. include:: FileUpload/formEditor/iconIdentifier.txt

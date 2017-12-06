@@ -51,7 +51,7 @@ implementationClassName
       - :ref:`"Custom validator implementations"<concepts-frontendrendering-codecomponents-customvalidatorimplementations>`
 
 :aspect:`Description`
-      .. include:: ../properties/implementationClassName.rst
+      .. include:: ../properties/implementationClassName.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.validatorsdefinition.regularexpression.options.regularExpression:
@@ -109,7 +109,7 @@ formeditor.iconIdentifier
       ToDo
 
 :aspect:`Description`
-      .. include:: ../properties/iconIdentifier.rst
+      .. include:: ../properties/iconIdentifier.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.validatorsdefinition.regularexpression.formeditor.label:
@@ -143,7 +143,7 @@ formeditor.label
       - :ref:`"Translate form editor settings"<concepts-formeditor-translation-formeditor>`
 
 :aspect:`Description`
-      .. include:: ../properties/label.rst
+      .. include:: ../properties/label.txt
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.validatorsdefinition.regularexpression.formeditor.predefineddefaults:
@@ -178,4 +178,4 @@ formeditor.predefinedDefaults
       ToDo
 
 :aspect:`Description`
-      .. include:: ../properties/predefinedDefaults.rst
+      .. include:: ../properties/predefinedDefaults.txt

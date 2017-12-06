@@ -13,22 +13,22 @@ Properties
 ==========
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.honeypot.implementationclassname:
-.. include:: Honeypot/implementationClassName.rst
+.. include:: Honeypot/implementationClassName.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.honeypot.renderingoptions._isHiddenFormElement:
-.. include:: Honeypot/renderingOptions/_isHiddenFormElement.rst
+.. include:: Honeypot/renderingOptions/_isHiddenFormElement.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.honeypot.properties.containerclassattribute:
-.. include:: Honeypot/properties/containerClassAttribute.rst
+.. include:: Honeypot/properties/containerClassAttribute.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.honeypot.properties.elementclassattribute:
-.. include:: Honeypot/properties/elementClassAttribute.rst
+.. include:: Honeypot/properties/elementClassAttribute.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.honeypot.properties.elementerrorclassattribute:
-.. include:: Honeypot/properties/elementErrorClassAttribute.rst
+.. include:: Honeypot/properties/elementErrorClassAttribute.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.honeypot.properties.renderashiddenfield:
-.. include:: Honeypot/properties/renderAsHiddenField.rst
+.. include:: Honeypot/properties/renderAsHiddenField.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.honeypot.properties.styleattribute:
-.. include:: Honeypot/properties/styleAttribute.rst
+.. include:: Honeypot/properties/styleAttribute.txt

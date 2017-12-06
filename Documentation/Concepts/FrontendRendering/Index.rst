@@ -345,24 +345,20 @@ method::
 ``form definition``. If it cannot be found, the method checks
 
 1. the ``prototype`` configuration for a default value,
+
 2. the finisher class itself by searching for a default value within the
    ``$defaultOptions`` property::
 
-   .. code-block:: php
+      declare(strict_types=1);
+      namespace VENDOR\MySitePackage\Domain\Finishers;
 
-       <?php
-       declare(strict_types=1);
-       namespace VENDOR\MySitePackage\Domain\Finishers;
-
-       class CustomFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher
-       {
-
-           protected $defaultOptions = [
-               'yourCustomOption' => 'Olli',
-           ];
-
-           // ...
-       }
+      class CustomFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher
+      {
+         protected $defaultOptions = [
+            'yourCustomOption' => 'Olli',
+         ];
+         // ...
+      }
 
 If the option cannot be found by processing this fallback chain, ``null`` is
 returned.

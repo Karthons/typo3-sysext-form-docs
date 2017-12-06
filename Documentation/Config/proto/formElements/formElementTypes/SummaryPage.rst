@@ -13,55 +13,55 @@ Properties
 ==========
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.implementationclassname:
-.. include:: SummaryPage/implementationClassName.rst
+.. include:: SummaryPage/implementationClassName.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.renderingoptions._iscompositeformelement:
-.. include:: SummaryPage/renderingOptions/_isCompositeFormElement.rst
+.. include:: SummaryPage/renderingOptions/_isCompositeFormElement.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.renderingoptions._istoplevelformelement:
-.. include:: SummaryPage/renderingOptions/_isTopLevelFormElement.rst
+.. include:: SummaryPage/renderingOptions/_isTopLevelFormElement.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.renderingoptions.nextbuttonlabel:
-.. include:: SummaryPage/renderingOptions/nextButtonLabel.rst
+.. include:: SummaryPage/renderingOptions/nextButtonLabel.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.renderingoptions.previousbuttonlabel:
-.. include:: SummaryPage/renderingOptions/previousButtonLabel.rst
+.. include:: SummaryPage/renderingOptions/previousButtonLabel.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor:
-.. include:: SummaryPage/formEditor.rst
+.. include:: SummaryPage/formEditor.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.editors.100:
-.. include:: SummaryPage/formEditor/editors/100.rst
+.. include:: SummaryPage/formEditor/editors/100.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.editors.200:
-.. include:: SummaryPage/formEditor/editors/200.rst
+.. include:: SummaryPage/formEditor/editors/200.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.editors.300:
-.. include:: SummaryPage/formEditor/editors/300.rst
+.. include:: SummaryPage/formEditor/editors/300.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.editors.400:
-.. include:: SummaryPage/formEditor/editors/400.rst
+.. include:: SummaryPage/formEditor/editors/400.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.editors.9999:
-.. include:: SummaryPage/formEditor/editors/9999.rst
+.. include:: SummaryPage/formEditor/editors/9999.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.predefineddefaults:
-.. include:: SummaryPage/formEditor/predefinedDefaults.rst
+.. include:: SummaryPage/formEditor/predefinedDefaults.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor._iscompositeformelement:
-.. include:: SummaryPage/formEditor/_isCompositeFormElement.rst
+.. include:: SummaryPage/formEditor/_isCompositeFormElement.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor._istoplevelformelement:
-.. include:: SummaryPage/formEditor/_isTopLevelFormElement.rst
+.. include:: SummaryPage/formEditor/_isTopLevelFormElement.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.label:
-.. include:: SummaryPage/formEditor/label.rst
+.. include:: SummaryPage/formEditor/label.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.group:
-.. include:: SummaryPage/formEditor/group.rst
+.. include:: SummaryPage/formEditor/group.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.groupsorting:
-.. include:: SummaryPage/formEditor/groupSorting.rst
+.. include:: SummaryPage/formEditor/groupSorting.txt
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.summarypage.formeditor.iconidentifier:
-.. include:: SummaryPage/formEditor/iconIdentifier.rst
+.. include:: SummaryPage/formEditor/iconIdentifier.txt
