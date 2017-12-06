@@ -1577,7 +1577,7 @@ example:
 
 The purpose of timestamps is to prevent conflicts that arise when two or more
 extensions within one TYPO3 installation use identical keys (e.g.
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement']['foo']).
+``$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement']['foo'])``.
 When timestamps are used, even a one-second difference in the time different
 hooks were connected ensures that one hook does not override the other.
 
