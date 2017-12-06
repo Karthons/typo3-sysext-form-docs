@@ -23,11 +23,11 @@ In contrast, the **form definition** describes the specific form, including
   mentioned aspects.
 
 In other words, the **prototype configuration** defines the existence of a
-form element of type ``Text`` globally. The **form definition** declares
-that such a form element of type ``Text`` is located on page 1 at position
+form element of type `Text` globally. The **form definition** declares
+that such a form element of type `Text` is located on page 1 at position
 1 of a specific form. In addition, it carries the information that this form
 element comes with the HTML attribute "placeholder" with value "Your name
-here". The form definition is written by the ``form editor``.
+here". The form definition is written by the `form editor`.
 
 
 Example form definition

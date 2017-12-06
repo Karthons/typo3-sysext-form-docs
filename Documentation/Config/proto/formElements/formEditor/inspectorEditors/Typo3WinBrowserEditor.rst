@@ -130,10 +130,10 @@ propertyValidators
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      This ``inspector editors`` is able to validate it's value through JavaScript methods.
-      This JavaScript validators can be registered through ``getFormEditorApp().addPropertyValidationValidator()``.
+      This `inspector editors` is able to validate it's value through JavaScript methods.
+      This JavaScript validators can be registered through `getFormEditorApp().addPropertyValidationValidator()`.
       The first method argument is the identifier for such a validator.
-      Every array value within ``propertyValidators`` must be equal to such a identifier.
+      Every array value within `propertyValidators` must be equal to such a identifier.
 
       For example:
 
@@ -171,7 +171,7 @@ propertyValidatorsMode
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      If set to 'OR' then at least one validator must be valid to accept the ``inspector editor`` value. If set to 'AND' then all validators must be valid.
+      If set to 'OR' then at least one validator must be valid to accept the `inspector editor` value. If set to 'AND' then all validators must be valid.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.fieldexplanationtext-typo3winbrowsereditor:
@@ -196,4 +196,4 @@ fieldExplanationText
       - :ref:`"Translate form editor settings"<concepts-formeditor-translation-formeditor>`
 
 :aspect:`Description`
-      A text which is shown at the bottom of the ``inspector editor``.
+      A text which is shown at the bottom of the `inspector editor`.

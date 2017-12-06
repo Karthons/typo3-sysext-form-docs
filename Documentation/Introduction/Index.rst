@@ -15,7 +15,7 @@ Introduction
    Get in touch with us:
 
      - Find us on `Slack <https://typo3.slack.com>`_ and join the channel
-       ``#ext:form``.
+       `#ext:form`.
      - Use the "Edit me on Github" function.
 
 
@@ -24,7 +24,7 @@ Introduction
 What does it do?
 ----------------
 
-The ``form`` extension acts as a flexible, extendible, yet easy to use form
+The `form` extension acts as a flexible, extendible, yet easy to use form
 framework. It equally allows editors, integrators, and developers to build
 all types of forms. For this task, different interfaces and techniques are
 available.

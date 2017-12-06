@@ -12,20 +12,20 @@ Form editor
 What does it do?
 ----------------
 
-The ``form editor`` is a powerful graphical user interface which allows the
-backend editor to create ``form definitions`` without writing a single line
-of code. Those ``form definitions`` will be used by the frontend process to
+The `form editor` is a powerful graphical user interface which allows the
+backend editor to create `form definitions` without writing a single line
+of code. Those `form definitions` will be used by the frontend process to
 render beautiful forms.
 
-The ``form editor`` is a modular interface which consists of several
+The `form editor` is a modular interface which consists of several
 components:
 
-- Stage: central visual component of the ``form editor`` which displays the
+- Stage: central visual component of the `form editor` which displays the
   form elements in an abstract view and a frontend preview
 - Tree: displays the structure of the form as a tree
 - Inspector: context specific toolbar which handles the visual display of
   form element options and allows editing those
-- Core: includes core functionalities of the ``form editor``
+- Core: includes core functionalities of the `form editor`
 - ViewModel: defines and steers the visual display
 - Mediator: delegates events of the components
 - Modals: processes modals
@@ -33,10 +33,10 @@ components:
 - Helper: helper functions which mainly allow the manipulation of DOM
   elements
 
-Generally speaking, the ``Modals``, ``Inspector``, and ``Stage`` components
-can be adapted through configuration. Especially the ``Inspector`` component
+Generally speaking, the `Modals`, `Inspector`, and `Stage` components
+can be adapted through configuration. Especially the `Inspector` component
 is modular and extremely flexible. As an integrator, you can reuse so-called
-``inspector editors``. Those elements are input fields of different types
+`inspector editors`. Those elements are input fields of different types
 which allow the backend editor to alter all of the available form element
 options.
 
@@ -45,7 +45,7 @@ options.
 
    JavaScript module interaction
 
-There is a general ``form editor`` configuration which can be found below
+There is a general `form editor` configuration which can be found below
 the following configuration path:
 
 .. code-block:: yaml
@@ -57,7 +57,7 @@ the following configuration path:
             standard:
               formEditor:
 
-Furthermore, you are able to configure the ``form editor`` regarding its
+Furthermore, you are able to configure the `form editor` regarding its
 different aspects. The configuration can be found below the following
 configuration paths:
 
@@ -84,10 +84,10 @@ configuration paths:
 Stage
 -----
 
-The ``Stage`` is the central visual component of the form editor which
+The `Stage` is the central visual component of the form editor which
 displays the form elements in two different modes:
 
-- abstract view: all form elements of a ``Page`` are presented in an
+- abstract view: all form elements of a `Page` are presented in an
   abstract way,
 - frontend preview: renders the form like it will (nearly) be displayed in
   the frontend ('nearly' since you have to make sure that your frontend CSS
@@ -101,7 +101,7 @@ to meet the specific needs of the TYPO3 backend. Thus, the frontend preview
 in the backend could differ compared to the "real" frontend.
 
 If your frontend preview requires loading additional CSS or a CSS framework
-then go ahead and configure a specific ``prototype`` accordingly.
+then go ahead and configure a specific `prototype` accordingly.
 
 Beside the frontend templates, there are also templates for the abstract
 view, i.e. you can customize the rendering of the abstract view for each
@@ -118,24 +118,24 @@ For more information, read the following chapter: ':ref:`Common abstract view fo
 Inspector
 ---------
 
-The ``Inspector`` component is situated on the right side of the ``form
-editor``. It is a modular, extremely flexible, and context specific toolbar
-which depends on the chosen form element. The ``Inspector`` allows editing
-the form element's options with the help of so-called ``inspector editors``.
+The `Inspector` component is situated on the right side of the `form
+editor`. It is a modular, extremely flexible, and context specific toolbar
+which depends on the chosen form element. The `Inspector` allows editing
+the form element's options with the help of so-called `inspector editors`.
 For the most parts, the interface can be easily customized by writing
 YAML configuration. For each form element you can define which properties
 are available and in which way they can be edited.
 
-In addition to the editable form element properties (like ``properties.placeholder``)
-there are so-called ``property collections`` which can be written by the
-``form editor`` as well. Their definition is stored on the hierarchical
-level of a form element. Right now, there are the following ``property
-collections``:
+In addition to the editable form element properties (like `properties.placeholder`)
+there are so-called `property collections` which can be written by the
+`form editor` as well. Their definition is stored on the hierarchical
+level of a form element. Right now, there are the following `property
+collections`:
 
 - validators
 - finishers
 
-``Property collections`` also make use of ``inspector editors`` in order to
+`Property collections` also make use of `inspector editors` in order to
 configure them properly. Due to this, we can do a lot of cool stuff. Imagine
 we have got a validator "Number range" with two validator options called
 "Minimum" and "Maximum". Additionally, we have got two form elements "Age
@@ -150,11 +150,11 @@ Basic JavaScript concepts
 -------------------------
 
 The form framework was designed to be as extendible as possible. Sooner or
-later, you want to customize the components of the ``form editor`` using
+later, you want to customize the components of the `form editor` using
 JavaScript. This is especially true if you want to create your own
-``inspector editors``. In order to achieve this, you can implement your own
+`inspector editors`. In order to achieve this, you can implement your own
 JavaScript modules. Those modules will include the required algorithms for
-the ``inspector editors`` and the ``abstract view`` as well as your own
+the `inspector editors` and the `abstract view` as well as your own
 event listing.
 
 
@@ -178,11 +178,11 @@ The following YAML configuration registers an additional JavaScript module.
                     - 'TYPO3/CMS/MySitePackage/Backend/FormEditor/ViewModel'
 
 According to the example shown above, the JavaScript files have to be stored
-within the folder ``my_site_package/Resources/Public/JavaScript/Backend/FormEditor/ViewModel.js``.
+within the folder `my_site_package/Resources/Public/JavaScript/Backend/FormEditor/ViewModel.js`.
 In the TYPO3 backend JavaScript files are loaded via RequireJS which depends
 on a certain convention. The name of the module starts with **TYPO3/CMS**/MySitePackage/Backend/FormEditor/ViewModel
 followed by your extension key TYPO3/CMS/**MySitePackage**/Backend/FormEditor/ViewModel.
-Thus, you have to ensure that the module is stored within a subfolder of ``my_site_package/Resources/Public/JavaScript/``.
+Thus, you have to ensure that the module is stored within a subfolder of `my_site_package/Resources/Public/JavaScript/`.
 The part TYPO3/CMS/MySitePackage/**Backend/FormEditor**/ViewModel tells you
 that your files have to be stored in my_site_package/Resources/Public/JavaScript/**Backend/FormEditor**/.
 The last section TYPO3/CMS/MySitePackage/Backend/FormEditor/**ViewModel**
@@ -329,7 +329,7 @@ for setting up your own module.
 Events
 ^^^^^^
 
-The event handling of EXT:form is based on the ``Publish/Subscribe Pattern``.
+The event handling of EXT:form is based on the `Publish/Subscribe Pattern`.
 To learn more about this terrific pattern, check out this website: https://addyosmani.com/resources/essentialjsdesignpatterns/book/.
 Please not that the processing sequence of the subscribers cannot be
 influenced. Furthermore, there is no information flow between the
@@ -345,10 +345,10 @@ FormElement model
 ^^^^^^^^^^^^^^^^^
 
 Within the JavaScript code, each form element is represented by a
-`FormElement model``. This model can be seen as a copy of the ``form
+`FormElement model`. This model can be seen as a copy of the `form
 definition'' enriched by some additional data. The following example shows
-you a ``form definition`` and the debug output of the corresponding
-``FormElement model``.
+you a `form definition` and the debug output of the corresponding
+`FormElement model`.
 
 .. code-block:: yaml
 
@@ -451,17 +451,17 @@ you a ``form definition`` and the debug output of the corresponding
     }
 
 For each form element which has child elements, you will find a property
-called ``renderables``. Those ``renderables`` are arrays whose elements
-consists of ``FormElement models`` of the particular child elements.
+called `renderables`. Those `renderables` are arrays whose elements
+consists of `FormElement models` of the particular child elements.
 
-As previously mentioned, the ``FormElement model`` is a conglomerate of the
-data of the ``form definition`` and some additional information:
+As previously mentioned, the `FormElement model` is a conglomerate of the
+data of the `form definition` and some additional information:
 
 - __parentRenderable
 - __identifierPath
 
 The following methods can be utilized in order to access the data of a
-``FormElement model``:
+`FormElement model`:
 
 - get()
 - set()
@@ -502,7 +502,7 @@ translated:
                 <validatorIdentifier>
                   formEditor:
 
-The translation files of the ``form editor`` are loaded as follows:
+The translation files of the `form editor` are loaded as follows:
 
 .. code-block:: yaml
 
@@ -529,13 +529,13 @@ Imagine, the following is defined for an option value:
     label: 'formEditor.elements.Form.editor.finishers.label'
     ...
 
-First of all, the process searches for the translation key ``formEditor.elements.Form.editor.finishers.label``
-within the file ``20: 'EXT:my_site_package/Resources/Private/Language/Database.xlf'``
-and after it inside the file ``10: 'EXT:form/Resources/Private/Language/Database.xlf'``.
+First of all, the process searches for the translation key `formEditor.elements.Form.editor.finishers.label`
+within the file `20: 'EXT:my_site_package/Resources/Private/Language/Database.xlf'`
+and after it inside the file `10: 'EXT:form/Resources/Private/Language/Database.xlf'`.
 If nothing is found, the option value will be displayed unmodified.
 
-Due to compatibility issues, the setting ``translationFile`` is not defined
+Due to compatibility issues, the setting `translationFile` is not defined
 as an array in the default configuration. To load your own translation files,
 you should define an array containing 'EXT:form/Resources/Private/Language/Database.xlf'
-as first entry (key ``10``) followed by your own file (key ``20``) as
+as first entry (key `10`) followed by your own file (key `20`) as
 displayed in the example above.

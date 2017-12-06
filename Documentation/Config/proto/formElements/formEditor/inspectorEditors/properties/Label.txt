@@ -21,4 +21,4 @@ label
       - :ref:`"Translate form editor settings"<concepts-formeditor-translation-formeditor>`
 
 :aspect:`Description`
-      The label for this ``inspector editor`` which is shown within the ``inspector component``.
+      The label for this `inspector editor` which is shown within the `inspector component`.

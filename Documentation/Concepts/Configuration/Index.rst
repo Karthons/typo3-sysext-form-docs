@@ -83,7 +83,7 @@ frontend.
     }
 
 Since the keys 10 and 20 are already taken, we recommend registering your
-own configuration beginning with the key ``100``.
+own configuration beginning with the key `100`.
 
 .. code-block:: typoscript
 
@@ -116,7 +116,7 @@ the backend.
     }
 
 Since the keys 10, 20, and 30 are already taken, we recommend registering
-your own configuration beginning with the key ``100``.
+your own configuration beginning with the key `100`.
 
 .. code-block:: typoscript
 
@@ -133,14 +133,14 @@ your own configuration beginning with the key ``100``.
 
 The backend module of EXT:form is based on Extbase. Such backend modules
 can, like frontend plugins, be configured via TypoScript. The frontend
-plugins are configured below ``plugin.tx_[pluginkey]``. For the
-configuration of the backend ``module.tx_[pluginkey]`` is used.
+plugins are configured below `plugin.tx_[pluginkey]`. For the
+configuration of the backend `module.tx_[pluginkey]` is used.
 
 There are different ways to include the TypoScript configuration for the
 backend:
 
 - a) use a file called `ext_typoscript_setup.txt`,
-- b) use the API function ``\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup()``,
+- b) use the API function `\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup()`,
 - c) add the configuration to your existing TypoScript template.
 
 We recommend using methods a and b. Here is why. The file
@@ -149,7 +149,7 @@ your own site package. It will be automatically loaded in both frontend and
 backend of your TYPO3 installation. The API call (method b) does pretty
 much the same.
 
-In both cases, the ``form editor`` will work as expected regardless the
+In both cases, the `form editor` will work as expected regardless the
 chosen page from the page tree. If using the aforementioned method c, the
 configuration would only be valid on a specific page tree, unless you add
 your configuration to all trees within your installation. Nevertheless,
@@ -210,15 +210,15 @@ Configuration aspects
 In EXT:form, four aspects can be configured:
 
 - the behaviour of the frontend rendering,
-- the behaviour of the ``form editor``,
-- the behaviour of the ``form manager``, and
-- the behaviour of the ``form plugin``.
+- the behaviour of the `form editor`,
+- the behaviour of the `form manager`, and
+- the behaviour of the `form plugin`.
 
 Those aspects are defined in separate files which are only loaded in the
 frontend/ backend when needed. This approach has two advantages:
 
 - increased clarity,
-- increased performance, e.g. the ``form editor`` configuration is not
+- increased performance, e.g. the `form editor` configuration is not
   needed in the frontend and therefore not loaded.
 
 It is up to you if you want to follow this guideline or if you want to put
@@ -228,8 +228,8 @@ There are some configurational aspects which cannot explicitly be assigned
 to either the frontend or the backend. Instead, the configuration is
 valid for both areas. For example, within the backend, the whole frontend
 configuration is required in order to allow the form preview to work
-properly. In addition, as soon as the form is rendered via the ``form
-plugin``, the ``FormEngine`` configuration is needed to interpret the
+properly. In addition, as soon as the form is rendered via the `form
+plugin`, the `FormEngine` configuration is needed to interpret the
 overridden finisher configuration correctly.
 
 
@@ -242,11 +242,11 @@ The final YAML configuration is not based on one huge file. Instead, it is
 a compilation of a sequential process:
 
 - First of all, all registered configuration files are parsed as YAML and
-  are overlain according to their order. ``TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule()``
+  are overlain according to their order. `TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule()`
   is involved in this first step.
-- After that, the ``__inheritances`` operator is applied. It is a unique
+- After that, the `__inheritances` operator is applied. It is a unique
   operator introduced by the form framework.
-- Finally, all configuration entries with a value of ``null`` are deleted.
+- Finally, all configuration entries with a value of `null` are deleted.
 
 Additionally, the frontend configuration can be extended/ overridden by
 TypoScript:
@@ -262,7 +262,7 @@ TypoScript:
     }
 
 .. note::
-   Your TypoScript overrides are not interpreted by the ``form editor``,
+   Your TypoScript overrides are not interpreted by the `form editor`,
    i.e. those settings are ignored.
 
 .. note::
@@ -286,7 +286,7 @@ register an additional configuration file via
         }
     }
 
-... you only have to define the following YAML setup in ``EXT:my_site_package/Configuration/Yaml/CustomFormSetup.yaml``:
+... you only have to define the following YAML setup in `EXT:my_site_package/Configuration/Yaml/CustomFormSetup.yaml`:
 
 .. code-block:: yaml
 
@@ -314,12 +314,12 @@ values of the basic configuration file (:file:`EXT:form/Configuration/Yaml/BaseS
 __inheritances operator
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``__inheritances`` operator is an extremely useful instrument. Using it
+The `__inheritances` operator is an extremely useful instrument. Using it
 helps to significantly reduce the configuration effort. It behaves similar
-to the ``<`` operator in TypoScript. That is, the definition of the source
+to the `<` operator in TypoScript. That is, the definition of the source
 object is copied to the target object. The configuration can be inherited
 from several parent objects and can be overridden afterwards. Two simple
-examples will show you the usage and behaviour of the ``__inheritances``
+examples will show you the usage and behaviour of the `__inheritances`
 operator.
 
 .. code-block:: yaml
@@ -347,7 +347,7 @@ The configuration above results in:
         key02:
           key03: value
 
-As you can see, ``part02`` inherited all of ``part01``'s properties.
+As you can see, `part02` inherited all of `part01`'s properties.
 
 .. code-block:: yaml
 
@@ -369,7 +369,7 @@ The configuration above results in:
       part02:
         key: 'value override'
 
-EXT:form heavily uses the ``__inheritances`` operator, in particular, for
+EXT:form heavily uses the `__inheritances` operator, in particular, for
 the definition of form elements. The following example shows you how to use
 the operator to define a new form element which behaves like the parent
 element but also has its own properties.
@@ -394,10 +394,10 @@ element but also has its own properties.
                       u: 'Unicorn'
                       a: 'Alien'
 
-The YAML configuration defines a new form element called ``GenderSelect``.
-This element inherits its definition from the ``RadioButton`` element but
+The YAML configuration defines a new form element called `GenderSelect`.
+This element inherits its definition from the `RadioButton` element but
 additionally ships four predefined options. Without any problems, the new
-element can be used and overridden within the ``form definition``.
+element can be used and overridden within the `form definition`.
 
 .. hint::
 
@@ -406,19 +406,19 @@ element can be used and overridden within the ``form definition``.
    to check the configuration, there is a fishy way which you should never
    implement on a production system.
 
-   Open the file ``typo3/sysext/form/Classes/Mvc/Configuration/ConfigurationManager.php::getConfigurationFromYamlFile()``
-   and add the following code before the ``return`` statement::
+   Open the file `typo3/sysext/form/Classes/Mvc/Configuration/ConfigurationManager.php::getConfigurationFromYamlFile()`
+   and add the following code before the `return` statement::
 
       \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($yamlSettings,
          'form configuration', 9999);
 
-   Now open the ``Forms`` module in the backend or navigate to a page in
+   Now open the `Forms` module in the backend or navigate to a page in
    the frontend which contains a form. The DebuggerUtility will print the
    final configuration directly to the screen.
 
 It will probably take some time to fully understand the awesomeness of
 this operator. If you are eager to learn more about this great instrument,
-check out the unit tests defined in ``EXT:form/Tests/Unit/Mvc/Configuration/InheritancesResolverServiceTest.php``.
+check out the unit tests defined in `EXT:form/Tests/Unit/Mvc/Configuration/InheritancesResolverServiceTest.php`.
 
 
 .. _concepts-configuration-prototypes:
@@ -427,9 +427,9 @@ Prototypes
 ----------
 
 Most of the configurational aspects of the form framework are defined
-in so-called ``prototypes``. By default, EXT:form defines a prototype
-named ``standard``. The definition of form elements - including their
-rendering in the frontend, ``form editor`` and ``form plugin`` - reside
+in so-called `prototypes`. By default, EXT:form defines a prototype
+named `standard`. The definition of form elements - including their
+rendering in the frontend, `form editor` and `form plugin` - reside
 within those prototypes. As soon as you create a new form, the specific
 form definition references such a prototype.
 
@@ -439,16 +439,16 @@ For example:
 - based on the referenced prototype, the same form can load
 
   - ...varying templates
-  - ...varying ``form editor`` configurations
-  - ...varying ``form plugin`` finisher overrides
+  - ...varying `form editor` configurations
+  - ...varying `form plugin` finisher overrides
 
-- within the ``form manager``, depending on the selected prototype
+- within the `form manager`, depending on the selected prototype
 
-  - ...varying ``form editor`` configurations can be loaded
+  - ...varying `form editor` configurations can be loaded
   - ...varying pre-configured form templates (boilerplates) can be chosen
 
 - different prototypes can define different/ extended form elements and
-  display them in the frontend/ ``form editor`` accordingly
+  display them in the frontend/ `form editor` accordingly
 
 Check out the following use case to fully understand the concept behind
 prototypes. Imagine that there are two defined prototypes: "noob" and
@@ -461,16 +461,16 @@ prototypes. Imagine that there are two defined prototypes: "noob" and
    :b: Prototype "noob"
    :c: Prototype "poweruser"
 
- - :a: **Available form elements within the ``form editor``**
+ - :a: **Available form elements within the `form editor`**
    :b: Text, Textarea
    :c: No changes. Default behaviour.
 
- - :a: **Available finisher within the ``form editor``**
+ - :a: **Available finisher within the `form editor`**
    :b: Only the email finisher is available. It offers a field for setting
        the subject of the mail. All remaining fields are hidden and filled
        with default values.
    :c: No changes. Default behaviour.
 
- - :a: **Finisher overrides within the ``form plugin``**
+ - :a: **Finisher overrides within the `form plugin`**
    :b: It is not possible to override the finisher configuration.
    :c: No changes. Default behaviour.

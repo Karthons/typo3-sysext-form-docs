@@ -28,10 +28,10 @@ TYPO3\\CMS\\Form\\Domain\\Renderer\\FluidFormRenderer
 Options
 ^^^^^^^
 
-The ``FluidFormRenderer`` uses some rendering options which are of particular importance,
+The `FluidFormRenderer` uses some rendering options which are of particular importance,
 as they determine how the form field is resolved to a path in the file system.
 
-All rendering options are retrieved from the ``FormDefinition``, using the ``TYPO3\CMS\Form\Domain\Model\FormDefinition::getRenderingOptions()`` method.
+All rendering options are retrieved from the `FormDefinition`, using the `TYPO3\CMS\Form\Domain\Model\FormDefinition::getRenderingOptions()` method.
 
 
 .. _apireference-frontendrendering-fluidformrenderer-options-templaterootpaths:
@@ -41,7 +41,7 @@ templateRootPaths
 
 Used to define several paths for templates, which will be tried in reversed order (the paths are searched from bottom to top).
 The first folder where the desired template is found, is used. If the array keys are numeric, they are first sorted and then tried in reversed order.
-Within this paths, fluid will search for a file which is named like the ``<formElementTypeIdentifier>``.
+Within this paths, fluid will search for a file which is named like the `<formElementTypeIdentifier>`.
 
 For example:
 
@@ -49,7 +49,7 @@ templateRootPaths.10 = EXT:form/Resources/Private/Frontend/Templates/
 $renderable->getType() == 'Form'
 Expected template file: EXT:form/Resources/Private/Frontend/Templates/Form.html
 
-Only the root element (``FormDefinition``) has to be a template file. All child form elements are partials. By default, the root element is called ``Form``.
+Only the root element (`FormDefinition`) has to be a template file. All child form elements are partials. By default, the root element is called `Form`.
 
 .. code-block:: yaml
 
@@ -95,7 +95,7 @@ partialRootPaths
 Used to define several paths for partials, which will be tried in reversed order. The first folder where the desired partial is found, is used.
 The keys of the array define the order.
 
-Within this paths, fluid will search for a file which is named like the ``<formElementTypeIdentifier>``.
+Within this paths, fluid will search for a file which is named like the `<formElementTypeIdentifier>`.
 
 For example:
 
@@ -132,7 +132,7 @@ partialRootPaths.10 = EXT:form/Resources/Private/Frontend/Partials/
 $renderable->getType() == 'Text'
 Expected partial file: EXT:form/Resources/Private/Frontend/Partials/Text.html
 
-Set ``templateName`` to define a custom name which should be used instead.
+Set `templateName` to define a custom name which should be used instead.
 
 For example:
 
@@ -168,11 +168,11 @@ Arguments
 factoryClass
 ++++++++++++
 
-A class name of a ``FormFactory``.
-This factory is used to create the ``TYPO3\CMS\Form\Domain\Model\FormDefinition`` which is the ``form definition`` Domain Model.
-If no ``factoryClass`` argument is passed, the factory supplied by EXT:form ``TYPO3\CMS\Form\ Domain\Factory\ArrayFormFactory`` is used.
+A class name of a `FormFactory`.
+This factory is used to create the `TYPO3\CMS\Form\Domain\Model\FormDefinition` which is the `form definition` Domain Model.
+If no `factoryClass` argument is passed, the factory supplied by EXT:form `TYPO3\CMS\Form\ Domain\Factory\ArrayFormFactory` is used.
 Another factory class is required if the form is to be generated programmatically.
-To do this you must implement your own ``FormFactory`` in which your own form is generated programmatically and passes this class name to the ViewHelper.
+To do this you must implement your own `FormFactory` in which your own form is generated programmatically and passes this class name to the ViewHelper.
 This then renders the form.
 
 .. code-block:: html
@@ -185,9 +185,9 @@ This then renders the form.
 persistenceIdentifier
 +++++++++++++++++++++
 
-The ``form definition`` to be found under ``persistenceIdentifier``.
-The PersistenceManager now loads the ``form definition`` which is found under ``persistenceIdentifier`` and passes this configuration to the ``factoryClass``.
-In this case, the ``factoryClass`` will be given an empty configuration array (if ``overrideConfiguration`` is not specified).
+The `form definition` to be found under `persistenceIdentifier`.
+The PersistenceManager now loads the `form definition` which is found under `persistenceIdentifier` and passes this configuration to the `factoryClass`.
+In this case, the `factoryClass` will be given an empty configuration array (if `overrideConfiguration` is not specified).
 
 .. code-block:: html
 
@@ -200,10 +200,10 @@ overrideConfiguration
 +++++++++++++++++++++
 
 A configuration to be superimposed can be entered here.
-If a ``persistenceIdentifier`` is specified, the ``form definition`` which is found under ``persistenceIdentifier`` is loaded.
-This configuration is then superimposed with ``overrideConfiguration``. This configuration is then passed to the ``factoryClass``.
-If no ``persistenceIdentifier`` is specified, ``overrideConfiguration`` is passed directly to the ``factoryClass``.
-This way a configuration can be given to a ``factoryClass`` implementation.
+If a `persistenceIdentifier` is specified, the `form definition` which is found under `persistenceIdentifier` is loaded.
+This configuration is then superimposed with `overrideConfiguration`. This configuration is then passed to the `factoryClass`.
+If no `persistenceIdentifier` is specified, `overrideConfiguration` is passed directly to the `factoryClass`.
+This way a configuration can be given to a `factoryClass` implementation.
 
 
 .. _apireference-frontendrendering-renderviewHelper-prototypename:
@@ -211,9 +211,9 @@ This way a configuration can be given to a ``factoryClass`` implementation.
 prototypeName
 +++++++++++++
 
-The name of the prototype, on which basis the ``factoryClass`` should create the form.
-If nothing is specified, the configuration (``form definition`` or ``overrideConfiguration``) is searched for the prototy name.
-If no specification exists, the standard prototype ``standard`` is used.
+The name of the prototype, on which basis the `factoryClass` should create the form.
+If nothing is specified, the configuration (`form definition` or `overrideConfiguration`) is searched for the prototy name.
+If no specification exists, the standard prototype `standard` is used.
 
 
 
@@ -222,7 +222,7 @@ If no specification exists, the standard prototype ``standard`` is used.
 Build forms programmatically
 ----------------------------
 
-Implement a ``FormFactory`` and build the form::
+Implement a `FormFactory` and build the form::
 
     <?php
     declare(strict_types=1);
@@ -393,8 +393,8 @@ Signature::
 
 
 You can use this method to prefill form element data for example from database tables.
-All the classes you can see above extends from the ``TYPO3\CMS\Form\Domain\Model\FormElement\AbstractFormElement``.
-``AbstractFormElement`` implements this method like this::
+All the classes you can see above extends from the `TYPO3\CMS\Form\Domain\Model\FormElement\AbstractFormElement`.
+`AbstractFormElement` implements this method like this::
 
     public function initializeFormElement()
     {
@@ -413,7 +413,7 @@ All the classes you can see above extends from the ``TYPO3\CMS\Form\Domain\Model
         }
     }
 
-If you extend you custom implementation from ``AbstractFormElement`` (and you should do this),
+If you extend you custom implementation from `AbstractFormElement` (and you should do this),
 it enables you to override the 'initializeFormElement' method within your custom implementation class.
 If you do not call the parents 'initializeFormElement' then no hook will be thrown.
 
@@ -594,7 +594,7 @@ addPage()
 '''''''''
 
 Add a new page at the end of the form.
-Instead of this method, you should use ``createPage`` instead.
+Instead of this method, you should use `createPage` instead.
 
 Signature::
 
@@ -661,7 +661,7 @@ addFinisher()
 '''''''''''''
 
 Adds the specified finisher to the form.
-Instead of this method, you should use ``createFinisher`` instead.
+Instead of this method, you should use `createFinisher` instead.
 
 Signature::
 
@@ -1008,7 +1008,7 @@ Signature::
 TYPO3\\CMS\\Form\\Domain\\Model\\FormElements\\AbstractFormElement
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The following classes extends from ``AbstractFormElement`` and therefore contain the following API methods.
+The following classes extends from `AbstractFormElement` and therefore contain the following API methods.
 
 - TYPO3\\CMS\\Form\\Domain\\Model\\FormElements\\AdvancedPassword
 - TYPO3\\CMS\\Form\\Domain\\Model\\FormElements\\GenericFormElement
@@ -1091,7 +1091,7 @@ The following classes extends from ``AbstractFormElement`` and therefore contain
 TYPO3\\CMS\\Form\\Domain\\Finishers\\AbstractFinisher
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The following classes extends from ``AbstractFinisher`` and therefore contain the following API methods.
+The following classes extends from `AbstractFinisher` and therefore contain the following API methods.
 
 - TYPO3\\CMS\\Form\\Domain\\Finishers\\ClosureFinisher
 - TYPO3\\CMS\\Form\\Domain\\Finishers\\ConfirmationFinisher
@@ -1107,8 +1107,8 @@ The following classes extends from ``AbstractFinisher`` and therefore contain th
 execute()
 '''''''''
 
-Executes the finisher. ``AbstractFinisher::execute()`` call ``$this->executeInternal()`` at the end. Own finisher
-implementations which extends from  ``AbstractFinisher:`` must start their own logic within ``executeInternal()``.
+Executes the finisher. `AbstractFinisher::execute()` call `$this->executeInternal()` at the end. Own finisher
+implementations which extends from  `AbstractFinisher:` must start their own logic within `executeInternal()`.
 
 Signature::
 
@@ -1120,7 +1120,7 @@ Signature::
 setOptions()
 ''''''''''''
 
-Set the finisher options. Instead of directly accessing them, you should rather use ``parseOption()``.
+Set the finisher options. Instead of directly accessing them, you should rather use `parseOption()`.
 
 Signature::
 
@@ -1299,7 +1299,7 @@ TYPO3\\CMS\\Form\\Domain\\Factory\\AbstractFormFactory
 triggerFormBuildingFinished()
 '''''''''''''''''''''''''''''
 
-Helper to be called by every ``FormFactory`` which extends from ``AbstractFormFactory`` after
+Helper to be called by every `FormFactory` which extends from `AbstractFormFactory` after
 everything has been built to call the "afterBuildingFinished" hook on all form elements.
 
 Signature::
@@ -1346,7 +1346,7 @@ Set the controller context which should be used
 render()
 ''''''''
 
-Renders the FormDefinition. This method is expected to call the ``beforeRendering`` hook on each form element.
+Renders the FormDefinition. This method is expected to call the `beforeRendering` hook on each form element.
 
 .. code-block:: php
 
@@ -1358,7 +1358,7 @@ Renders the FormDefinition. This method is expected to call the ``beforeRenderin
 setFormRuntime()
 ''''''''''''''''
 
-Set the current ``FormRuntime``.
+Set the current `FormRuntime`.
 
 .. code-block:: php
 
@@ -1370,7 +1370,7 @@ Set the current ``FormRuntime``.
 getFormRuntime()
 ''''''''''''''''
 
-Get the current ``FormRuntime``.
+Get the current `FormRuntime`.
 
 .. code-block:: php
 
@@ -1395,7 +1395,7 @@ initializeFormElement
 +++++++++++++++++++++
 
 You can connect to this hook and initialize a form element without defining a
-custom implementaion to access the element's ``initializeFormElement`` method.
+custom implementaion to access the element's `initializeFormElement` method.
 You only need a class which connects to this hook. Then detect the form
 element you wish to initialize. For example, you can use this hook to prefill
 form element data from database tables. Note that this hook will be called
@@ -1405,9 +1405,9 @@ form element. If you want to prefill form element data after the complete
 form element is configured you should use the
 :ref:`afterBuildingFinished<apireference-frontendrendering-runtimemanipulation-hooks-afterbuildingfinished>` hook.
 
-The initializeFormElement hook is invoked by the methods ``TYPO3\CMS\Form\Domain\Model\FormElements\Page::createElement()``
-and ``TYPO3\CMS\Form\Domain\Model\FormElements\Section::createElement()``.
-That means the hook will **not** be triggered for ``Pages``. At this point
+The initializeFormElement hook is invoked by the methods `TYPO3\CMS\Form\Domain\Model\FormElements\Page::createElement()`
+and `TYPO3\CMS\Form\Domain\Model\FormElements\Section::createElement()`.
+That means the hook will **not** be triggered for `Pages`. At this point
 you do not have access to submitted form element values.
 
 
@@ -1458,7 +1458,7 @@ seen in the following example::
         = \VENDOR\YourNamespace\YourClass::class;
 
 
-Leaving the section ``<useATimestampAsKeyPlease>`` as is is not recommended.
+Leaving the section `<useATimestampAsKeyPlease>` as is is not recommended.
 It does nothing except cause the extension to fail and an error message to be
 delivered. Nor should it be replaced with a function like time(), as the key
 should be unalterable. Instead, replace this section with the current UNIX
@@ -1471,7 +1471,7 @@ example::
 
 The purpose of timestamps is to prevent conflicts that arise when two or more
 extensions within one TYPO3 installation use identical keys (e.g.
-``$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement']['foo'])``.
+`$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement']['foo'])`.
 When timestamps are used, even a one-second difference in the time different
 hooks were connected ensures that one hook does not override the other.
 
@@ -1481,8 +1481,8 @@ hooks were connected ensures that one hook does not override the other.
 beforeRemoveFromParentRenderable
 ++++++++++++++++++++++++++++++++
 
-This hook is invoked by the methods ``TYPO3\CMS\Form\Domain\Model\FormDefinition::removePage()``,  ``TYPO3\CMS\Form\Domain\Model\FormElements\Page::removeElement()``
-and ``TYPO3\CMS\Form\Domain\Model\FormElements\Section::removeElement()``
+This hook is invoked by the methods `TYPO3\CMS\Form\Domain\Model\FormDefinition::removePage()`,  `TYPO3\CMS\Form\Domain\Model\FormElements\Page::removeElement()`
+and `TYPO3\CMS\Form\Domain\Model\FormElements\Section::removeElement()`
 
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-beforeremovefromparentrenderable-connect:
@@ -1523,15 +1523,15 @@ Use the hook
 afterBuildingFinished
 +++++++++++++++++++++
 
-This hook is called for each form element after the class ``TYPO3\CMS\Form\Domain\Factory\ArrayFormFactory``
+This hook is called for each form element after the class `TYPO3\CMS\Form\Domain\Factory\ArrayFormFactory`
 has built the entire form. This hook is triggered just before the
-``FormRuntime`` object is generated. At this point, no run-time information
+`FormRuntime` object is generated. At this point, no run-time information
 (e.g. assigned form values) is yet available. It can, for example, be used to
-generate new form elements within complex forms. The ``ArrayFormFactory`` is
-used by EXT:form via the ``RenderViewHelper`` to render forms using a ``form
-definition`` YAML file. Each form factory implementation must deal with the
+generate new form elements within complex forms. The `ArrayFormFactory` is
+used by EXT:form via the `RenderViewHelper` to render forms using a `form
+definition` YAML file. Each form factory implementation must deal with the
 calling of this hook themselves. EXT:form itself uses this hook to initialize
-the property-mapper configuration for ``FileUpload`` elements.
+the property-mapper configuration for `FileUpload` elements.
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-afterbuildingfinished-connect:
 
@@ -1618,10 +1618,10 @@ afterSubmit
 +++++++++++
 
 You can use it for example for dynamic validations which depends on other submitted form element values.
-This hook is invoked by the ``FormRuntime`` for each form element **before** values are property mapped, validated and pushed within the FormRuntime's ``FormState``.
-If the first page is submitted at the first time you cannot access the form element values from the first page by just calling ``$formRuntime['<someOtherFormElementIdentifier>']`` to access
-the submitted form element values from the first page. In this case you can access the submitted raw data through ``$requestArguments``.
-EXT:form itself uses this hook to dynamically add validation errors for ``AdvancedPassword`` form elements.
+This hook is invoked by the `FormRuntime` for each form element **before** values are property mapped, validated and pushed within the FormRuntime's `FormState`.
+If the first page is submitted at the first time you cannot access the form element values from the first page by just calling `$formRuntime['<someOtherFormElementIdentifier>']` to access
+the submitted form element values from the first page. In this case you can access the submitted raw data through `$requestArguments`.
+EXT:form itself uses this hook to dynamically add validation errors for `AdvancedPassword` form elements.
 
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-aftersubmit-connect:
@@ -1666,7 +1666,7 @@ beforeRendering
 +++++++++++++++
 
 This is a hook that is invoked by the rendering system before the corresponding element is rendered.
-Use this to access previously submitted values and/or modify the ``FormRuntime`` before an element is outputted to the browser.
+Use this to access previously submitted values and/or modify the `FormRuntime` before an element is outputted to the browser.
 This hook is called after all validations and property mappings are done.
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-beforerendering-connect:
@@ -1843,7 +1843,7 @@ Email finisher
 --------------
 
 This finisher sends an email to one recipient.
-EXT:form uses 2 EmailFinisher declarations with the identifiers ``EmailToReceiver`` and ``EmailToSender``.
+EXT:form uses 2 EmailFinisher declarations with the identifiers `EmailToReceiver` and `EmailToSender`.
 
 Usage within form definition
 
@@ -2001,7 +2001,7 @@ replyToAddress
       Email address of to be used as reply-to email (use multiple addresses with an array)
 
 .. note::
-   For the moment, the ``form editor`` cannot deal with multiple reply-to addresses (use multiple addresses with an array)
+   For the moment, the `form editor` cannot deal with multiple reply-to addresses (use multiple addresses with an array)
 
 
 .. _apireference-finisheroptions-emailfinisher-options-carboncopyaddress:
@@ -2022,7 +2022,7 @@ carbonCopyAddress
       Email address of the copy recipient (use multiple addresses with an array)
 
 .. note::
-   For the moment, the ``form editor`` cannot deal with multiple copy recipient addresses (use multiple addresses with an array)
+   For the moment, the `form editor` cannot deal with multiple copy recipient addresses (use multiple addresses with an array)
 
 
 .. _apireference-finisheroptions-emailfinisher-options-blindcarboncopyaddress:
@@ -2043,7 +2043,7 @@ blindCarbonCopyAddress
       Email address of the blind copy recipient (use multiple addresses with an array)
 
 .. note::
-   For the moment, the ``form editor`` cannot deal with multiple blind copy recipient addresses (use multiple addresses with an array)
+   For the moment, the `form editor` cannot deal with multiple blind copy recipient addresses (use multiple addresses with an array)
 
 
 .. _apireference-finisheroptions-emailfinisher-options-format:
@@ -2141,7 +2141,7 @@ templatePathAndFilename
 
 :aspect:`Description`
       Template path and filename for the mail body.
-      The placeholder {\@format} will be replaced with the value from option ``format``
+      The placeholder {\@format} will be replaced with the value from option `format`
 
 
 .. _apireference-finisheroptions-emailfinisher-options-layoutrootpaths:
@@ -2670,9 +2670,9 @@ mode
       insert/ update
 
 :aspect:`Description`
-      ``insert`` will create a new database row with the values from the submitted form and/or some predefined values. @see options.elements and options.databaseFieldMappings
+      `insert` will create a new database row with the values from the submitted form and/or some predefined values. @see options.elements and options.databaseFieldMappings
 
-      ``update`` will update a given database row with the values from the submitted form and/or some predefined values. 'options.whereClause' is then required.
+      `update` will update a given database row with the values from the submitted form and/or some predefined values. 'options.whereClause' is then required.
 
 
 .. _apireference-finisheroptions-savetodatabasefinisher-options-whereclause:
@@ -2708,9 +2708,9 @@ elements
       empty array
 
 :aspect:`Description`
-      Use ``options.elements`` to map form element values to existing database columns.
-      Each key within ``options.elements`` has to match with a form element identifier.
-      The value for each key within ``options.elements`` is an array with additional informations.
+      Use `options.elements` to map form element values to existing database columns.
+      Each key within `options.elements` has to match with a form element identifier.
+      The value for each key within `options.elements` is an array with additional informations.
 
 
 .. _apireference-finisheroptions-savetodatabasefinisher-options-elements-<formelementidentifier>-mapondatabasecolumn:
@@ -2728,7 +2728,7 @@ elements.<formElementIdentifier>.mapOnDatabaseColumn
       undefined
 
 :aspect:`Description`
-      The value from the submitted form element with the identifier ``<formElementIdentifier>`` will be written into this database column.
+      The value from the submitted form element with the identifier `<formElementIdentifier>` will be written into this database column.
 
 
 .. _apireference-finisheroptions-savetodatabasefinisher-options-elements-<formelementidentifier>-skipifvalueisempty:
@@ -2747,7 +2747,7 @@ elements.<formElementIdentifier>.skipIfValueIsEmpty
 
 :aspect:`Description`
       Set this to true if the database column should not be written if the value from the submitted form element with the identifier
-      ``<formElementIdentifier>`` is empty (think about password fields etc.)
+      `<formElementIdentifier>` is empty (think about password fields etc.)
 
 
 .. _apireference-finisheroptions-savetodatabasefinisher-options-elements-<formelementidentifier>-savefileidentifierinsteadofuid:
@@ -2766,9 +2766,9 @@ elements.<formElementIdentifier>.saveFileIdentifierInsteadOfUid
 
 :aspect:`Description`
       Set this to true if the database column should not be written if the value from the submitted form element with the identifier
-      ``<formElementIdentifier>`` is empty (think about password fields etc.)
+      `<formElementIdentifier>` is empty (think about password fields etc.)
 
-      This setting only rules for form elements which creates a FAL object like ``FileUpload`` or ``ImageUpload``.
+      This setting only rules for form elements which creates a FAL object like `FileUpload` or `ImageUpload`.
       By default, the uid of the FAL object will be written into the database column. Set this to true if you want to store the
       FAL identifier (1:/user_uploads/some_uploaded_pic.jpg) instead.
 
@@ -2789,13 +2789,13 @@ databaseColumnMappings
 
 :aspect:`Description`
       Use this to map database columns to static values.
-      Each key within ``options.databaseColumnMappings`` has to match with an existing database column.
-      The value for each key within ``options.databaseColumnMappings`` is an array with additional informations.
+      Each key within `options.databaseColumnMappings` has to match with an existing database column.
+      The value for each key within `options.databaseColumnMappings` is an array with additional informations.
 
-      This mapping is done *before* the ``options.element`` mapping.
-      This means if you map a database column to a value through ``options.databaseColumnMappings`` and map a submitted
-      form element value to the same database column through ``options.element``, the submitted form element value
-      will override the value you set within ``options.databaseColumnMappings``.
+      This mapping is done *before* the `options.element` mapping.
+      This means if you map a database column to a value through `options.databaseColumnMappings` and map a submitted
+      form element value to the same database column through `options.element`, the submitted form element value
+      will override the value you set within `options.databaseColumnMappings`.
 
 
 .. _apireference-finisheroptions-savetodatabasefinisher-options-databasecolumnmappings.<databasecolumnname>.value:
@@ -2814,11 +2814,11 @@ databaseColumnMappings.<databaseColumnName>.value
 
 :aspect:`Description`
       The value which will be written to the database column.
-      You can also use the :ref:`FormRuntime accessor feature<concepts-frontendrendering-codecomponents-customfinisherimplementations-accessingoptions-formruntimeaccessor>` to access every getable property from the ``FormRuntime``
-      In short: use something like ``{<formElementIdentifier>}`` to get the value from the submitted form element with the identifier ``<formElementIdentifier>``.
+      You can also use the :ref:`FormRuntime accessor feature<concepts-frontendrendering-codecomponents-customfinisherimplementations-accessingoptions-formruntimeaccessor>` to access every getable property from the `FormRuntime`
+      In short: use something like `{<formElementIdentifier>}` to get the value from the submitted form element with the identifier `<formElementIdentifier>`.
 
-      If you use the FormRuntime accessor feature within ``options.databaseColumnMappings``, the functionality is nearly identical
-      to the ``options.elements`` configuration variant.
+      If you use the FormRuntime accessor feature within `options.databaseColumnMappings`, the functionality is nearly identical
+      to the `options.elements` configuration variant.
 
 
 .. _apireference-finisheroptions-savetodatabasefinisher-options-databasecolumnmappings.<databasecolumnname>.skipifvalueisempty:
@@ -2836,7 +2836,7 @@ databaseColumnMappings.<databaseColumnName>.skipIfValueIsEmpty
       false
 
 :aspect:`Description`
-      Set this to true if the database column should not be written if the value from ``options.databaseColumnMappings.<databaseColumnName>.value`` is empty.
+      Set this to true if the database column should not be written if the value from `options.databaseColumnMappings.<databaseColumnName>.value` is empty.
 
 
 
@@ -3034,17 +3034,17 @@ Stage
 Common abstract view form element templates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The basic idea of the ``abstract view`` is to give a quick overview of the
+The basic idea of the `abstract view` is to give a quick overview of the
 configuration of form elements, without having to click them in order to view
-the detailed configuration in the ``Inspector``. The ``form editor`` requires
+the detailed configuration in the `Inspector`. The `form editor` requires
 for each form element an inline HTML template and the corresponding JavaScript
 code. Information matching inline HTML templates to the appropriate form
 elements must be configured within :ref:`TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formeditor.formEditorPartials <typo3.cms.form.prototypes.\<prototypeidentifier>.formeditor.formeditorpartials>`.
 At this point, the key identifying the form element follows a convention:
-``FormElement-<formElementTypeIdentifier>``. The value for the key tells the
-``form editor`` which inline HTML template should be loaded for the respective
+`FormElement-<formElementTypeIdentifier>`. The value for the key tells the
+`form editor` which inline HTML template should be loaded for the respective
 form element. This template is then cloned via JavaScript, brought to life
-using the form element configuration and shown in the ``Stage`` component.
+using the form element configuration and shown in the `Stage` component.
 
 You can read about how particular form elements are mapped to inline HTML
 templates and how the corresponding JavaScript code are executed :ref:`here <apireference-formeditor-basicjavascriptconcepts-events-view-stage-abstract-render-template-perform>`.
@@ -3053,9 +3053,9 @@ The form element inline HTML templates and the corresponding JavaScript code
 are configured for reuse. In this way, most form elements you create should be
 able to access the components delivered in EXT:form, without requiring separate
 implementations (at least we hope so). For your own implementations, study
-EXT:form stage templates, which is found under ``Resources/Private/Backend/Partials/FormEditor/Stage/*``.
-The corresponding JavaScript code is found under ``Resources/Public/JavaScript/Backend/FormEditor/StageComponent.js``.
-The method ``_renderTemplateDispatcher()`` shows, which methods will be used to
+EXT:form stage templates, which is found under `Resources/Private/Backend/Partials/FormEditor/Stage/*`.
+The corresponding JavaScript code is found under `Resources/Public/JavaScript/Backend/FormEditor/StageComponent.js`.
+The method `_renderTemplateDispatcher()` shows, which methods will be used to
 render the respective form elements.
 
 Essentially, two different inline HTML templates exists that can be rendered
@@ -3070,15 +3070,15 @@ corresponding JavaScript codes.
 Stage/SimpleTemplate
 ++++++++++++++++++++
 
-This template displays the ``label`` property of the form element. Depending on
+This template displays the `label` property of the form element. Depending on
 the JavaScript rendering method used, a validator icon will be shown on the
 right as soon as a validator is added to the form element. In this case, the
 used validator labels are likewise displayed, if the form element is selected
 and/ or the cursor hovers over the form element. This template should generally
 be enough for all possible, self-defined form elements.
 
-The ``Stage/SimpleTemplate`` can then :ref:`be rendered <apireference-formeditor-basicjavascriptconcepts-events-view-stage-abstract-render-template-perform>`
-with the method ``getFormEditorApp().getViewModel().getStage().renderSimpleTemplateWithValidators()``.
+The `Stage/SimpleTemplate` can then :ref:`be rendered <apireference-formeditor-basicjavascriptconcepts-events-view-stage-abstract-render-template-perform>`
+with the method `getFormEditorApp().getViewModel().getStage().renderSimpleTemplateWithValidators()`.
 
 
 .. _apireference-formeditor-stage-commonabstractformelementtemplates-selecttemplate:
@@ -3086,10 +3086,10 @@ with the method ``getFormEditorApp().getViewModel().getStage().renderSimpleTempl
 Stage/SelectTemplate
 ++++++++++++++++++++
 
-This template behaves like the ``Stage/SimpleTemplate`` except that it also
+This template behaves like the `Stage/SimpleTemplate` except that it also
 shows the chosen options labels of the form elements. This is naturally only
-possible for form elements that have ``properties.options.*`` values, e.g.
-``MultiCheckbox``:
+possible for form elements that have `properties.options.*` values, e.g.
+`MultiCheckbox`:
 
 .. code-block:: yaml
 
@@ -3106,12 +3106,12 @@ The template will now list 'label1' and 'label2'.
 
 You can copy this template variant for your own form element, if that form-
 element template also lists array values, which, however, are not found under
-``properties.options.*``. For this purpose, the 'Stage/FileUploadTemplate' is
+`properties.options.*`. For this purpose, the 'Stage/FileUploadTemplate' is
 an example. It is basically the 'Stage/SelectTemplate' template, with one
 altered property.
 
-In the ``FileUpload`` form element, multiple property values are available
-under ``properties.allowedMimeTypes.*`` as an array.
+In the `FileUpload` form element, multiple property values are available
+under `properties.allowedMimeTypes.*` as an array.
 
 .. code-block:: yaml
 
@@ -3139,11 +3139,11 @@ Stage/FileUploadTemplate
     <div data-identifier="multiValueContainer" data-template-property="properties.allowedMimeTypes">
 
 
-``data-template-property`` contains the path to the property, which is to be
+`data-template-property` contains the path to the property, which is to be
 read out of the form element and then shown in the template.
 
-The ``Stage/SelectTemplate`` can then :ref:`be rendered <apireference-formeditor-basicjavascriptconcepts-events-view-stage-abstract-render-template-perform>`
-with the method ``getFormEditorApp().getViewModel().getStage().renderSelectTemplates()``.
+The `Stage/SelectTemplate` can then :ref:`be rendered <apireference-formeditor-basicjavascriptconcepts-events-view-stage-abstract-render-template-perform>`
+with the method `getFormEditorApp().getViewModel().getStage().renderSelectTemplates()`.
 
 
 
@@ -3158,7 +3158,7 @@ Basic JavaScript Concepts
 Events
 ^^^^^^
 
-EXT:form implements the ``publish/subscribe pattern`` to put the event handling
+EXT:form implements the `publish/subscribe pattern` to put the event handling
 into effect. To learn more about this pattern, you should read
 https://addyosmani.com/resources/essentialjsdesignpatterns/book/.
 Note that the order of the subscriber is not manipulable and that information
@@ -3247,9 +3247,9 @@ core/ajax/error
 +++++++++++++++
 
 This event is called if the Ajax request, which is used to save the form or to
-render the current page of the form in the ``preview view``, fails. EXT:form
+render the current page of the form in the `preview view`, fails. EXT:form
 uses this event to show an error message as a flash message and to show the
-received error text in the ``preview view``.
+received error text in the `preview view`.
 
 
 Subscribe to the event:
@@ -3276,8 +3276,8 @@ core/ajax/renderFormDefinitionPage/success
 ++++++++++++++++++++++++++++++++++++++++++
 
 This event is called if the Ajax request that is used to render the current
-page of the form in the ``preview view`` was successful. EXT:form uses this
-event to display the rendered form in the ``preview view``.
+page of the form in the `preview view` was successful. EXT:form uses this
+event to display the rendered form in the `preview view`.
 
 
 Subscribe to the event:
@@ -3304,7 +3304,7 @@ core/ajax/saveFormDefinition/success
 
 This event is called if the Ajax request that is used to save the form was
 successful. EXT:form uses this event to display a success message as a flash
-message. The ``form editor`` is also informed that no unsaved content currently
+message. The `form editor` is also informed that no unsaved content currently
 exists.
 
 
@@ -3359,8 +3359,8 @@ Subscribe to the event:
 core/currentlySelectedFormElementChanged
 ++++++++++++++++++++++++++++++++++++++++
 
-The method ``getFormEditorApp().setCurrentlySelectedFormElement()`` tells the
-``form editor`` which form element should currently be dealt with. This method
+The method `getFormEditorApp().setCurrentlySelectedFormElement()` tells the
+`form editor` which form element should currently be dealt with. This method
 calls this event at the end.
 
 
@@ -3386,17 +3386,17 @@ core/formElement/somePropertyChanged
 ++++++++++++++++++++++++++++++++++++
 
 Each :ref:`FormElement model<apireference-formeditor-basicjavascriptconcepts-formelementmodel>`
-can write properties into the ``FormElement model`` through the methods ``get``
-and ``set``. Each property path can register an event name for the publisher
-through the method ``on``. This event is then always called when a property
-path is written via ``set``. Read :ref:`FormElement model<concepts-formeditor-basicjavascriptconcepts-formelementmodel>`
+can write properties into the `FormElement model` through the methods `get`
+and `set`. Each property path can register an event name for the publisher
+through the method `on`. This event is then always called when a property
+path is written via `set`. Read :ref:`FormElement model<concepts-formeditor-basicjavascriptconcepts-formelementmodel>`
 for more information. EXT:form automatically registers for all known property
-paths of a form element the event ``core/formElement/somePropertyChanged``.
-This means that every property written via ``set`` calls this event. Among
+paths of a form element the event `core/formElement/somePropertyChanged`.
+This means that every property written via `set` calls this event. Among
 other things, EXT:form uses this event for, for example, updating the label of
-a form element in other components (e.g. ``Tree`` component ) when this label
+a form element in other components (e.g. `Tree` component ) when this label
 is changed. Furthermore, any validation errors from form element properties
-are indicated by this event in the ``Tree`` component.
+are indicated by this event in the `Tree` component.
 
 
 Subscribe to the event:
@@ -3423,9 +3423,9 @@ Subscribe to the event:
 view/collectionElement/moved
 ++++++++++++++++++++++++++++
 
-The method ``getFormEditorApp().getViewModel().movePropertyCollectionElement()``
+The method `getFormEditorApp().getViewModel().movePropertyCollectionElement()`
 calls this event at the end. EXT:form uses this event to re-render the
-``Inspector`` component as soon as a property collection element (validator/
+`Inspector` component as soon as a property collection element (validator/
 finisher) is moved.
 
 
@@ -3453,9 +3453,9 @@ Subscribe to the event:
 view/collectionElement/new/added
 ++++++++++++++++++++++++++++++++
 
-The method ``getFormEditorApp().getViewModel().createAndAddPropertyCollectionElement()``
+The method `getFormEditorApp().getViewModel().createAndAddPropertyCollectionElement()`
 calls this event at the end. EXT:form uses this event to re-render the
-``Inspector`` component as soon as a property collection element (validator/
+`Inspector` component as soon as a property collection element (validator/
 finisher) is created and added.
 
 
@@ -3484,9 +3484,9 @@ Subscribe to the event:
 view/collectionElement/removed
 ++++++++++++++++++++++++++++++
 
-The method ``getFormEditorApp().getViewModel().removePropertyCollectionElement()``
+The method `getFormEditorApp().getViewModel().removePropertyCollectionElement()`
 calls this event at the end. EXT:form uses this event to re-render the
-``Inspector`` component as soon as a property collection element (validator/
+`Inspector` component as soon as a property collection element (validator/
 finisher) is removed.
 
 
@@ -3513,11 +3513,11 @@ Subscribe to the event:
 view/formElement/inserted
 +++++++++++++++++++++++++
 
-The method ``getFormEditorApp().getViewModel().createAndAddFormElement()`` and
+The method `getFormEditorApp().getViewModel().createAndAddFormElement()` and
 the event :ref:`view/insertElements/perform/after<apireference-formeditor-basicjavascriptconcepts-events-view-insertelements-perform-after>`
 call this event at the end. EXT:form uses this event to set the current
-to-be-processed form element (``getFormEditorApp().setCurrentlySelectedFormElement()``)
-and to re-render the ``Tree``, ``Stage`` and ``Inspector`` components.
+to-be-processed form element (`getFormEditorApp().setCurrentlySelectedFormElement()`)
+and to re-render the `Tree`, `Stage` and `Inspector` components.
 
 
 Subscribe to the event:
@@ -3541,7 +3541,7 @@ Subscribe to the event:
 view/formElement/moved
 ++++++++++++++++++++++
 
-The method ``getFormEditorApp().getViewModel().moveFormElement()`` calls this
+The method `getFormEditorApp().getViewModel().moveFormElement()` calls this
 event at the end.
 
 
@@ -3566,10 +3566,10 @@ Subscribe to the event:
 view/formElement/removed
 ++++++++++++++++++++++++
 
-The method ``getFormEditorApp().getViewModel().removeFormElement()`` calls this
+The method `getFormEditorApp().getViewModel().removeFormElement()` calls this
 event at the end. EXT:form uses this event to set the current to-be-processed
-form element (``getFormEditorApp().setCurrentlySelectedFormElement()``) and to
-re-render the ``Tree``, ``Stage`` and ``Inspector`` components.
+form element (`getFormEditorApp().setCurrentlySelectedFormElement()`) and to
+re-render the `Tree`, `Stage` and `Inspector` components.
 
 
 Subscribe to the event:
@@ -3593,7 +3593,7 @@ Subscribe to the event:
 view/header/button/close/clicked
 ++++++++++++++++++++++++++++++++
 
-The onClick event of the "Close" button in the ``form editor's`` header section
+The onClick event of the "Close" button in the `form editor's` header section
 calls this event. EXT:form uses this event to display a warning message in case
 there are unsaved changes.
 
@@ -3618,7 +3618,7 @@ Subscribe to the event:
 view/header/button/newPage/clicked
 ++++++++++++++++++++++++++++++++++
 
-The onClick event of the "new page" button in the ``form editor's`` header
+The onClick event of the "new page" button in the `form editor's` header
 section calls this event. EXT:form uses this event to display the "new page"
 dialog box.
 
@@ -3644,10 +3644,10 @@ Subscribe to the event:
 view/header/button/save/clicked
 +++++++++++++++++++++++++++++++
 
-The onClick event of the "save" button in the ``form editor's`` header section
+The onClick event of the "save" button in the `form editor's` header section
 calls this event. EXT:form uses this event either to display a dialog box with
-the element in question (if there are validation errors) or to save the ``form
-definition`` (if there are no validation errors).
+the element in question (if there are validation errors) or to save the `form
+definition` (if there are no validation errors).
 
 
 Subscribe to the event:
@@ -3670,7 +3670,7 @@ Subscribe to the event:
 view/header/formSettings/clicked
 ++++++++++++++++++++++++++++++++
 
-The onClick event of the "settings"  button in the ``form editor's`` header
+The onClick event of the "settings"  button in the `form editor's` header
 section calls this event. EXT:form uses this event to select the root form
 element.
 
@@ -3701,11 +3701,11 @@ element:
 - if "After" in the "Create new element" split button in the form-element toolbar for composite elements (e.g. fieldset) is clicked.
 - if the "Create new element" button in the form-element toolbar for non-composite elements is clicked.
 
-EXT:form uses this event to create a new form element (``getFormEditorApp().getViewModel().createAndAddFormElement()``)
-and then move (``getFormEditorApp().getViewModel().moveFormElement()``) it
+EXT:form uses this event to create a new form element (`getFormEditorApp().getViewModel().createAndAddFormElement()`)
+and then move (`getFormEditorApp().getViewModel().moveFormElement()`) it
 below the currently selected element (sibling). At the end of this event, the
 event :ref:`view/formElement/inserted<apireference-formeditor-basicjavascriptconcepts-events-view-formelement-inserted>`
-is called. The event ``view/formElement/inserted`` in ``getFormEditorApp().getViewModel().createAndAddFormElement()``
+is called. The event `view/formElement/inserted` in `getFormEditorApp().getViewModel().createAndAddFormElement()`
 was previously deactivated.
 
 
@@ -3733,9 +3733,9 @@ view/insertElements/perform/bottom
 This event is called from the "new element" dialog box upon selection of a form
 element:
 
-- if, in the ``abstract view`` mode, the "Create new element" button at the end of the ``Stage`` component is clicked.
+- if, in the `abstract view` mode, the "Create new element" button at the end of the `Stage` component is clicked.
 
-EXT:form uses this event to create a new form element (``getFormEditorApp().getViewModel().createAndAddFormElement()``).
+EXT:form uses this event to create a new form element (`getFormEditorApp().getViewModel().createAndAddFormElement()`).
 This element is always created as the last element of the currently selected
 page.
 
@@ -3767,7 +3767,7 @@ element:
 - if "Inside" in the "Create new element" split button in the form-element toolbar for composite elements (e.g. fieldset) is clicked.
 
 EXT:form uses this event to create a new form element as a child element of the
-currently selected element (``getFormEditorApp().getViewModel().createAndAddFormElement()``).
+currently selected element (`getFormEditorApp().getViewModel().createAndAddFormElement()`).
 
 
 Subscribe to the event:
@@ -3795,10 +3795,10 @@ This event is called from the "new element" dialog box upon selection of a page
 element:
 
 - if the "Create new page" icon in the header section is clicked.
-- if the "Create new page" button in the ``Tree`` component is clicked.
+- if the "Create new page" button in the `Tree` component is clicked.
 
 EXT:form uses this event to create a new page after the currently selected page
-(``getFormEditorApp().getViewModel().createAndAddFormElement()``).
+(`getFormEditorApp().getViewModel().createAndAddFormElement()`).
 
 
 Subscribe to the event:
@@ -3822,14 +3822,14 @@ Subscribe to the event:
 view/inspector/collectionElement/existing/selected
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The ``inspector editors`` :ref:`ValidatorsEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.finisherseditor>`
+The `inspector editors` :ref:`ValidatorsEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.finisherseditor>`
 and :ref:`FinishersEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.validatorseditor>`
 are used to display the available validators/ finishers for a form element as a
-select box. Furthermore, these ``inspector editors`` indicate that in the
-``form definition``, validators/ finishers for the currently selected element
-already exist. This occurs through the event ``view/inspector/collectionElement/existing/selected``.
+select box. Furthermore, these `inspector editors` indicate that in the
+`form definition`, validators/ finishers for the currently selected element
+already exist. This occurs through the event `view/inspector/collectionElement/existing/selected`.
 EXT:form uses this event to render these validators/ finishers and their
-tentatively configured ``inspector editors`` (``getFormEditorApp().getViewModel().renderInspectorCollectionElementEditors()``).
+tentatively configured `inspector editors` (`getFormEditorApp().getViewModel().renderInspectorCollectionElementEditors()`).
 
 Subscribe to the event:
 
@@ -3853,13 +3853,13 @@ Subscribe to the event:
 view/inspector/collectionElement/new/selected
 +++++++++++++++++++++++++++++++++++++++++++++
 
-The ``inspector editors`` :ref:`ValidatorsEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.finisherseditor>`
+The `inspector editors` :ref:`ValidatorsEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.finisherseditor>`
 and :ref:`FinishersEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.validatorseditor>`
 are used to display the available validators/ finishers for a form element as a
 select box. The onChange event of the select box then calls this event. In
-addition, the ``inspector editor`` :ref:`RequiredValidatorEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.requiredvalidatoreditor>`
+addition, the `inspector editor` :ref:`RequiredValidatorEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.requiredvalidatoreditor>`
 calls this event when a checkbox is chosen. EXT:form uses this event to add and
-render the validator/ finisher of the ``form definition`` via ``getFormEditorApp().getViewModel().createAndAddPropertyCollectionElement()``.
+render the validator/ finisher of the `form definition` via `getFormEditorApp().getViewModel().createAndAddPropertyCollectionElement()`.
 
 
 Subscribe to the event:
@@ -3886,10 +3886,10 @@ view/inspector/collectionElements/dnd/update
 
 EXT:form uses the jQuery plugin 'jquery.mjs.nestedSortable' for the drag-and-
 drop functionality. The 'update' event from 'jquery.mjs.nestedSortable' calls
-the ``view/inspector/collectionElements/dnd/update`` event if a property
-collection element in the ``Inspector`` component is sorted. EXT:form uses this
-event to move the validator/ finisher in the ``form definition`` via the method
-``getFormEditorApp().getViewModel().movePropertyCollectionElement()``.
+the `view/inspector/collectionElements/dnd/update` event if a property
+collection element in the `Inspector` component is sorted. EXT:form uses this
+event to move the validator/ finisher in the `form definition` via the method
+`getFormEditorApp().getViewModel().movePropertyCollectionElement()`.
 
 
 Subscribe to the event:
@@ -3916,27 +3916,27 @@ Subscribe to the event:
 view/inspector/editor/insert/perform
 ++++++++++++++++++++++++++++++++++++
 
-The methods ``getFormEditorApp().getViewModel().renderInspectorEditors()`` (to
-render all ``inspector editors`` for a form element) and ``getFormEditorApp().getViewModel().renderInspectorCollectionElementEditors()``
-(to render the ``inspector editors`` for a validator/ finisher) call this event
-at the end. Strictly speaking, the ``Inspector`` component in the method
-``_renderEditorDispatcher()`` calls this event.
-Each ``inspector editor`` has the property :ref:`templateName <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.templatename>`,
-which gives the ``form editor`` two pieces of information. On the one hand the
-``templateName`` must match with a key within the :ref:`TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formeditor.formEditorPartials <typo3.cms.form.prototypes.\<prototypeidentifier>.formeditor.formeditorpartials>`.
-The ``form editor`` can consequently load a corresponding inline HTML template
-for the ``inspector editor``. On the other hand, the ``Inspector`` component
+The methods `getFormEditorApp().getViewModel().renderInspectorEditors()` (to
+render all `inspector editors` for a form element) and `getFormEditorApp().getViewModel().renderInspectorCollectionElementEditors()`
+(to render the `inspector editors` for a validator/ finisher) call this event
+at the end. Strictly speaking, the `Inspector` component in the method
+`_renderEditorDispatcher()` calls this event.
+Each `inspector editor` has the property :ref:`templateName <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.templatename>`,
+which gives the `form editor` two pieces of information. On the one hand the
+`templateName` must match with a key within the :ref:`TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formeditor.formEditorPartials <typo3.cms.form.prototypes.\<prototypeidentifier>.formeditor.formeditorpartials>`.
+The `form editor` can consequently load a corresponding inline HTML template
+for the `inspector editor`. On the other hand, the `Inspector` component
 must be told which JavaScript code should be executed for the
-``inspector editor``. For the ``inspector editors`` delivered with EXT:form,
-this occurs within the method ``_renderEditorDispatcher()``.
-An existing hard-coded list of known ``inspector editors`` determines, by means
-of the property ``templateName``, which corresponding JavaScript method should
-be executed for the ``inspector editor``. At the end, the event
-``view/inspector/editor/insert/perform`` is called. If you wish to implement
-your own ``inspector editor``, you can use this event to execute in
+`inspector editor`. For the `inspector editors` delivered with EXT:form,
+this occurs within the method `_renderEditorDispatcher()`.
+An existing hard-coded list of known `inspector editors` determines, by means
+of the property `templateName`, which corresponding JavaScript method should
+be executed for the `inspector editor`. At the end, the event
+`view/inspector/editor/insert/perform` is called. If you wish to implement
+your own `inspector editor`, you can use this event to execute in
 :ref:`your own JavaScript module <concepts-formeditor-basicjavascriptconcepts-registercustomjavascriptmodules>`.
 the corresponding JavaScript code, with the help of the property
-``templateName``.
+`templateName`.
 
 
 Subscribe to the event:
@@ -3958,7 +3958,7 @@ Subscribe to the event:
     });
 
 
-A simple example that registers a custom ``inspector editor`` called 'Inspector-MyCustomInspectorEditor' and adds it to text form elements:
+A simple example that registers a custom `inspector editor` called 'Inspector-MyCustomInspectorEditor' and adds it to text form elements:
 
 .. code-block:: yaml
 
@@ -4147,10 +4147,10 @@ A simple example that registers a custom ``inspector editor`` called 'Inspector-
 view/inspector/removeCollectionElement/perform
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-The ``inspector editor`` :ref:`RequiredValidatorEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.requiredvalidatoreditor>`
+The `inspector editor` :ref:`RequiredValidatorEditor <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.requiredvalidatoreditor>`
 calls this event, if the checkbox is deselected. EXT:form uses this event to
-remove the configured required validator ('NotEmpty') from the ``form
-definition`` through the method ``getFormEditorApp().getViewModel().removePropertyCollectionElement()``.
+remove the configured required validator ('NotEmpty') from the `form
+definition` through the method `getFormEditorApp().getViewModel().removePropertyCollectionElement()`.
 
 
 Subscribe to the event:
@@ -4176,10 +4176,10 @@ Subscribe to the event:
 view/modal/close/perform
 ++++++++++++++++++++++++
 
-If you try to close the ``form editor`` with unsaved content, a dialog box
+If you try to close the `form editor` with unsaved content, a dialog box
 appears, asking whether you really wish to close it. If you confirm it, this
-event is called in the ``check box`` component. EXT:form uses this event to
-close the ``form editor`` and return to the ``form manager``.
+event is called in the `check box` component. EXT:form uses this event to
+close the `form editor` and return to the `form manager`.
 
 
 Subscribe to the event:
@@ -4204,9 +4204,9 @@ view/modal/removeCollectionElement/perform
 
 If you try to remove a validator/ finisher by clicking the remove icon, a
 dialog box appears, asking you to confirm this action. If confirmed, this event
-is called in the ``check box`` component. EXT:form uses this event to remove
-the validator/ finisher from the ``form definition`` through the method
-``getFormEditorApp().getViewModel().removePropertyCollectionElement()``.
+is called in the `check box` component. EXT:form uses this event to remove
+the validator/ finisher from the `form definition` through the method
+`getFormEditorApp().getViewModel().removePropertyCollectionElement()`.
 
 
 Subscribe to the event:
@@ -4234,8 +4234,8 @@ view/modal/removeFormElement/perform
 
 If you try to remove a form element by clicking the remove icon, a dialog box
 appears, asking you to confirm this action. If confirmed, this event is called
-in the ``check box`` component. EXT:form uses this event to remove the form
-element from the ``form definition`` via the method ``getFormEditorApp().getViewModel().removeFormElement()``.
+in the `check box` component. EXT:form uses this event to remove the form
+element from the `form definition` via the method `getFormEditorApp().getViewModel().removeFormElement()`.
 
 
 Subscribe to the event:
@@ -4287,7 +4287,7 @@ Subscribe to the event:
 view/paginationNext/clicked
 +++++++++++++++++++++++++++
 
-This event is called if the 'pagination next' button in the ``Stage``
+This event is called if the 'pagination next' button in the `Stage`
 component's header section is clicked. EXT:form uses this event to render the
 next page of the form.
 
@@ -4312,7 +4312,7 @@ Subscribe to the event:
 view/paginationPrevious/clicked
 +++++++++++++++++++++++++++++++
 
-This event is called, if the 'pagination previous' button in the ``Stage``
+This event is called, if the 'pagination previous' button in the `Stage`
 component's header section is clicked. EXT:form uses this event to render the
 previous page of the form.
 
@@ -4338,9 +4338,9 @@ view/ready
 ++++++++++
 
 EXT:form makes it possible to load :ref:`your own JavaScript module <concepts-formeditor-basicjavascriptconcepts-registercustomjavascriptmodules>`.
-If all modules are loaded, the view-model method ``_loadAdditionalModules``
+If all modules are loaded, the view-model method `_loadAdditionalModules`
 calls this event. EXT:form uses this event to remove the preloader icon and
-finally initialize the ``form editor``.
+finally initialize the `form editor`.
 
 
 Subscribe to the event:
@@ -4363,7 +4363,7 @@ Subscribe to the event:
 view/redoButton/clicked
 +++++++++++++++++++++++
 
-This event is called if the redo button in the ``form editor`` header is
+This event is called if the redo button in the `form editor` header is
 clicked. The addition/ deletion and movement of form elements and property
 collection elements (validators/ finishers) is saved in an internal stack in
 order to reset the undo/ redo functionality. EXT:form uses this event to reset
@@ -4391,7 +4391,7 @@ view/stage/abstract/button/newElement/clicked
 +++++++++++++++++++++++++++++++++++++++++++++
 
 This event is called if the "Create new element" button at the end of the
-``Stage`` component in the ``abstract view`` mode is clicked. EXT:form uses
+`Stage` component in the `abstract view` mode is clicked. EXT:form uses
 this event to display the "new element" dialog box.
 
 
@@ -4419,8 +4419,8 @@ view/stage/abstract/dnd/change
 
 EXT:form uses the jQuery plugin 'jquery.mjs.nestedSortable' for the drag-and-
 drop functionality. The 'change' event from 'jquery.mjs.nestedSortable' calls
-the ``view/stage/abstract/dnd/change`` event in the ``Stage`` component in the
-``abstract view`` mode if form elements are sorted. EXT:form uses this event to
+the `view/stage/abstract/dnd/change` event in the `Stage` component in the
+`abstract view` mode if form elements are sorted. EXT:form uses this event to
 set various CSS classes during the drag-and-drop process.
 
 
@@ -4449,8 +4449,8 @@ view/stage/abstract/dnd/start
 
 EXT:form uses the jQuery plugin 'jquery.mjs.nestedSortable' for the drag-and-
 drop functionality. The 'start' event from 'jquery.mjs.nestedSortable' calls
-the ``view/stage/abstract/dnd/start`` event in the ``Stage`` component in the
-``abstract view`` mode if form elements are sorted. EXT:form uses this event to
+the `view/stage/abstract/dnd/start` event in the `Stage` component in the
+`abstract view` mode if form elements are sorted. EXT:form uses this event to
 set various CSS classes at the start of the drag-and-drop process.
 
 
@@ -4478,9 +4478,9 @@ view/stage/abstract/dnd/stop
 
 EXT:form uses the jQuery plugin 'jquery.mjs.nestedSortable' for the drag-and-
 drop functionality. The 'stop' event from 'jquery.mjs.nestedSortable' calls the
-``view/stage/abstract/dnd/stop`` event in the ``Stage`` component in the
-``abstract view`` mode if form elements are sorted. EXT:form uses this event to
-to re-render the ``Tree``, ``Stage`` and ``Inspector`` components at the end of
+`view/stage/abstract/dnd/stop` event in the `Stage` component in the
+`abstract view` mode if form elements are sorted. EXT:form uses this event to
+to re-render the `Tree`, `Stage` and `Inspector` components at the end of
 the drag-and-drop process and to select the moved form element.
 
 
@@ -4507,9 +4507,9 @@ view/stage/abstract/dnd/update
 
 EXT:form uses the jQuery plugin 'jquery.mjs.nestedSortable' for the drag-and-
 drop functionality. The 'update' event from 'jquery.mjs.nestedSortable' calls
-the ``view/stage/abstract/dnd/update`` event in the ``Stage`` component in the
-``abstract view`` mode if form elements are sorted. EXT:form uses this event
-to move the form element in the ``form definition`` accordingly at the end of
+the `view/stage/abstract/dnd/update` event in the `Stage` component in the
+`abstract view` mode if form elements are sorted. EXT:form uses this event
+to move the form element in the `form definition` accordingly at the end of
 the drag-and-drop process.
 
 
@@ -4564,7 +4564,7 @@ Subscribe to the event:
 view/stage/abstract/render/postProcess
 ++++++++++++++++++++++++++++++++++++++
 
-This event is called after the ``abstract view`` of the ``Stage`` component has
+This event is called after the `abstract view` of the `Stage` component has
 been rendered. EXT:form uses this event to render the undo/ redo buttons.
 
 
@@ -4588,7 +4588,7 @@ Subscribe to the event:
 view/stage/abstract/render/preProcess
 +++++++++++++++++++++++++++++++++++++
 
-This event is called before the ``abstract view`` of the ``Stage`` component is
+This event is called before the `abstract view` of the `Stage` component is
 rendered.
 
 
@@ -4612,31 +4612,31 @@ Subscribe to the event:
 view/stage/abstract/render/template/perform
 +++++++++++++++++++++++++++++++++++++++++++
 
-The methods ``getFormEditorApp().getViewModel().renderAbstractStageArea()``
-call this event. Strictly speaking, the ``Stage`` component in the method
-``_renderTemplateDispatcher()`` calls this event. The ``form editor`` requires
+The methods `getFormEditorApp().getViewModel().renderAbstractStageArea()`
+call this event. Strictly speaking, the `Stage` component in the method
+`_renderTemplateDispatcher()` calls this event. The `form editor` requires
 for each form element an inline HTML template the corresponding JavaScript
 code. Information matching inline HTML templates to the appropriate form
 elements must be configured within :ref:`TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formeditor.formEditorPartials <typo3.cms.form.prototypes.\<prototypeidentifier>.formeditor.formeditorpartials>`.
 At this point, the key identifying the form element follows a convention:
-``FormElement-<formElementTypeIdentifier>``. The value for the key tells the
-``form editor`` which inline HTML template should be loaded for the respective
-form element. The ``_renderTemplateDispatcher()`` method then identifies, by
-means of the form element's ``<formElementTypeIdentifier>``, the corresponding
+`FormElement-<formElementTypeIdentifier>`. The value for the key tells the
+`form editor` which inline HTML template should be loaded for the respective
+form element. The `_renderTemplateDispatcher()` method then identifies, by
+means of the form element's `<formElementTypeIdentifier>`, the corresponding
 JavaScript code to fill the inline HTML template with life.
-``_renderTemplateDispatcher()`` contains a hard-coded list with the
-``<formElementTypeIdentifier>`` that is brought in with the EXT:form, and it
+`_renderTemplateDispatcher()` contains a hard-coded list with the
+`<formElementTypeIdentifier>` that is brought in with the EXT:form, and it
 renders the inline HTML templates accordingly. At the end, the
-``view/stage/abstract/render/template/perform`` event is called. If you wish to
-implement your own form element and show it in the ``form editor``, this event
+`view/stage/abstract/render/template/perform` event is called. If you wish to
+implement your own form element and show it in the `form editor`, this event
 can be used to execute in :ref:`your own JavaScript module <concepts-formeditor-basicjavascriptconcepts-registercustomjavascriptmodules>`
-the corresponding JavaScript code, with the help of the ``<formElementTypeIdentifier>``.
-This is generally enough to allow the ``Stage/SimpleTemplate`` and/ or
-``Stage/SelectTemplate`` inline HTML template to be rendered for your own form
-element and, in the JavaScript code, to access the ``getFormEditorApp().getViewModel().getStage().renderSimpleTemplateWithValidators()``
-and/ or ``getFormEditorApp().getViewModel().getStage().renderSelectTemplates()``
+the corresponding JavaScript code, with the help of the `<formElementTypeIdentifier>`.
+This is generally enough to allow the `Stage/SimpleTemplate` and/ or
+`Stage/SelectTemplate` inline HTML template to be rendered for your own form
+element and, in the JavaScript code, to access the `getFormEditorApp().getViewModel().getStage().renderSimpleTemplateWithValidators()`
+and/ or `getFormEditorApp().getViewModel().getStage().renderSelectTemplates()`
 method delivered with EXT:form. An overview over the functionality of the
-formEditorPartials for the ``<formElementTypeIdentifier>`` and its JavaScript
+formEditorPartials for the `<formElementTypeIdentifier>` and its JavaScript
 code is found :ref:`here <apireference-formeditor-stage-commonabstractformelementtemplates>`.
 
 
@@ -4657,8 +4657,8 @@ Subscribe to the event:
     });
 
 
-A simple example reusing the EXT:form inline HTML template ``Stage/SelectTemplate`` and the EXT:form JavaScript code ``renderSelectTemplates()``
-for a custom form element with ``<formElementTypeIdentifier>`` = 'GenderSelect'.
+A simple example reusing the EXT:form inline HTML template `Stage/SelectTemplate` and the EXT:form JavaScript code `renderSelectTemplates()`
+for a custom form element with `<formElementTypeIdentifier>` = 'GenderSelect'.
 In this example, 'GenderSelect' is basically a radio button form element with some predefined options.
 
 
@@ -4845,9 +4845,9 @@ In this example, 'GenderSelect' is basically a radio button form element with so
 view/stage/element/clicked
 ++++++++++++++++++++++++++
 
-This event is called from the ``Stage`` component when a form element is
+This event is called from the `Stage` component when a form element is
 clicked. EXT:form uses this event to select this element and to display the
-form-element toolbar. In addition, the ``Tree`` and ``Inspector`` components
+form-element toolbar. In addition, the `Tree` and `Inspector` components
 are re-rendered.
 
 
@@ -4872,7 +4872,7 @@ Subscribe to the event:
 view/stage/panel/clicked
 ++++++++++++++++++++++++
 
-This event is called if the header section of the ``Stage`` component is
+This event is called if the header section of the `Stage` component is
 clicked.
 
 
@@ -4896,7 +4896,7 @@ Subscribe to the event:
 view/stage/preview/render/postProcess
 +++++++++++++++++++++++++++++++++++++
 
-This event is called after the ``preview view`` of the ``Stage`` component has
+This event is called after the `preview view` of the `Stage` component has
 been rendered. EXT:form uses this event to render the undo/ redo buttons.
 
 
@@ -4920,7 +4920,7 @@ Subscribe to the event:
 view/structure/button/newPage/clicked
 +++++++++++++++++++++++++++++++++++++
 
-This event is called from the onClick event of the ``Tree`` component's "Create
+This event is called from the onClick event of the `Tree` component's "Create
 new page" button. EXT:form uses this event to display the "new page" dialog
 box.
 
@@ -4945,9 +4945,9 @@ Subscribe to the event:
 view/structure/renew/postProcess
 ++++++++++++++++++++++++++++++++
 
-This event is called from the view-model after the ``Tree`` component has been
+This event is called from the view-model after the `Tree` component has been
 re-rendered. EXT:form uses this event to display potential validation errors
-from form elements in the ``Tree`` component.
+from form elements in the `Tree` component.
 
 
 Subscribe to the event:
@@ -4970,9 +4970,9 @@ Subscribe to the event:
 view/structure/root/selected
 ++++++++++++++++++++++++++++
 
-This event is called if the root form element in the ``Tree`` component is
-clicked. EXT:form uses this event to re-render the ``Stage``, ``Inspector`` and
-``Tree`` components.
+This event is called if the root form element in the `Tree` component is
+clicked. EXT:form uses this event to re-render the `Stage`, `Inspector` and
+`Tree` components.
 
 
 Subscribe to the event:
@@ -4997,7 +4997,7 @@ view/tree/dnd/change
 
 EXT:form uses the jQuery plugin 'jquery.mjs.nestedSortable' for the drag-and-
 drop functionality. The 'change' event from 'jquery.mjs.nestedSortable' calls
-the ``view/tree/dnd/change`` event in der ``Tree`` component if form elements
+the `view/tree/dnd/change` event in der `Tree` component if form elements
 are sorted. EXT:form uses this event to set various CSS classes during the drag
 -and-drop process.
 
@@ -5027,9 +5027,9 @@ view/tree/dnd/stop
 
 EXT:form uses the jQuery plugin 'jquery.mjs.nestedSortable' for the drag-and-
 drop functionality. The 'stop' event from 'jquery.mjs.nestedSortable' calls the
-``view/tree/dnd/stop`` event in the ``Tree`` component if form elements are
-sorted. EXT:form uses this event to re-render ``Tree``, ``Stage`` and
-``Inspector`` components at the end of the drag-and-drop process and to select
+`view/tree/dnd/stop` event in the `Tree` component if form elements are
+sorted. EXT:form uses this event to re-render `Tree`, `Stage` and
+`Inspector` components at the end of the drag-and-drop process and to select
 the moved form element.
 
 
@@ -5056,9 +5056,9 @@ view/tree/dnd/update
 
 EXT:form uses the jQuery plugin 'jquery.mjs.nestedSortable' for the drag-and-
 drop functionality. The 'update' event from 'jquery.mjs.nestedSortable' calls
-the ``view/tree/dnd/update`` event in der ``Tree`` component if form elements
-are sorted. EXT:form uses this event to move the form element in the ``form
-definition`` accordingly at the end of the drag-and-drop process.
+the `view/tree/dnd/update` event in der `Tree` component if form elements
+are sorted. EXT:form uses this event to move the form element in the `form
+definition` accordingly at the end of the drag-and-drop process.
 
 
 Subscribe to the event:
@@ -5085,8 +5085,8 @@ Subscribe to the event:
 view/tree/node/clicked
 ++++++++++++++++++++++
 
-This event is called from the ``Tree`` component if a form element is clicked.
-EXT:form uses this event to re-render the ``Stage`` and ``Inspector``
+This event is called from the `Tree` component if a form element is clicked.
+EXT:form uses this event to re-render the `Stage` and `Inspector`
 components and select the form element.
 
 
@@ -5111,7 +5111,7 @@ Subscribe to the event:
 view/tree/render/listItemAdded
 ++++++++++++++++++++++++++++++
 
-This event is called by the ``Tree`` component for each form element as soon as
+This event is called by the `Tree` component for each form element as soon as
 it is added to the tree.
 
 
@@ -5137,7 +5137,7 @@ Subscribe to the event:
 view/undoButton/clicked
 +++++++++++++++++++++++
 
-This event is called when the undo button is clicked in the ``form editor``
+This event is called when the undo button is clicked in the `form editor`
 header. The history of adding / deleting and moving form elements and property
 collection elements (validators/ finishers) is stored in an internal stack to
 implement the undo / redo functionality. EXT:form uses this event to set this
@@ -5165,8 +5165,8 @@ view/viewModeButton/abstract/clicked
 ++++++++++++++++++++++++++++++++++++
 
 This event is called when the abstract view button is clicked in the header
-area of the ``Stage`` component. EXT:form uses this event to render the
-``abstract view`` in the ``Stage`` component.
+area of the `Stage` component. EXT:form uses this event to render the
+`abstract view` in the `Stage` component.
 
 
 Subscribe to the event:
@@ -5190,8 +5190,8 @@ view/viewModeButton/preview/clicked
 +++++++++++++++++++++++++++++++++++
 
 This event is called when the preview button is clicked in the header area of
-the ``Stage`` component. EXT:form uses this event to render the ``preview
-view`` in the ``Stage`` component.
+the `Stage` component. EXT:form uses this event to render the `preview
+view` in the `Stage` component.
 
 
 Subscribe to the event:
@@ -5221,7 +5221,7 @@ FormElement model
 Property: __parentRenderable
 ++++++++++++++++++++++++++++
 
-__parentRenderable includes the parent element as ``FormElement model``.
+__parentRenderable includes the parent element as `FormElement model`.
 
 
 .. _apireference-formeditor-basicjavascriptconcepts-formelementmodel-property-identifierpath:
@@ -5230,8 +5230,8 @@ Property: __identifierPath
 ++++++++++++++++++++++++++
 
 Internally, all form elements are identified by their 'identifier' property,
-which must be unique for each form. The ``__identifierPath`` property contains
-the path to the element (as seen from the first element), separated by a ``/``.
+which must be unique for each form. The `__identifierPath` property contains
+the path to the element (as seen from the first element), separated by a `/`.
 Using this path, you can access the element directly through an API method.
 
 
@@ -5240,12 +5240,12 @@ Using this path, you can access the element directly through an API method.
 Method: get()
 +++++++++++++
 
-Each property of the ``FormElement model`` can be accessed by the ``get()``
-method through the property path (separated by ``.``). Prerequisite for this
+Each property of the `FormElement model` can be accessed by the `get()`
+method through the property path (separated by `.`). Prerequisite for this
 is that all levels up to the target property are objects.
 
 
-Example of a ``FormElement model``:
+Example of a `FormElement model`:
 
 .. code-block:: javascript
 
@@ -5269,7 +5269,7 @@ Example of a ``FormElement model``:
     }
 
 
-Access to ``properties.fluidAdditionalAttributes.placeholder``:
+Access to `properties.fluidAdditionalAttributes.placeholder`:
 
 .. code-block:: javascript
 
@@ -5277,8 +5277,8 @@ Access to ``properties.fluidAdditionalAttributes.placeholder``:
     var value = getFormEditorApp().getFormElementByIdentifierPath('example-form/page-1/name').get('properties.fluidAdditionalAttributes.placeholder');
 
 
-Two exceptions are the two arrays of "finishers" / "validators" (``property
-collections``) and the ``renderables``.
+Two exceptions are the two arrays of "finishers" / "validators" (`property
+collections`) and the `renderables`.
 
 
 .. _apireference-formeditor-basicjavascriptconcepts-formelementmodel-method-get-propertycollectionproperties:
@@ -5287,13 +5287,13 @@ Accessing property collection properties
 ''''''''''''''''''''''''''''''''''''''''
 
 Property collection are identified as form elements through the property
-``identifier``. Because property collection properties are in an array and
-their positions in the array are potentially unknown, the ``getFormEditorApp().buildPropertyPath()``
+`identifier`. Because property collection properties are in an array and
+their positions in the array are potentially unknown, the `getFormEditorApp().buildPropertyPath()`
 method exists. This can be used to access a property of a property collection
-item via its ``identifier``.
+item via its `identifier`.
 
 
-Example of a ``FormElement model``:
+Example of a `FormElement model`:
 
 .. code-block:: javascript
 
@@ -5320,7 +5320,7 @@ Example of a ``FormElement model``:
       ]
     }
 
-Access to ``options.minimum`` of the validator ``StringLength``:
+Access to `options.minimum` of the validator `StringLength`:
 
 .. code-block:: javascript
 
@@ -5335,12 +5335,12 @@ Access to ``options.minimum`` of the validator ``StringLength``:
 Accessing renderables
 '''''''''''''''''''''
 
-Like ``property collections``, ``renderables`` (the child elements) are also in
+Like `property collections`, `renderables` (the child elements) are also in
 an array and their position in the array is potentially unknown. Direct access
-to child elements through the  ``get()`` method is impossible.
-``formElement.get('renderables')`` supplies an array with the ``FormElement
-models`` of the child elements. You must then loop over this array. Access to a
-specific child element should be done using ``getFormEditorApp().getFormElementByIdentifierPath()``.
+to child elements through the  `get()` method is impossible.
+`formElement.get('renderables')` supplies an array with the `FormElement
+models` of the child elements. You must then loop over this array. Access to a
+specific child element should be done using `getFormEditorApp().getFormElementByIdentifierPath()`.
 
 
 .. _apireference-formeditor-basicjavascriptconcepts-formelementmodel-method-set:
@@ -5348,10 +5348,10 @@ specific child element should be done using ``getFormEditorApp().getFormElementB
 Method: set()
 +++++++++++++
 
-Any property of the ``FormElement model`` can be written using the ``set()``
-method by means of the property path (separated by ``.``).
+Any property of the `FormElement model` can be written using the `set()`
+method by means of the property path (separated by `.`).
 
-Example of a ``FormElement model``:
+Example of a `FormElement model`:
 
 .. code-block:: javascript
 
@@ -5375,14 +5375,14 @@ Example of a ``FormElement model``:
     }
 
 
-Set the property ``properties.fluidAdditionalAttributes.placeholder``:
+Set the property `properties.fluidAdditionalAttributes.placeholder`:
 
 .. code-block:: javascript
 
     getFormEditorApp().getFormElementByIdentifierPath('example-form/page-1/name').set('properties.fluidAdditionalAttributes.placeholder', 'New Placeholder');
 
 
-Example of the ``FormElement model`` after the ``set()`` operation:
+Example of the `FormElement model` after the `set()` operation:
 
 .. code-block:: javascript
 
@@ -5406,8 +5406,8 @@ Example of the ``FormElement model`` after the ``set()`` operation:
     }
 
 
-Two exceptions are the two arrays of "finishers" / "validators" (``property
-collections``) and the ``renderables``.
+Two exceptions are the two arrays of "finishers" / "validators" (`property
+collections`) and the `renderables`.
 
 
 .. _apireference-formeditor-basicjavascriptconcepts-formelementmodel-method-set-propertycollectionproperties:
@@ -5417,7 +5417,7 @@ Setting property collection properties
 
 In principle, the same applies here as for :ref:`get property collection properties<apireference-formeditor-basicjavascriptconcepts-formelementmodel-method-get-propertycollectionproperties>`.
 
-Set the property ``options.minimum`` of the validator ``StringLength``:
+Set the property `options.minimum` of the validator `StringLength`:
 
 .. code-block:: javascript
 
@@ -5431,7 +5431,7 @@ Set the property ``options.minimum`` of the validator ``StringLength``:
 Setting renderables
 '''''''''''''''''''
 
-To add child form elements to a ``FormElement model``, the appropriate API
+To add child form elements to a `FormElement model`, the appropriate API
 methods should be used:
 
 - getFormEditorApp().createAndAddFormElement()
@@ -5445,10 +5445,10 @@ methods should be used:
 Method: unset()
 +++++++++++++++
 
-Any property of the ``FormElement model`` can be deleted using the method
-``unset()`` by means of the property path (separated by ``.``).
+Any property of the `FormElement model` can be deleted using the method
+`unset()` by means of the property path (separated by `.`).
 
-Example of a ``FormElement model``:
+Example of a `FormElement model`:
 
 .. code-block:: javascript
 
@@ -5472,7 +5472,7 @@ Example of a ``FormElement model``:
     }
 
 
-Delete the property ``properties.fluidAdditionalAttributes.placeholder``:
+Delete the property `properties.fluidAdditionalAttributes.placeholder`:
 
 .. code-block:: javascript
 
@@ -5480,7 +5480,7 @@ Delete the property ``properties.fluidAdditionalAttributes.placeholder``:
     var value = getFormEditorApp().getFormElementByIdentifierPath('example-form/page-1/name').unset('properties.fluidAdditionalAttributes.placeholder');
 
 
-Example of the ``FormElement model`` after the ``unset()`` operation:
+Example of the `FormElement model` after the `unset()` operation:
 
 .. code-block:: javascript
 
@@ -5502,8 +5502,8 @@ Example of the ``FormElement model`` after the ``unset()`` operation:
     }
 
 
-Two exceptions are the two arrays of "finishers" / "validators" (``property
-collections``) and the ``renderables``.
+Two exceptions are the two arrays of "finishers" / "validators" (`property
+collections`) and the `renderables`.
 
 
 .. _apireference-formeditor-basicjavascriptconcepts-formelementmodel-method-unset-propertycollectionproperties:
@@ -5513,7 +5513,7 @@ Remove property collection properties
 
 In principle, the same applies here as for :ref:`get property collection properties<apireference-formeditor-basicjavascriptconcepts-formelementmodel-method-get-propertycollectionproperties>`.
 
-Delete the property ``options.minimum`` of the validator ``StringLength``:
+Delete the property `options.minimum` of the validator `StringLength`:
 
 .. code-block:: javascript
 
@@ -5527,8 +5527,8 @@ Delete the property ``options.minimum`` of the validator ``StringLength``:
 Remove renderables
 ''''''''''''''''''
 
-To delete a ``FormElement model``, the corresponding API method
-``getFormEditorApp().removeFormElement()`` should be used.
+To delete a `FormElement model`, the corresponding API method
+`getFormEditorApp().removeFormElement()` should be used.
 
 
 .. _apireference-formeditor-basicjavascriptconcepts-formelementmodel-method-on:
@@ -5537,8 +5537,8 @@ Method: on()
 ++++++++++++
 
 Any number of :ref:`Publisher/Subscriber<concepts-formeditor-basicjavascriptconcepts-events>`
-events can be assigned to any property path of a ``FormElement model``. Each
-``set()`` operation on this property path will then call these events. By
+events can be assigned to any property path of a `FormElement model`. Each
+`set()` operation on this property path will then call these events. By
 default, EXT:form registers the event :ref:`core/formElement/somePropertyChanged<apireference-formeditor-basicjavascriptconcepts-events-core-formelement-somepropertychanged>`
 for each property path.
 
@@ -5571,13 +5571,13 @@ Example:
 Method: getObjectData()
 +++++++++++++++++++++++
 
-All ``FormElement model`` properties are private and cannot be manipulated
-directly from the outside. They can only be accessed via ``set()`` or
-``get()``. This method is used internally to obtain all data of a ``FormElement
-model`` in object form so that they can be used in, for example, Ajax requests.
-``getObjectData()`` returns a dereferenced object of the ``FormElement model``
+All `FormElement model` properties are private and cannot be manipulated
+directly from the outside. They can only be accessed via `set()` or
+`get()`. This method is used internally to obtain all data of a `FormElement
+model` in object form so that they can be used in, for example, Ajax requests.
+`getObjectData()` returns a dereferenced object of the `FormElement model`
 with all internal data, thus allowing read access to all data set via
-``set()``.
+`set()`.
 
 
 .. _apireference-formeditor-basicjavascriptconcepts-formelementmodel-method-tostring:
@@ -5586,7 +5586,7 @@ Method: toString()
 ++++++++++++++++++
 
 A method that was implemented for debugging purposes. Returns the object data
-supplied by ``getObjectData()`` in string form.
+supplied by `getObjectData()` in string form.
 
 .. code-block:: javascript
 
@@ -5599,7 +5599,7 @@ Method: clone()
 +++++++++++++++
 
 If necessary, a form element can be cloned. Returns a dereferenced clone of the
-original ``FormElement model``.
+original `FormElement model`.
 
 
 .. code-block:: javascript

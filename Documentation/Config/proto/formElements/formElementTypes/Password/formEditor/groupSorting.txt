@@ -26,4 +26,4 @@ formEditor.groupSorting
       ToDo
 
 :aspect:`Description`
-      The position within the ``formEditor.group`` for this form element.
+      The position within the `formEditor.group` for this form element.

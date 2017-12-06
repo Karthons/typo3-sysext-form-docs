@@ -44,7 +44,7 @@ allowedFileMounts
 
 :aspect:`Description`
       EXT:form stores the form definitions within the file system and thus needs
-      write access to this storage. By default, the folder ``form_definitions`` is
+      write access to this storage. By default, the folder `form_definitions` is
       created and used. It is possible to configure a different and/ or an additional
       filemount which is then utilized for storing and reading forms.
 
@@ -78,7 +78,7 @@ allowSaveToExtensionPaths
       :ref:`Form/ File storages<concepts-form-file-storages>`
 
 :aspect:`Description`
-      Set this to ``true`` if you want to allow backend users to **edit** forms stored within your own extension.
+      Set this to `true` if you want to allow backend users to **edit** forms stored within your own extension.
 
 
 .. _typo3.cms.form.persistencemanager.allowDeleteFromExtensionPaths:
@@ -110,7 +110,7 @@ allowDeleteFromExtensionPaths
       :ref:`Form/ File storages<concepts-form-file-storages>`
 
 :aspect:`Description`
-      Set this to ``true`` if you want to allow backend users to **delete** forms stored within your own extension.
+      Set this to `true` if you want to allow backend users to **delete** forms stored within your own extension.
 
 
 .. _typo3.cms.form.persistencemanager.allowedExtensionPaths:

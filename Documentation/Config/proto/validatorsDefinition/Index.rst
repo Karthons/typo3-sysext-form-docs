@@ -44,7 +44,7 @@ Properties
       - :ref:`"Custom validator implementations"<concepts-frontendrendering-codecomponents-customvalidatorimplementations>`
 
 :aspect:`Description`
-      Array which defines the available serverside validators. Every key within this array is called the ``<validatoridentifier>``.
+      Array which defines the available serverside validators. Every key within this array is called the `<validatoridentifier>`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.validatorsdefinition.<validatoridentifier>:
@@ -188,7 +188,7 @@ formEditor
       ToDo
 
 :aspect:`Description`
-      Array with configurations for the ``form editor``
+      Array with configurations for the `form editor`
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.validatorsdefinition.<validatoridentifier>.formeditor.iconidentifier:

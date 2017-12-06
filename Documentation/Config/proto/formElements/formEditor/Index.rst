@@ -37,7 +37,7 @@ Properties
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      Array with numerical keys. Each arrayitem describes an ``inspector editor`` which is used to write values into a form element property.
+      Array with numerical keys. Each arrayitem describes an `inspector editor` which is used to write values into a form element property.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*-commonproperties:

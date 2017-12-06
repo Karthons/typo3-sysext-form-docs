@@ -77,7 +77,7 @@ selectOptions.[*].value
       ToDo
 
 :aspect:`Description`
-      Has to match with a ``TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.validatorsDefinition`` configuration key.
+      Has to match with a `TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.validatorsDefinition` configuration key.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.selectoptions.*.label-validatorseditor:

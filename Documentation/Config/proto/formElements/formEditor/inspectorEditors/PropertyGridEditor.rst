@@ -177,7 +177,7 @@ removeLastAvailableRowFlashMessageTitle
       - :ref:`"Translate form editor settings"<concepts-formeditor-translation-formeditor>`
 
 :aspect:`Description`
-      There must be at least one existing row within this ``inspector editor``. If the last existing row is tried to be removed then a flash message is shown.
+      There must be at least one existing row within this `inspector editor`. If the last existing row is tried to be removed then a flash message is shown.
       This property define the title for the flash message.
 
 
@@ -203,7 +203,7 @@ removeLastAvailableRowFlashMessageMessage
       - :ref:`"Translate form editor settings"<concepts-formeditor-translation-formeditor>`
 
 :aspect:`Description`
-      There must be at least one existing row within this ``inspector editor``. If the last existing row is tried to be removed then a flash message is shown.
+      There must be at least one existing row within this `inspector editor`. If the last existing row is tried to be removed then a flash message is shown.
       This property define the text for the flash message.
 
 

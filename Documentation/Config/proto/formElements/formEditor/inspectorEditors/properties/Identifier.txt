@@ -20,5 +20,5 @@ identifier
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      Identifies the current ``inspector editor`` within the current form element.
-      The identifier is a text of your choice but must be unique within the optionpath ``TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.formElementsDefinition.<formElementTypeIdentifier>.formEditor.editors``.
+      Identifies the current `inspector editor` within the current form element.
+      The identifier is a text of your choice but must be unique within the optionpath `TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.formElementsDefinition.<formElementTypeIdentifier>.formEditor.editors`.

@@ -7,15 +7,15 @@ Form/ File storages
 ===================
 
 EXT:form stores the form definitions within the file system and thus needs
-write access to this storage. By default, the filemount ``user_uploads`` is
+write access to this storage. By default, the filemount `user_uploads` is
 used. It is possible to configure a different and/ or an additional
 filemount, which is then utilized for storing and reading forms.
 
 The backend user will only see form definitions that are stored in
-filemounts where the user has at least read access. The ``form editor`` and
-the ``form plugin`` respect those access rights. In this way, you are able
+filemounts where the user has at least read access. The `form editor` and
+the `form plugin` respect those access rights. In this way, you are able
 to implement ACLs. If you have configure more than one filemount and the
-backend user is able to access those, the ``form manager`` will allow the
+backend user is able to access those, the `form manager` will allow the
 user to choose the preferred storage in which the form will be saved.
 
 Even cooler, form definitions can be stored in and shipped with your custom
@@ -23,8 +23,8 @@ extensions. If configured accordingly, the backend user will be able to
 embed those forms. Furthermore, you can configure that these form
 definitions:
 
-- can be edited within the ``form editor``,
-- can be deleted with the help of the ``form manager``.
+- can be edited within the `form editor`,
+- can be deleted with the help of the `form manager`.
 
 By default, the aforementioned options are turned off. We decided to do so
 because having dynamic content within an extension - which is possibly

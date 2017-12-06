@@ -26,5 +26,5 @@ formEditor.group
       Depends (see :ref:`concrete element configuration <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>-concreteconfigurations>`)
 
 :aspect:`Description`
-      Define within which group within the ``form editor`` "new Element" modal the form element should be shown.
-      The ``group`` value must be equal to an array key within ``formElementGroups``.
+      Define within which group within the `form editor` "new Element" modal the form element should be shown.
+      The `group` value must be equal to an array key within `formElementGroups`.

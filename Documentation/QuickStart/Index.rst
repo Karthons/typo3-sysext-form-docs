@@ -14,14 +14,14 @@ steps!
 
 1. Include static TypoScript templates
 
-   First, open the ``Template`` module in the backend and edit your root
+   First, open the `Template` module in the backend and edit your root
    TypoScript template. Under the tab "Includes", ensure that Fluid Content
    Elements (fluid_styled_content) and Form (form) are among the selected
    items. Save the template.
 
 2. Create a new form
 
-   Go to the ``Forms`` module, and create a new form there. With the help of
+   Go to the `Forms` module, and create a new form there. With the help of
    the form editor you can build appealing forms easily.
 
 3. Move the form definition

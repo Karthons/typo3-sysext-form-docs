@@ -127,7 +127,7 @@ translationFile
 
 :aspect:`Good to know`
       :ref:`Translate "Start template" options<concepts-formmanager-translation-starttemplate>`
-      
+
 :aspect:`Description`
       The translation file(s) which should be used to translate parts of the form manager.
 
@@ -197,7 +197,7 @@ selectablePrototypesConfiguration
       - :ref:`Translate "Start template" options<concepts-formmanager-translation-starttemplate>`
 
 :aspect:`Description`
-      Array with numerical Keys. Configure the ``Start template`` selection list within the ``form manager`` "Advanced settings" step.
+      Array with numerical Keys. Configure the `Start template` selection list within the `form manager` "Advanced settings" step.
 
 
 .. _typo3.cms.form.formmanager.selectableprototypesconfiguration.*.identifier:
@@ -224,7 +224,7 @@ selectablePrototypesConfiguration.*.identifier
       - :ref:`"Start templates"<concepts-formmanager-starttemplate>`
 
 :aspect:`Description`
-      Reference to a ``prototype`` which should be used for the newly created form definition.
+      Reference to a `prototype` which should be used for the newly created form definition.
 
 
 .. _typo3.cms.form.formmanager.selectableprototypesconfiguration.*.label:
@@ -249,7 +249,7 @@ selectablePrototypesConfiguration.*.label
       - :ref:`Translate "Start template" options<concepts-formmanager-translation-starttemplate>`
 
 :aspect:`Description`
-      The ``Form prototype`` selectlist label for this ``prototype`` within the ``form manager`` "Advanced settings" step.
+      The `Form prototype` selectlist label for this `prototype` within the `form manager` "Advanced settings" step.
 
 
 .. _typo3.cms.form.formmanager.selectableprototypesconfiguration.*.newformtemplates:
@@ -291,7 +291,7 @@ selectablePrototypesConfiguration.*.newFormTemplates
       - :ref:`Translate "Start template" options<concepts-formmanager-translation-starttemplate>`
 
 :aspect:`Description`
-      Array with numerical Keys. Configure the ``Start templates`` selectlist for this ``prototype`` within the ``form manager`` "Advanced settings" step.
+      Array with numerical Keys. Configure the `Start templates` selectlist for this `prototype` within the `form manager` "Advanced settings" step.
 
 
 .. _typo3.cms.form.formmanager.selectableprototypesconfiguration.*.newformtemplates.*.templatepath:
@@ -316,7 +316,7 @@ selectablePrototypesConfiguration.*.newFormTemplates.*.templatePath
       - :ref:`Translate "Start template" options<concepts-formmanager-translation-starttemplate>`
 
 :aspect:`Description`
-      The filesystem path to the `Start template`` YAML file.
+      The filesystem path to the `Start template` YAML file.
 
 
 .. _typo3.cms.form.formmanager.selectableprototypesconfiguration.*.newformtemplates.*.label:
@@ -341,7 +341,7 @@ selectablePrototypesConfiguration.*.newFormTemplates.*.label
       - :ref:`Translate "Start template" options<concepts-formmanager-translation-starttemplate>`
 
 :aspect:`Description`
-      The ``Start template`` selectlist label for this ``Start template`` within the ``form manager`` "Advanced settings" step.
+      The `Start template` selectlist label for this `Start template` within the `form manager` "Advanced settings" step.
 
 
 .. _typo3.cms.form.formmanager.controller:
@@ -371,7 +371,7 @@ controller
              errorMessage: formManagerController.deleteAction.error.body
 
 :aspect:`Description`
-      Internal setting. Configure the ``form manager`` flash message texts.
+      Internal setting. Configure the `form manager` flash message texts.
 
 
 .. _typo3.cms.form.formmanager.controller.deleteaction.errortitle:
@@ -402,7 +402,7 @@ controller.deleteAction.errorTitle
              errorMessage: formManagerController.deleteAction.error.body
 
 :aspect:`Description`
-      Internal setting. Configure the ``form manager`` flash message texts.
+      Internal setting. Configure the `form manager` flash message texts.
 
 
 .. _typo3.cms.form.formmanager.controller.deleteaction.errormessage:
@@ -433,4 +433,4 @@ controller.deleteAction.errorMessage
              errorMessage: formManagerController.deleteAction.error.body
 
 :aspect:`Description`
-      Internal setting. Configure the ``form manager`` flash message texts.
+      Internal setting. Configure the `form manager` flash message texts.

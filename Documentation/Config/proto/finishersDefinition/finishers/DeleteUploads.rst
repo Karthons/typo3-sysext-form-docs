@@ -42,7 +42,7 @@ implementationClassName
       - :ref:`"Custom finisher implementations"<concepts-frontendrendering-codecomponents-customfinisherimplementations>`
 
 :aspect:`Description`
-      Array which defines the available finishers. Every key within this array is called the ``<finisherIdentifier>``
+      Array which defines the available finishers. Every key within this array is called the `<finisherIdentifier>`
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.deleteuploads.formeditor.iconidentifier:

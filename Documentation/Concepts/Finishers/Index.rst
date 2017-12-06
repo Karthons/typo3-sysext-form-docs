@@ -46,8 +46,8 @@ Email finisher
 --------------
 
 The 'Email finisher' sends an email to one recipient. EXT:form uses two
-``EmailFinisher`` declarations with the identifiers ``EmailToReceiver`` and
-``EmailToSender``.
+`EmailFinisher` declarations with the identifiers `EmailToReceiver` and
+`EmailToSender`.
 
 
 .. _concepts-finishers-flashmessagefinisher:

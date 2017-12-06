@@ -44,7 +44,7 @@ Properties
       - :ref:`"Custom finisher implementations"<concepts-frontendrendering-codecomponents-customfinisherimplementations>`
 
 :aspect:`Description`
-      Array which defines the available finishers. Every key within this array is called the ``<finisherIdentifier>``.
+      Array which defines the available finishers. Every key within this array is called the `<finisherIdentifier>`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.finishersdefinition.<finisheridentifier>:
@@ -213,7 +213,7 @@ formEditor
       ToDo
 
 :aspect:`Description`
-      Array with configurations for the ``form editor``
+      Array with configurations for the `form editor`
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.<finisheridentifier>.formeditor.iconidentifier:
@@ -321,7 +321,7 @@ FormEngine
       ToDo
 
 :aspect:`Description`
-      Array with configurations for the ``form plugin``
+      Array with configurations for the `form plugin`
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.<finisheridentifier>.FormEngine.label:

@@ -76,7 +76,7 @@ configurationOptions.viewPorts.[*].viewPortIdentifier
       ToDo
 
 :aspect:`Description`
-      Has to match with a ``TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.formElementsDefinition.<formElementTypeIdentifier>.properties.gridColumnClassAutoConfiguration.viewPorts`` configuration key.
+      Has to match with a `TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.formElementsDefinition.<formElementTypeIdentifier>.properties.gridColumnClassAutoConfiguration.viewPorts` configuration key.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.configurationOptions.viewPorts.*.label-gridcolumnviewportconfigurationeditor:

@@ -21,7 +21,7 @@ Globally extend the fluid search paths
 
 Since EXT:form mainly uses YAML as configuration language you need to
 register your own additional YAML files. Let us assume you are using a
-sitepackage ``EXT:my_site_package`` which contains your whole frontend
+sitepackage `EXT:my_site_package` which contains your whole frontend
 integration.
 
 
@@ -77,7 +77,7 @@ EXT:my_site_package/ext_typoscript_setup.txt
 
 Register your EXT:form configuration for the backend via TypoScript. Read
 the :ref:`chapter <concepts-configuration-yamlregistration-backend>` to
-learn why we recommend using the concept behind ``ext_typoscript_setup.txt``.
+learn why we recommend using the concept behind `ext_typoscript_setup.txt`.
 
 .. code-block:: typoscript
 
@@ -96,7 +96,7 @@ How do I migrate from EXT:form v7?
 ==================================
 
 The old form extension (used in TYPO3 v7, which is compatible to TYPO3 v6)
-was moved into an own extension called ``form_legacy``.  This extension can
+was moved into an own extension called `form_legacy`.  This extension can
 be found within the official `TER <https://typo3.org/extensions/repository/view/form_legacy>`_.
 When upgrading to TYPO3 v8 an upgrade wizard will tell you if form_legacy is
 still needed.

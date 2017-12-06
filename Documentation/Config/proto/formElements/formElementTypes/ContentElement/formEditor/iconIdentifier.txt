@@ -26,10 +26,10 @@ formEditor.iconIdentifier
       ToDo
 
 :aspect:`Description`
-        An icon identifier which must be registered through the ``\TYPO3\CMS\Core\Imaging\IconRegistry``.
+        An icon identifier which must be registered through the `\TYPO3\CMS\Core\Imaging\IconRegistry`.
         This icon will be shown within
 
         - :ref:`"Inspector [FormElementHeaderEditor]"<typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.formelementheadereditor>`.
         - :ref:`"Abstract view formelement templates"<apireference-formeditor-stage-commonabstractformelementtemplates>`.
-        - ``Tree`` component.
+        - `Tree` component.
         - "new element" Modal

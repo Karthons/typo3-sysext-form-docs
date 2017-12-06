@@ -21,5 +21,5 @@ propertyPath
       - :ref:`"JavaScript FormElement model"<apireference-formeditor-basicjavascriptconcepts-formelementmodel>`
 
 :aspect:`Description`
-      The path to the property of the form element which should be written by this ``inspector editor``.
+      The path to the property of the form element which should be written by this `inspector editor`.
 

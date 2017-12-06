@@ -214,7 +214,7 @@ options.replyToAddress
       Email address of to be used as reply-to email (use multiple addresses with an array).
 
 .. note::
-   For the moment, the ``form editor`` cannot deal with multiple reply-to addresses (use multiple addresses with an array)
+   For the moment, the `form editor` cannot deal with multiple reply-to addresses (use multiple addresses with an array)
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtoreceiver.options.carboncopyaddress:
@@ -245,7 +245,7 @@ options.carbonCopyAddress
       Email address of the copy recipient (use multiple addresses with an array)
 
 .. note::
-   For the moment, the ``form editor`` cannot deal with multiple copy recipient addresses (use multiple addresses with an array)
+   For the moment, the `form editor` cannot deal with multiple copy recipient addresses (use multiple addresses with an array)
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtoreceiver.options.blindcarboncopyaddress:
@@ -276,7 +276,7 @@ options.blindCarbonCopyAddress
       Email address of the blind copy recipient (use multiple addresses with an array)
 
 .. note::
-   For the moment, the ``form editor`` cannot deal with multiple blind copy recipient addresses (use multiple addresses with an array)
+   For the moment, the `form editor` cannot deal with multiple blind copy recipient addresses (use multiple addresses with an array)
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtoreceiver.options.format:
@@ -431,7 +431,7 @@ options.templatePathAndFilename
 
 :aspect:`Description`
       Template path and filename for the mail body.
-      The placeholder {\@format} will be replaced with the value from option ``format``.
+      The placeholder {\@format} will be replaced with the value from option `format`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.emailtoreceiver.options.partialrootpaths:

@@ -43,7 +43,7 @@ Properties
       - :ref:`"Custom form element implementations"<concepts-frontendrendering-codecomponents-customformelementimplementations>`
 
 :aspect:`Description`
-      Array which defines the available form elements. Every key within this array is called the ``<formElementTypeIdentifier>``.
+      Array which defines the available form elements. Every key within this array is called the `<formElementTypeIdentifier>`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>:
@@ -180,7 +180,7 @@ renderingOptions.translation.translationFile
 
 :aspect:`Description`
       Filesystem path(s) to translation files which should be searched for form element property translations.
-      If ``translationFile`` is undefined, - :ref:`"TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formElementsDefinition.Form.renderingOptions.translation.translationFile"<typo3.cms.form.prototypes.\<prototypeIdentifier>.formelementsdefinition.form.renderingoptions.translation.translationfile>` will be used.
+      If `translationFile` is undefined, - :ref:`"TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formElementsDefinition.Form.renderingOptions.translation.translationFile"<typo3.cms.form.prototypes.\<prototypeIdentifier>.formelementsdefinition.form.renderingoptions.translation.translationfile>` will be used.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.renderingOptions.translation.translatePropertyValueIfEmpty:
@@ -208,7 +208,7 @@ renderingOptions.translation.translatePropertyValueIfEmpty
       - :ref:`"Translate form definition"<concepts-frontendrendering-translation-formdefinition>`
 
 :aspect:`Description`
-      If set to ``false``, the form element property translation will be skipped if the form element property value is empty.
+      If set to `false`, the form element property translation will be skipped if the form element property value is empty.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.renderingoptions.templatename:
@@ -236,7 +236,7 @@ renderingOptions.templateName
       - :ref:`"templateName"<apireference-frontendrendering-fluidformrenderer-options-templatename>`
 
 :aspect:`Description`
-      Set ``templateName`` to define a custom template name which should be used instead of the ``<formElementTypeIdentifier>``.
+      Set `templateName` to define a custom template name which should be used instead of the `<formElementTypeIdentifier>`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.properties:
@@ -292,7 +292,7 @@ properties.fluidAdditionalAttributes
       - :ref:`"Translate form definition"<concepts-frontendrendering-translation-formdefinition>`
 
 :aspect:`Description`
-      The values within this array goes directely into the fluid form element viewhelpers property ``additionalAttributes``.
+      The values within this array goes directely into the fluid form element viewhelpers property `additionalAttributes`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.properties.gridcolumnclassautoconfiguration:
@@ -320,7 +320,7 @@ properties.gridColumnClassAutoConfiguration
 
 :aspect:`Description`
         If the form element lies within a GridRow you can define the number of columns which the form element should occupy.
-        Each ``viewPorts`` configuration key has to match with on ofe the defined viewports within ``TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.formElementsDefinition.GridRow.properties.gridColumnClassAutoConfiguration.viewPorts``
+        Each `viewPorts` configuration key has to match with on ofe the defined viewports within `TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.formElementsDefinition.GridRow.properties.gridColumnClassAutoConfiguration.viewPorts`
 
               .. code-block:: yaml
                  :linenos:
@@ -388,7 +388,7 @@ formEditor
       ToDo
 
 :aspect:`Description`
-      Array with configurations for the ``form editor``
+      Array with configurations for the `form editor`
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.predefineddefaults:
@@ -442,7 +442,7 @@ formEditor.propertyCollections
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      Array with configurations for ``property collections`` for the form element.
+      Array with configurations for `property collections` for the form element.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.propertycollections.validators:
@@ -497,7 +497,7 @@ formEditor.propertyCollections.validators.[*].identifier
       - :ref:`"\<validatorIdentifier>"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.\<validatoridentifier>>`
 
 :aspect:`Description`
-      Identifies the validator which should be attached to the form element. Must be equal to a existing ``<validatorIdentifier>``.
+      Identifies the validator which should be attached to the form element. Must be equal to a existing `<validatorIdentifier>`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.propertycollections.validators.*.editors:
@@ -524,7 +524,7 @@ formEditor.propertyCollections.validators.[*].editors
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      Array with available ``inspector editors`` for this validator. 
+      Array with available `inspector editors` for this validator.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.propertycollections.finishers:
@@ -579,7 +579,7 @@ formEditor.propertyCollections.finishers.[*].identifier
       - :ref:`"\<finisherIdentifier>"<typo3.cms.form.prototypes.\<prototypeidentifier>.finishersdefinition.\<finisheridentifier>>`
 
 :aspect:`Description`
-      Identifies the finisher which should be attached to the form definition. Must be equal to a existing ``<finisherIdentifier>``.
+      Identifies the finisher which should be attached to the form definition. Must be equal to a existing `<finisherIdentifier>`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.propertycollections.finishers.*.editors:
@@ -606,7 +606,7 @@ formEditor.propertyCollections.finishers.[*].editors
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      Array with available ``inspector editors`` for this finisher. 
+      Array with available `inspector editors` for this finisher.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.label:
@@ -660,8 +660,8 @@ formEditor.group
       Depends (see :ref:`concrete element configuration <typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>-concreteconfigurations>`)
 
 :aspect:`Description`
-      Define within which group within the ``form editor`` "new Element" modal the form element should be shown.
-      The ``group`` value must be equal to an array key within ``formElementGroups``.
+      Define within which group within the `form editor` "new Element" modal the form element should be shown.
+      The `group` value must be equal to an array key within `formElementGroups`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.groupsorting:
@@ -688,7 +688,7 @@ formEditor.groupSorting
       ToDo
 
 :aspect:`Description`
-      The position within the ``formEditor.group`` for this form element.
+      The position within the `formEditor.group` for this form element.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.iconidentifier:
@@ -715,12 +715,12 @@ formEditor.iconIdentifier
       ToDo
 
 :aspect:`Description`
-      An icon identifier which must be registered through the ``\TYPO3\CMS\Core\Imaging\IconRegistry``.
+      An icon identifier which must be registered through the `\TYPO3\CMS\Core\Imaging\IconRegistry`.
       This icon will be shown within
 
       - :ref:`"Inspector [FormElementHeaderEditor]"<typo3.cms.form.prototypes.\<prototypeidentifier>.formelementsdefinition.\<formelementtypeidentifier>.formeditor.editors.*.formelementheadereditor>`.
       - :ref:`"Abstract view formelement templates"<apireference-formeditor-stage-commonabstractformelementtemplates>`.
-      - ``Tree`` component.
+      - `Tree` component.
       - "new element" Modal
 
 

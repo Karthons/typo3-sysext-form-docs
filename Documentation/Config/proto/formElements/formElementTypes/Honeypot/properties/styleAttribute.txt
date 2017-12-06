@@ -36,4 +36,4 @@ properties.styleAttribute
       ToDo
 
 :aspect:`Description`
-      By default the honeypot will be rendered as a regular text form element (input type "text"). The ``styleAttribute`` is written to the honeypot form element to make it "invisible" for humans.
+      By default the honeypot will be rendered as a regular text form element (input type "text"). The `styleAttribute` is written to the honeypot form element to make it "invisible" for humans.

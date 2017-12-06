@@ -81,7 +81,7 @@ selectOptions.[*].value
 
 :aspect:`Description`
       The value which should be written into the corresponding form elements property.
-      The corresponding form elements property is identified by the ``propertyPath`` option.
+      The corresponding form elements property is identified by the `propertyPath` option.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.selectoptions.*.label-multiselecteditor:

@@ -36,4 +36,4 @@ properties.renderAsHiddenField
       ToDo
 
 :aspect:`Description`
-      By default the honeypot will be rendered as a regular text form element (input type "text"). ``renderAsHiddenField`` renders the honeypot as a hidden form element (input type "hidden").
+      By default the honeypot will be rendered as a regular text form element (input type "text"). `renderAsHiddenField` renders the honeypot as a hidden form element (input type "hidden").

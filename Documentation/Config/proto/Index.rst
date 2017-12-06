@@ -43,7 +43,7 @@ prototypes
       - :ref:`"Form configuration vs. form definition"<concepts-formdefinition-vs-formconfiguration>`
 
 :aspect:`Description`
-      Array which defines the available prototypes. Every key within this array is called the ``<prototypeIdentifier>``.
+      Array which defines the available prototypes. Every key within this array is called the `<prototypeIdentifier>`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>:
@@ -80,7 +80,7 @@ prototypes
       - :ref:`"Form configuration vs. form definition"<concepts-formdefinition-vs-formconfiguration>`
 
 :aspect:`Description`
-      This array key identifies the `prototype``. Every ``form definition`` references to such a ``<prototypeIdentifier>`` through the property ``prototypeName``.
+      This array key identifies the `prototype`. Every `form definition` references to such a `<prototypeIdentifier>` through the property `prototypeName`.
 
 
 Subproperties

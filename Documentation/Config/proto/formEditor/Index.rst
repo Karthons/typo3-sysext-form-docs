@@ -177,7 +177,7 @@ dynamicRequireJsModules.additionalViewModelModules
       - :ref:`"Register custom JavaScript modules"<concepts-formeditor-basicjavascriptconcepts-registercustomjavascriptmodules>`
 
 :aspect:`Description`
-      Array with RequireJS paths for custom JavaScript modules. 
+      Array with RequireJS paths for custom JavaScript modules.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formeditor.addinlinesettings:
@@ -269,7 +269,7 @@ stylesheets
       - :ref:`"Form editor"<concepts-formeditor>`
 
 :aspect:`Description`
-      The CSS files to be used by the ``form editor``.
+      The CSS files to be used by the `form editor`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formeditor.formeditorfluidconfiguration:
@@ -548,9 +548,9 @@ formElementPropertyValidatorsDefinition
 
 :aspect:`Description`
       Some inspector editors are able to validate it's values through a JavaScript methods.
-      ``formElementPropertyValidatorsDefinition`` define basic configurations for such JavaScript validators.
-      This JavaScript validators can be registered through ``getFormEditorApp().addPropertyValidationValidator()``. The first method argument is the identifier
-      for this validator. Every array key within ``formElementPropertyValidatorsDefinition`` must be equal to such a identifier.
+      `formElementPropertyValidatorsDefinition` define basic configurations for such JavaScript validators.
+      This JavaScript validators can be registered through `getFormEditorApp().addPropertyValidationValidator()`. The first method argument is the identifier
+      for this validator. Every array key within `formElementPropertyValidatorsDefinition` must be equal to such a identifier.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formeditor.formelementpropertyvalidatorsdefinition.<formelementpropertyvalidatoridentifier>.errormessage:
@@ -659,14 +659,14 @@ formElementGroups
       - :ref:`"TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formElementsDefinition.ContentElement.formEditor.group"<typo3.cms.form.prototypes.\<prototypeIdentifier>.formelementsdefinition.contentelement.formeditor.group>`
       - :ref:`"TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formElementsDefinition.DatePicker.formEditor.group"<typo3.cms.form.prototypes.\<prototypeIdentifier>.formelementsdefinition.datepicker.formeditor.group>`
       - :ref:`"TYPO3.CMS.Form.prototypes.\<prototypeIdentifier>.formElementsDefinition.Textarea.formEditor.group"<typo3.cms.form.prototypes.\<prototypeIdentifier>.formelementsdefinition.textarea.formeditor.group>`
-      
+
 :aspect:`Good to know`
       - :ref:`"Form editor"<concepts-formeditor>`
 
 :aspect:`Description`
-      Every form element can be placed within a group within the ``form editor`` "new Element" modal.
-      Every form element which should be shown within such a group, must have a ``group`` property. The form element ``group`` property value
-      must be equal to an array key within ``formElementGroups``.
+      Every form element can be placed within a group within the `form editor` "new Element" modal.
+      Every form element which should be shown within such a group, must have a `group` property. The form element `group` property value
+      must be equal to an array key within `formElementGroups`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formeditor.formelementgroups.<formelementgroupidentifier>.label:
@@ -708,4 +708,4 @@ formElementGroups.<formElementGroupIdentifier>.label
       - :ref:`"Form editor"<concepts-formeditor>`
 
 :aspect:`Description`
-      The label for a group within the ``form editor`` "new Element" modal.
+      The label for a group within the `form editor` "new Element" modal.

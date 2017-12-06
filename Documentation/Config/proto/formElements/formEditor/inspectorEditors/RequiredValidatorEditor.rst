@@ -12,7 +12,7 @@
 Introduction
 ============
 
-Shows a checkbox. If set, a validator ('NotEmpty' by default) will be written into the ``form definition``. In addition another property could be written into the ``form definition``.
+Shows a checkbox. If set, a validator ('NotEmpty' by default) will be written into the `form definition`. In addition another property could be written into the `form definition`.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.requiredvalidatoreditor-properties:
@@ -76,7 +76,7 @@ validatorIdentifier
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      The ``<validatorIdentifier>`` which should be used.
+      The `<validatorIdentifier>` which should be used.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.propertypath-requiredvalidatoreditor:
@@ -100,7 +100,7 @@ propertyPath
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      An property path which should be written into the `form definition`` if the checkbox is set.
+      An property path which should be written into the `form definition` if the checkbox is set.
 
 
 .. _typo3.cms.form.prototypes.<prototypeidentifier>.formelementsdefinition.<formelementtypeidentifier>.formeditor.editors.*.propertyvalue-requiredvalidatoreditor:
@@ -124,4 +124,4 @@ propertyValue
       - :ref:`"Inspector"<concepts-formeditor-inspector>`
 
 :aspect:`Description`
-      The value for the property path which should be written into the `form definition`` if the checkbox is set.
+      The value for the property path which should be written into the `form definition` if the checkbox is set.
