@@ -2,16 +2,12 @@ setDataType()
 '''''''''''''
 
 The target data type the data should be converted through the property mapper.
- 
-Signature:
 
-.. code-block:: php
+Signature::
 
     public function setDataType(string $dataType);
 
-Example:
-
-.. code-block:: php
+Example::
 
     public function initializeFormElement()
     {

@@ -4,9 +4,7 @@ getUniqueIdentifier()
 Returns a unique identifier of the element. While element identifiers are only unique within one form,
 this identifier includes also the identifier of the form itself, and therefore making it "globally" unique.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getUniqueIdentifier(): string;
 

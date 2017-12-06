@@ -180,9 +180,7 @@ YAML registration for the backend via addTypoScriptSetup()
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Add the following PHP code to your :file:`ext_localconf.php` of your site
-package:
-
-.. code-block:: php
+package::
 
     <?php
     defined('TYPO3_MODE') or die();
@@ -402,17 +400,17 @@ additionally ships four predefined options. Without any problems, the new
 element can be used and overridden within the ``form definition``.
 
 .. hint::
+
    Currently, there is no built-in solution within the TYPO3 core to
    preview the resulting/ final EXT:form YAML configuration. If you want
    to check the configuration, there is a fishy way which you should never
    implement on a production system.
 
    Open the file ``typo3/sysext/form/Classes/Mvc/Configuration/ConfigurationManager.php::getConfigurationFromYamlFile()``
-   and add the following code before the ``return`` statement.
+   and add the following code before the ``return`` statement::
 
-   .. code-block:: php
-
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($yamlSettings, 'form configuration', 9999);
+      \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($yamlSettings,
+         'form configuration', 9999);
 
    Now open the ``Forms`` module in the backend or navigate to a page in
    the frontend which contains a form. The DebuggerUtility will print the

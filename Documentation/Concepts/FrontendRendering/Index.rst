@@ -59,9 +59,7 @@ Example
 
 Basically, you can manually create a ``FormDefinition`` domain model just
 by calling the API methods on it, or you can use a ``FormFactory`` to build
-the form from a different representation format such as YAML.
-
-.. code-block:: php
+the form from a different representation format such as YAML::
 
     $formDefinition = $this->objectManager->get(FormDefinition::class, 'myForm');
 
@@ -88,9 +86,7 @@ or ``Page``. EXT:form will automatically resolve the implementation class
 name and set default values.
 
 The :ref:`simple example <concepts-frontendrendering-basiccodecomponents-formdefinition-anatomy-example>`
-shown above should be rewritten as follows:
-
-.. code-block:: php
+shown above should be rewritten as follows::
 
     // we will come back to this later on
     $prototypeConfiguration = [];
@@ -102,9 +98,7 @@ shown above should be rewritten as follows:
 You might wonder how the system knows that the element ``Text`` is
 implemented by using a ``GenericFormElement``. This is configured in the
 ``$prototypeConfiguration``. To make the example from above actually work,
-we need to add some meaningful values to ``$prototypeConfiguration``:
-
-.. code-block:: php
+we need to add some meaningful values to ``$prototypeConfiguration``::
 
     $prototypeConfiguration = [
         'formElementsDefinition' => [
@@ -121,9 +115,7 @@ For each abstract ``<formElementTypeIdentifier>`` we have to add some
 configuration. In the snippet above, we only define the ``implementation
 class name``. Apart form that, it is always possible to set default values
 for all configuration options of such elements, as the following example
-shows:
-
-.. code-block:: php
+shows::
 
     $prototypeConfiguration = [
         'formElementsDefinition' => [
@@ -163,9 +155,7 @@ To trigger the rendering of a ``FormDefinition`` domain model, the current
 ``TYPO3\CMS\Extbase\Mvc\Web\Request`` needs to be bound to the
 ``FormDefinition``. This binding results in a ``TYPO3\CMS\Form\Domain\Runtime\FormRuntime``
 object which contains the ``Runtime State`` of the form. Among other things,
-this object includes the currently inserted values.
-
-.. code-block:: php
+this object includes the currently inserted values::
 
     // $currentRequest and $currentResponse need to be available
     // inside a controller, you would use $this->request and $this->response;
@@ -192,9 +182,7 @@ You generally receive an instance of this class by calling ``TYPO3\CMS\Form\Doma
 Rendering a form
 ++++++++++++++++
 
-Rendering a form is easy. Just call ``render()`` on the ``FormRuntime``.
-
-.. code-block:: php
+Rendering a form is easy. Just call ``render()`` on the ``FormRuntime``::
 
     $form = $formDefinition->bind($request, $response);
     $renderedForm = $form->render();
@@ -349,33 +337,32 @@ Accessing finisher options
 
 If your finisher extends ``TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher``,
 you can access your finisher options with the help of the ``parseOption()``
-method.
-
-.. code-block:: php
+method::
 
     $yourCustomOption = $this->parseOption('yourCustomOption');
 
 ``parseOption()`` is looking for 'yourCustomOption' in your
 ``form definition``. If it cannot be found, the method checks
 
-- 1. the ``prototype`` configuration for a default value,
-- 2. the finisher class itself by searching for a default value within the
-     ``$defaultOptions`` property.
+1. the ``prototype`` configuration for a default value,
+2. the finisher class itself by searching for a default value within the
+   ``$defaultOptions`` property::
 
-.. code-block:: php
+   .. code-block:: php
 
-    <?php
-    declare(strict_types=1);
-    namespace VENDOR\MySitePackage\Domain\Finishers;
+       <?php
+       declare(strict_types=1);
+       namespace VENDOR\MySitePackage\Domain\Finishers;
 
-    class CustomFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher
-    {
+       class CustomFinisher extends \TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher
+       {
 
-        protected $defaultOptions = [
-            'yourCustomOption' => 'Olli',
-        ];
+           protected $defaultOptions = [
+               'yourCustomOption' => 'Olli',
+           ];
 
-        ...
+           // ...
+       }
 
 If the option cannot be found by processing this fallback chain, ``null`` is
 returned.
@@ -438,29 +425,21 @@ Finisher Context
 The class ``TYPO3\CMS\Form\Domain\Finishers\FinisherContext`` takes care of
 transferring a finisher context to each finisher. Given the finisher is
 derived from ``TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher`` the
-finisher context will be available via
-
-.. code-block:: php
+finisher context will be available via::
 
     $this->finisherContext
 
-The method ``cancel`` prevents the execution of successive finishers:
-
-.. code-block:: php
+The method ``cancel`` prevents the execution of successive finishers::
 
     $this->finisherContext->cancel();
 
 The method ``getFormValues`` returns all of the submitted form values.
 
-``getFormValues``.
-
-.. code-block:: php
+``getFormValues``::
 
     $this->finisherContext->getFormValues();
 
-The method ``getFormRuntime`` returns the ``FormRuntime``.
-
-.. code-block:: php
+The method ``getFormRuntime`` returns the ``FormRuntime``::
 
     $this->finisherContext->getFormRuntime();
 
@@ -472,9 +451,7 @@ Share data between finishers
 
 The method ``getFinisherVariableProvider`` returns an object (``TYPO3\CMS\Form\Domain\Finishers\FinisherVariableProvider``)
 which allows you to store data and transfer it to other finishers. The data
-can be easily accessed programmatically or within your configuration.
-
-.. code-block:: php
+can be easily accessed programmatically or within your configuration::
 
     $this->finisherContext->getFinisherVariableProvider();
 
@@ -483,9 +460,7 @@ by a user-defined 'finisher identifier' and a custom option value path. The
 name of the 'finisher identifier' should consist of the name of the finisher
 without the potential 'Finisher' appendix. If your finisher is derived from
 the class ``TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher``, the name of
-this construct is stored in the following variable:
-
-.. code-block:: php
+this construct is stored in the following variable::
 
     $this->shortFinisherIdentifier
 
@@ -494,9 +469,7 @@ mentioned variable will contain the value 'Custom'.
 
 There are a bunch of methods to access and manage the finisher data:
 
-- Add data:
-
-  .. code-block:: php
+- Add data::
 
       $this->finisherContext->getFinisherVariableProvider()->add(
           $this->shortFinisherIdentifier,
@@ -504,9 +477,7 @@ There are a bunch of methods to access and manage the finisher data:
           $value
       );
 
-- Get data:
-
-  .. code-block:: php
+- Get data::
 
       $this->finisherContext->getFinisherVariableProvider()->get(
           $this->shortFinisherIdentifier,
@@ -514,18 +485,14 @@ There are a bunch of methods to access and manage the finisher data:
           'default value'
       );
 
-- Check the existence of data:
-
-  .. code-block:: php
+- Check the existence of data::
 
       $this->finisherContext->getFinisherVariableProvider()->exists(
           $this->shortFinisherIdentifier,
           'unique.value.identifier'
       );
 
-- Delete data:
-
-  .. code-block:: php
+- Delete data::
 
       $this->finisherContext->getFinisherVariableProvider()->remove(
           $this->shortFinisherIdentifier,
@@ -536,9 +503,7 @@ In this way, each finisher can access data programmatically. Moreover, it is
 possible to retrieve the data via configuration, provided that a finisher
 stores the values within the ``FinisherVariableProvider``.
 
-Assuming that a finisher called 'Custom' sets data as follows:
-
-.. code-block:: php
+Assuming that a finisher called 'Custom' sets data as follows::
 
     $this->finisherContext->getFinisherVariableProvider()->add(
         $this->shortFinisherIdentifier,

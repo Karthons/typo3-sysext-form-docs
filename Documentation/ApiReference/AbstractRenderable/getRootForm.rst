@@ -3,8 +3,6 @@ getRootForm()
 
 Get the root form the element belongs to.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getRootForm(): FormDefinition

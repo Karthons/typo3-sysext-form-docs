@@ -3,8 +3,6 @@ getIdentifier()
 
 Returns the identifier of the form element.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getIdentifier(): string;

@@ -3,8 +3,6 @@ getRendererClassName()
 
 Get the renderer class name.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getRendererClassName(): string;

@@ -3,8 +3,6 @@ setLabel()
 
 Set the label for the form element.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function setLabel(string $label);

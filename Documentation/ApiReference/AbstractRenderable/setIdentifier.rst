@@ -3,8 +3,6 @@ setIdentifier()
 
 Set the identifier of the form element.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function setIdentifier(string $identifier);

@@ -3,8 +3,6 @@ setRenderingOption()
 
 Set a rendering option.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function setRenderingOption(string $key, $value);

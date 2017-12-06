@@ -222,9 +222,7 @@ If no specification exists, the standard prototype ``standard`` is used.
 Build forms programmatically
 ----------------------------
 
-Implement a ``FormFactory`` and build the form.
-
-.. code-block:: php
+Implement a ``FormFactory`` and build the form::
 
     <?php
     declare(strict_types=1);
@@ -306,9 +304,7 @@ Create a page with the given $identifier and attach this page to the form.
 - attach Page object to this form
 - return the newly created Page object
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createPage(string $identifier, string $typeName = 'Page'): Page;
 
@@ -320,9 +316,7 @@ TYPO3\\CMS\\Form\\Domain\\Model\\FormDefinition::createFinisher()
 
 Create a finisher with the given $identifier and given $options and attach this finisher to the form.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createFinisher(string $finisherIdentifier, array $options = []): FinisherInterface;
 
@@ -339,9 +333,7 @@ Create a form element with the given $identifier and attach it to the page.
 - attach Form Element to the Page
 - return the newly created Form Element object
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createElement(string $identifier, string $typeName): FormElementInterface;
 
@@ -358,9 +350,7 @@ Create a form element with the given $identifier and attach it to the section.
 - attach Form Element to the Section
 - return the newly created Form Element object
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createElement(string $identifier, string $typeName): FormElementInterface;
 
@@ -378,9 +368,7 @@ Mainly possible for
 - TYPO3\\CMS\\Form\\Domain\\Model\\FormElements\\DatePicker
 - TYPO3\\CMS\\Form\\Domain\\Model\\FormElements\\FileUpload
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createValidator(string $validatorIdentifier, array $options = []);
 
@@ -399,18 +387,14 @@ Possible for
 - TYPO3\\CMS\\Form\\Domain\\Model\\FormElements\\DatePicker
 - TYPO3\\CMS\\Form\\Domain\\Model\\FormElements\\FileUpload
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function initializeFormElement();
 
 
 You can use this method to prefill form element data for example from database tables.
 All the classes you can see above extends from the ``TYPO3\CMS\Form\Domain\Model\FormElement\AbstractFormElement``.
-``AbstractFormElement`` implements this method like this
-
-.. code-block:: php
+``AbstractFormElement`` implements this method like this::
 
     public function initializeFormElement()
     {
@@ -459,15 +443,11 @@ Override the current page taken from the request, rendering the page with index 
 This is typically not needed in production code.
 You might prefer the hook :ref:`afterInitializeCurrentPage <apireference-frontendrendering-runtimemanipulation-hooks-afterinitializecurrentpage>`
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function overrideCurrentPage(int $pageIndex);
 
-Example:
-
-.. code-block:: php
+Example::
 
     $form = $formDefinition->bind($this->request, $this->response);
     $form->overrideCurrentPage($pageIndex);
@@ -480,9 +460,7 @@ render()
 
 Render the form.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function render();
 
@@ -498,9 +476,7 @@ getRequest()
 Get the request this object is bound to.
 This is mostly relevant inside Finishers, where you f.e. want to redirect the user to another page.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getRequest(): Request;
 
@@ -513,9 +489,7 @@ getResponse()
 Get the response this object is bound to.
 This is mostly relevant inside Finishers, where you f.e. want to set response headers or output content.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getResponse(): Response;
 
@@ -527,9 +501,7 @@ getCurrentPage()
 
 Returns the currently selected page.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getCurrentPage(): Page;
 
@@ -541,9 +513,7 @@ getPreviousPage()
 
 Returns the previous page of the currently selected one or NULL if there is no previous page.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getPreviousPage();
 
@@ -555,9 +525,7 @@ getNextPage()
 
 Returns the next page of the currently selected one or NULL if there is no next page.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getNextPage();
 
@@ -573,9 +541,7 @@ getElementValue()
 
 Returns the value of the specified element.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getElementValue(string $identifier);
 
@@ -587,9 +553,7 @@ getPages()
 
 Return the form's pages in the correct order.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getPages(): array;
 
@@ -614,9 +578,7 @@ getFormDefinition()
 
 Get the underlying form definition from the runtime.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getFormDefinition(): FormDefinition;
 
@@ -634,9 +596,7 @@ addPage()
 Add a new page at the end of the form.
 Instead of this method, you should use ``createPage`` instead.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function addPage(Page $page);
 
@@ -653,9 +613,7 @@ Create a page with the given $identifier and attach this page to the form.
 - attach Page object to this form
 - return the newly created Page object
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createPage(string $identifier, string $typeName = 'Page'): Page;
 
@@ -667,9 +625,7 @@ getPages()
 
 Return the form's pages in the correct order.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getPages(): array;
 
@@ -681,9 +637,7 @@ hasPageWithIndex()
 
 Check whether a page with the given $index exists.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function hasPageWithIndex(int $index): bool;
 
@@ -696,9 +650,7 @@ getPageByIndex()
 Get the page with the passed index. The first page has index zero.
 If page at $index does not exist, an exception is thrown.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getPageByIndex(int $index);
 
@@ -711,9 +663,7 @@ addFinisher()
 Adds the specified finisher to the form.
 Instead of this method, you should use ``createFinisher`` instead.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function addFinisher(FinisherInterface $finisher);
 
@@ -725,9 +675,7 @@ createFinisher()
 
 Create a finisher with the given $identifier and given $options and attach this finisher to the form.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createFinisher(string $finisherIdentifier, array $options = []): FinisherInterface;
 
@@ -738,9 +686,7 @@ getFinishers()
 
 Gets all finishers of the form.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getFinishers(): array;
 
@@ -753,9 +699,7 @@ getElementByIdentifier()
 Get a form element by its identifier.
 If identifier does not exist, returns NULL.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getElementByIdentifier(string $elementIdentifier);
 
@@ -767,9 +711,7 @@ movePageAfter()
 
 Move $pageToMove after $referencePage.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function movePageAfter(Page $pageToMove, Page $referencePage);
 
@@ -781,9 +723,7 @@ removePage()
 
 Remove $pageToRemove from the form.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function removePage(Page $pageToRemove);
 
@@ -795,9 +735,7 @@ bind()
 
 Bind the current request and response to this form instance, effectively creating a new "instance" of the Form.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function bind(Request $request, Response $response): FormRuntime;
 
@@ -809,9 +747,7 @@ getProcessingRule()
 
 Get the processing rule which contains information for property mappings and validations.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getProcessingRule(string $propertyPath): ProcessingRule;
 
@@ -844,9 +780,7 @@ setRendererClassName()
 
 Set the renderer class name.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function setRendererClassName(string $rendererClassName);
 
@@ -902,9 +836,7 @@ Create a form element with the given $identifier and attach it to the page.
 - attach Form Element to the Page
 - return the newly created Form Element object
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createElement(string $identifier, string $typeName): FormElementInterface;
 
@@ -1008,9 +940,7 @@ Create a form element with the given $identifier and attach it to the section.
 - attach Form Element to the Section
 - return the newly created Form Element object
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function createElement(string $identifier, string $typeName): FormElementInterface;
 
@@ -1180,9 +1110,7 @@ execute()
 Executes the finisher. ``AbstractFinisher::execute()`` call ``$this->executeInternal()`` at the end. Own finisher
 implementations which extends from  ``AbstractFinisher:`` must start their own logic within ``executeInternal()``.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function execute(FinisherContext $finisherContext);
 
@@ -1194,9 +1122,7 @@ setOptions()
 
 Set the finisher options. Instead of directly accessing them, you should rather use ``parseOption()``.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function setOptions(array $options);
 
@@ -1208,9 +1134,7 @@ setOption()
 
 Sets a single finisher option.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function setOption(string $optionName, $optionValue);
 
@@ -1222,9 +1146,7 @@ parseOption()
 
 Please read :ref:`Accessing finisher options<concepts-frontendrendering-codecomponents-customfinisherimplementations-accessingoptions>`
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     protected function parseOption(string $optionName);
 
@@ -1241,9 +1163,7 @@ cancel()
 
 Cancels the finisher invocation after the current finisher.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function cancel();
 
@@ -1255,9 +1175,7 @@ getFormRuntime()
 
 The Form Runtime that is associated with the current finisher.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getFormRuntime(): FormRuntime;
 
@@ -1269,9 +1187,7 @@ getFormValues()
 
 The values of the submitted form (after validation and property mapping).
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getFormValues(): array;
 
@@ -1283,9 +1199,7 @@ getControllerContext()
 
 Returns the current ControllerContext.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getControllerContext(): ControllerContext;
 
@@ -1297,9 +1211,7 @@ getFinisherVariableProvider()
 
 Returns the current FinisherVariableProvider.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getFinisherVariableProvider(): FinisherVariableProvider;
 
@@ -1319,9 +1231,7 @@ add()
 Add a variable to the finisher variable provider.
 In case the value is already inside, it is silently overridden.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function add(string $finisherIdentifier, string $key, $value);
 
@@ -1333,9 +1243,7 @@ get()
 
 Gets a variable from the finisher variable provider.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function get(string $finisherIdentifier, string $key, $default = null);
 
@@ -1347,9 +1255,7 @@ exists()
 
 Determine whether there is a variable stored for the given key.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function exists($finisherIdentifier, $key): bool;
 
@@ -1361,9 +1267,7 @@ remove()
 
 Remove a value from the finisher variable provider.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function remove(string $finisherIdentifier, string $key);
 
@@ -1380,9 +1284,7 @@ getPrototypeConfiguration()
 
 Get the configuration for a given $prototypeName
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function getPrototypeConfiguration(string $prototypeName): array;
 
@@ -1400,9 +1302,7 @@ triggerFormBuildingFinished()
 Helper to be called by every ``FormFactory`` which extends from ``AbstractFormFactory`` after
 everything has been built to call the "afterBuildingFinished" hook on all form elements.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     protected function triggerFormBuildingFinished(FormDefinition $form);
 
@@ -1419,9 +1319,7 @@ build()
 
 Build a form definition, depending on some configuration.
 
-Signature:
-
-.. code-block:: php
+Signature::
 
     public function build(array $configuration, string $prototypeName = null): FormDefinition;
 
@@ -1554,9 +1452,7 @@ What does <useATimestampAsKeyPlease> mean?
 ++++++++++++++++++++++++++++++++++++++++++
 
 Timestamps are recommended for hooks such as those of the form framework, as
-seen in the following example:
-
-.. code-block:: php
+seen in the following example::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -1567,9 +1463,7 @@ It does nothing except cause the extension to fail and an error message to be
 delivered. Nor should it be replaced with a function like time(), as the key
 should be unalterable. Instead, replace this section with the current UNIX
 timestamp the moment you are implementing the hook. Check out the following
-example:
-
-.. code-block:: php
+example::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement'][1507018413]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -1596,13 +1490,14 @@ and ``TYPO3\CMS\Form\Domain\Model\FormElements\Section::removeElement()``
 Connect to the hook
 '''''''''''''''''''
 
-.. code-block:: php
+::
 
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeRemoveFromParentRenderable'][<useATimestampAsKeyPlease>]
-        = \VENDOR\YourNamespace\YourClass::class;
+   $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeRemoveFromParentRenderable'][<useATimestampAsKeyPlease>]
+      = \VENDOR\YourNamespace\YourClass::class;
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -1612,7 +1507,7 @@ Connect to the hook
 Use the hook
 ''''''''''''
 
-.. code-block:: php
+::
 
     /**
      * @param \TYPO3\CMS\Form\Domain\Model\Renderable\RenderableInterface $renderable
@@ -1643,7 +1538,7 @@ the property-mapper configuration for ``FileUpload`` elements.
 Connect to the hook
 '''''''''''''''''''
 
-.. code-block:: php
+::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['afterBuildingFinished'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -1659,7 +1554,7 @@ Connect to the hook
 Use the hook
 ''''''''''''
 
-.. code-block:: php
+::
 
     /**
      * @param \TYPO3\CMS\Form\Domain\Model\Renderable\RenderableInterface $renderable
@@ -1686,7 +1581,7 @@ other form elements have specific values.
 Connect to the hook
 '''''''''''''''''''
 
-.. code-block:: php
+::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['afterInitializeCurrentPage'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -1702,7 +1597,7 @@ Connect to the hook
 Use the hook
 ''''''''''''
 
-.. code-block:: php
+::
 
     /**
      * @param \TYPO3\CMS\Form\Domain\Runtime\FormRuntime $formRuntime
@@ -1734,7 +1629,7 @@ EXT:form itself uses this hook to dynamically add validation errors for ``Advanc
 Connect to the hook
 '''''''''''''''''''
 
-.. code-block:: php
+::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['afterSubmit'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -1750,7 +1645,7 @@ Connect to the hook
 Use the hook
 ''''''''''''
 
-.. code-block:: php
+::
 
     /**
      * @param \TYPO3\CMS\Form\Domain\Runtime\FormRuntime $formRuntime
@@ -1779,7 +1674,7 @@ This hook is called after all validations and property mappings are done.
 Connect to the hook
 '''''''''''''''''''
 
-.. code-block:: php
+::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeRendering'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -1795,7 +1690,7 @@ Connect to the hook
 Use the hook
 ''''''''''''
 
-.. code-block:: php
+::
 
     /**
      * @param \TYPO3\CMS\Form\Domain\Runtime\FormRuntime $formRuntime
@@ -1821,9 +1716,7 @@ This finisher can only be used in programmatically-created forms. It makes it
 possible to execute one's own finisher code without having to implement/
 declare this finisher.
 
-Usage through code:
-
-.. code-block:: php
+Usage through code::
 
     $closureFinisher = $this->objectManager->get(ClosureFinisher::class);
     $closureFinisher->setOption('closure', function($finisherContext) {
@@ -1876,17 +1769,13 @@ Usage within form definition
     ...
 
 
-Usage through code:
-
-.. code-block:: php
+Usage through code::
 
     $formDefinition->createFinisher('Confirmation', [
         'message' => 'foo',
     ]);
 
-or create manually (not preferred)
-
-.. code-block:: php
+or create manually (not preferred)::
 
     $confirmationFinisher = $this->objectManager->get(ConfirmationFinisher::class);
     $confirmationFinisher->setOptions([
@@ -1938,15 +1827,11 @@ Usage within form definition
     ...
 
 
-Usage through code:
-
-.. code-block:: php
+Usage through code::
 
     $formDefinition->createFinisher('DeleteUploads');
 
-or create manually (not preferred)
-
-.. code-block:: php
+or create manually (not preferred)::
 
     $deleteUploadsFinisher = $this->objectManager->get(DeleteUploadsFinisher::class);
     $formDefinition->addFinisher($deleteUploadsFinisher);
@@ -1980,9 +1865,7 @@ Usage within form definition
     ...
 
 
-Usage through code:
-
-.. code-block:: php
+Usage through code::
 
     $formDefinition->createFinisher('EmailToReceiver', [
         'subject' => 'Your message',
@@ -1992,9 +1875,7 @@ Usage through code:
         'senderName' => 'form submitter',
     ]);
 
-or create manually (not preferred)
-
-.. code-block:: php
+or create manually (not preferred)::
 
     $emailFinisher = $this->objectManager->get(EmailFinisher::class);
     $emailFinisher->setOptions([
@@ -2343,9 +2224,7 @@ Usage within form definition
     ...
 
 
-Usage through code:
-
-.. code-block:: php
+Usage through code::
 
     $formDefinition->createFinisher('FlashMessage', [
         'messageBody' => 'Thx for using TYPO3',
@@ -2353,9 +2232,7 @@ Usage through code:
         'severity' => \TYPO3\CMS\Core\Messaging\AbstractMessage::OK,
     ]);
 
-or create manually (not preferred)
-
-.. code-block:: php
+or create manually (not preferred)::
 
     $flashMessageFinisher = $this->objectManager->get(FlashMessageFinisher::class);
     $flashMessageFinisher->setOptions([
@@ -2487,18 +2364,14 @@ Usage within form definition
     ...
 
 
-Usage through code:
-
-.. code-block:: php
+Usage through code::
 
     $formDefinition->createFinisher('Redirect', [
         'pageUid' => 1,
         'additionalParameters' => 'param1=value1&param2=value2',
     ]);
 
-or create manually (not preferred)
-
-.. code-block:: php
+or create manually (not preferred)::
 
     $redirectFinisher = $this->objectManager->get(RedirectFinisher::class);
     $redirectFinisher->setOptions([
@@ -2625,9 +2498,7 @@ Usage within form definition
     ...
 
 
-Usage through code:
-
-.. code-block:: php
+Usage through code::
 
     $formDefinition->createFinisher('SaveToDatabase', [
         'table' => 'fe_users',
@@ -2649,9 +2520,7 @@ Usage through code:
         ],
     ]);
 
-or create manually (not preferred)
-
-.. code-block:: php
+or create manually (not preferred)::
 
     $saveToDatabaseFinisher = $this->objectManager->get(SaveToDatabaseFinisher::class);
     $saveToDatabaseFinisher->setOptions([
@@ -2706,9 +2575,7 @@ Usage within form definition
     ...
 
 
-Usage through code:
-
-.. code-block:: php
+Usage through code::
 
     $formDefinition->createFinisher('SaveToDatabase', [
         1 => [
@@ -2730,9 +2597,7 @@ Usage through code:
         ],
     ]);
 
-or create manually (not preferred)
-
-.. code-block:: php
+or create manually (not preferred)::
 
     $saveToDatabaseFinisher = $this->objectManager->get(SaveToDatabaseFinisher::class);
     $saveToDatabaseFinisher->setOptions([
@@ -3003,7 +2868,7 @@ The form manager calls the 'beforeFormCreate' hook.
 Connect to the hook
 +++++++++++++++++++
 
-.. code-block:: php
+::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormCreate'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -3019,7 +2884,7 @@ Connect to the hook
 Use the hook
 ++++++++++++
 
-.. code-block:: php
+::
 
     /**
      * @param string $formPersistenceIdentifier
@@ -3045,7 +2910,7 @@ The form manager call the 'beforeFormDuplicate' hook.
 Connect to the hook
 +++++++++++++++++++
 
-.. code-block:: php
+::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormDuplicate'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -3061,7 +2926,7 @@ Connect to the hook
 Use the hook
 ++++++++++++
 
-.. code-block:: php
+::
 
     /**
      * @param string $formPersistenceIdentifier
@@ -3087,7 +2952,7 @@ The form manager call the 'beforeFormDelete' hook.
 Connect to the hook
 +++++++++++++++++++
 
-.. code-block:: php
+::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormDelete'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
@@ -3103,7 +2968,7 @@ Connect to the hook
 Use the hook
 ++++++++++++
 
-.. code-block:: php
+::
 
     /**
      * @param string $formPersistenceIdentifier
@@ -3127,13 +2992,14 @@ The form editor call the 'beforeFormSave' hook.
 Connect to the hook
 +++++++++++++++++++
 
-.. code-block:: php
+::
 
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormSave'][<useATimestampAsKeyPlease>]
-        = \VENDOR\YourNamespace\YourClass::class;
+   $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormSave'][<useATimestampAsKeyPlease>]
+      = \VENDOR\YourNamespace\YourClass::class;
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -3143,7 +3009,7 @@ Connect to the hook
 Use the hook
 ++++++++++++
 
-.. code-block:: php
+::
 
     /**
      * @param string $formPersistenceIdentifier
