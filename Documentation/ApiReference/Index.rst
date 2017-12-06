@@ -160,8 +160,8 @@ Expected partial file: EXT:form/Resources/Private/Frontend/Partials/Text.html
 
 .. _apireference-frontendrendering-renderviewHelper-arguments:
 
-Argumentes
-^^^^^^^^^^
+Arguments
+^^^^^^^^^
 
 .. _apireference-frontendrendering-renderviewHelper-factoryclass:
 
@@ -1496,17 +1496,21 @@ Hooks
 initializeFormElement
 +++++++++++++++++++++
 
-You can connect to the hook and initialize a form elements without defining a custom implementaion to access the element's ``initializeFormElement`` method.
-You only need a class which connects to this hook. Then detect the form element you wish to initialize.
-You can use this hook to prefill form element data for example from database tables.
-Note that this hook will be called **after** all properties from the prototype configuration are set in the form element but **before** the properties from
-the form definition are set in the form element.
-If you want to prefill form element data after the complete form element is configured you should use the :ref:`afterBuildingFinished<apireference-frontendrendering-runtimemanipulation-hooks-afterbuildingfinished>` hook.
+You can connect to this hook and initialize a form element without defining a
+custom implementaion to access the element's ``initializeFormElement`` method.
+You only need a class which connects to this hook. Then detect the form
+element you wish to initialize. For example, you can use this hook to prefill
+form element data from database tables. Note that this hook will be called
+**after** all properties from the prototype configuration are set in the form
+element but **before** the properties from the form definition are set in the
+form element. If you want to prefill form element data after the complete
+form element is configured you should use the
+:ref:`afterBuildingFinished<apireference-frontendrendering-runtimemanipulation-hooks-afterbuildingfinished>` hook.
 
-
-This hook is invoked by the methods ``TYPO3\CMS\Form\Domain\Model\FormElements\Page::createElement()`` and ``TYPO3\CMS\Form\Domain\Model\FormElements\Section::createElement()``.
-That means the hook will **not** be triggered for ``Pages``.
-At this point you don't have access to submitted form element values.
+The initializeFormElement hook is invoked by the methods ``TYPO3\CMS\Form\Domain\Model\FormElements\Page::createElement()``
+and ``TYPO3\CMS\Form\Domain\Model\FormElements\Section::createElement()``.
+That means the hook will **not** be triggered for ``Pages``. At this point
+you do not have access to submitted form element values.
 
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-initializeformelement-connect:
@@ -1518,6 +1522,11 @@ Connect to the hook
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
+
+
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
 
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-initializeformelement-use:
@@ -1539,6 +1548,40 @@ Use the hook
     }
 
 
+.. _useATimestampAsKeyPlease:
+
+What does <useATimestampAsKeyPlease> mean?
+++++++++++++++++++++++++++++++++++++++++++
+
+Timestamps are recommended for hooks such as those of the form framework, as
+seen in the following example:
+
+.. code-block:: php
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement'][<useATimestampAsKeyPlease>]
+        = \VENDOR\YourNamespace\YourClass::class;
+
+
+Leaving the section ``<useATimestampAsKeyPlease>`` as is is not recommended.
+It does nothing except cause the extension to fail and an error message to be
+delivered. Nor should it be replaced with a function like time(), as the key
+should be unalterable. Instead, replace this section with the current UNIX
+timestamp the moment you are implementing the hook. Check out the following
+example:
+
+.. code-block:: php
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement'][1507018413]
+        = \VENDOR\YourNamespace\YourClass::class;
+
+
+The purpose of timestamps is to prevent conflicts that arise when two or more
+extensions within one TYPO3 installation use identical keys (e.g.
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement']['foo']).
+When timestamps are used, even a one-second difference in the time different
+hooks were connected ensures that one hook does not override the other.
+
+
 .. _apireference-frontendrendering-runtimemanipulation-hooks-beforeremovefromparentrenderable:
 
 beforeRemoveFromParentRenderable
@@ -1557,6 +1600,11 @@ Connect to the hook
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeRemoveFromParentRenderable'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
+
+
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
 
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-beforeremovefromparentrenderable-use:
@@ -1601,6 +1649,11 @@ Connect to the hook
         = \VENDOR\YourNamespace\YourClass::class;
 
 
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
+
+
 .. _apireference-frontendrendering-runtimemanipulation-hooks-afterbuildingfinished-use:
 
 Use the hook
@@ -1637,6 +1690,11 @@ Connect to the hook
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['afterInitializeCurrentPage'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
+
+
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
 
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-afterinitializecurrentpage-use:
@@ -1682,6 +1740,11 @@ Connect to the hook
         = \VENDOR\YourNamespace\YourClass::class;
 
 
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
+
+
 .. _apireference-frontendrendering-runtimemanipulation-hooks-aftersubmit-use:
 
 Use the hook
@@ -1720,6 +1783,11 @@ Connect to the hook
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeRendering'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
+
+
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
 
 
 .. _apireference-frontendrendering-runtimemanipulation-hooks-beforerendering-use:
@@ -2941,6 +3009,11 @@ Connect to the hook
         = \VENDOR\YourNamespace\YourClass::class;
 
 
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
+
+
 .. _apireference-formeditor-hooks-beforeformcreate-use:
 
 Use the hook
@@ -2976,6 +3049,11 @@ Connect to the hook
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormDuplicate'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
+
+
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
 
 
 .. _apireference-formeditor-hooks-beforeformduplicate-use:
@@ -3015,6 +3093,11 @@ Connect to the hook
         = \VENDOR\YourNamespace\YourClass::class;
 
 
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
+
+
 .. _apireference-formeditor-hooks-beforeformdelete-use:
 
 Use the hook
@@ -3048,6 +3131,11 @@ Connect to the hook
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormSave'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
+
+
+.. note::
+   Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
+   means?
 
 
 .. _apireference-formeditor-hooks-beforeformsave-use:
