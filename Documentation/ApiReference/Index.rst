@@ -2747,7 +2747,7 @@ elements.<formElementIdentifier>.skipIfValueIsEmpty
 
 :aspect:`Description`
       Set this to true if the database column should not be written if the value from the submitted form element with the identifier
-      `<formElementIdentifier>` is empty (think about password fields etc.)
+      `<formElementIdentifier>` is empty (think about password fields etc.). Empty means strings without content, whitespace is valid content.
 
 
 .. _apireference-finisheroptions-savetodatabasefinisher-options-elements-<formelementidentifier>-savefileidentifierinsteadofuid:
