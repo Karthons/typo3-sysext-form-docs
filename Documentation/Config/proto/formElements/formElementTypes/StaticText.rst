@@ -15,6 +15,9 @@ Properties
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.statictext.implementationclassname:
 .. include:: StaticText/implementationClassName.txt
 
+.. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.statictext.renderingoptions._isReadOnlyFormElement:
+.. include:: StaticText/renderingOptions/_isReadOnlyFormElement.txt
+
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.statictext.properties.text:
 .. include:: StaticText/properties/text.txt
 

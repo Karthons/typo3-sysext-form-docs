@@ -15,6 +15,9 @@ Properties
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.contentelement.implementationclassname:
 .. include:: ContentElement/implementationClassName.txt
 
+.. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.contentelement.renderingoptions._isReadOnlyFormElement:
+.. include:: ContentElement/renderingOptions/_isReadOnlyFormElement.txt
+
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.contentelement.properties.contentelementuid:
 .. include:: ContentElement/properties/contentElementUid.txt
 
