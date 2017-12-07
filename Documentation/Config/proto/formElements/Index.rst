@@ -336,6 +336,61 @@ properties.gridColumnClassAutoConfiguration
                       xs:
                         numbersOfColumnsToUse: '5'
 
+
+.. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.properties.validationerrormessages:
+
+properties.validationErrorMessages
+----------------------------------
+
+:aspect:`Option path`
+      TYPO3.CMS.Form.prototypes.<prototypeIdentifier>.formElementsDefinition.<formElementTypeIdentifier>.properties.validationErrorMessages
+
+:aspect:`Data type`
+      array
+
+:aspect:`Needed by`
+      Frontend/ Backend (form editor)
+
+:aspect:`Mandatory`
+      No
+
+:aspect:`Default value`
+      undefined
+
+:aspect:`Good to know`
+      - :ref:`"Alphanumeric validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.alphanumeric-validationerrorcodes>`
+      - :ref:`"Count validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.count-validationerrorcodes>`
+      - :ref:`"DateTime validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.datetime-validationerrorcodes>`
+      - :ref:`"EmailAddress validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.emailaddress-validationerrorcodes>`
+      - :ref:`"Float validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.float-validationerrorcodes>`
+      - :ref:`"Integer validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.integer-validationerrorcodes>`
+      - :ref:`"NotEmpty validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.notempty-validationerrorcodes>`
+      - :ref:`"NumberRange validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.numberrange-validationerrorcodes>`
+      - :ref:`"RegularExpression validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.regularexpression-validationerrorcodes>`
+      - :ref:`"StringLength validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.stringlength-validationerrorcodes>`
+      - :ref:`"Text validation error codes"<typo3.cms.form.prototypes.\<prototypeidentifier>.validatorsdefinition.text-validationerrorcodes>`
+
+:aspect:`Description`
+      Each server side validation error message can be identified by a unique number such as "1221560910".
+      This error message can be :ref:`translated <concepts-frontendrendering-translation-validationerrors>`.
+      If you want to set custom error messages for a specific validation error code through the form definition you can use
+      the ``validationErrorMessages`` property. Note that those custom messages are *not* translatable.
+
+      .. code-block:: yaml
+         :linenos:
+
+                identifier: name
+                type: Text
+                properties:
+                  validationErrorMessages:
+                    -
+                      code: '1221560910'
+                      message: doh
+                    -
+                      code: '1221560718'
+                      message: wrong
+
+
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.formelementsdefinition.<formelementtypeidentifier>.label:
 
 label
