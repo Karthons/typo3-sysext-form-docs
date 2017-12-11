@@ -8,6 +8,7 @@ Frontend rendering
 ==================
 
 
+
 .. _concepts-frontendrendering-basiccodecomponents:
 
 Basic code components
@@ -665,6 +666,7 @@ those).
      ...
 
 
+
 .. _concepts-frontendrendering-programmatically:
 
 Build forms programmatically
@@ -674,10 +676,12 @@ To learn more about this topic, head to the chapter ':ref:`Build forms programma
 which is part of the API reference section.
 
 
+
 .. _concepts-frontendrendering-runtimemanipulation:
 
 Runtime manipulation
 ====================
+
 
 .. _concepts-frontendrendering-runtimemanipulation-hooks:
 
@@ -735,6 +739,7 @@ form elements using the above-mentioned concept of :ref:`hooks<concepts-frontend
     }
 
 
+
 .. _concepts-frontendrendering-templates:
 
 Templates
@@ -782,10 +787,12 @@ reside within the `templateRootPaths` folder. According to the introduced
 logic, the template name must be `Form.html`.
 
 
+
 .. _concepts-frontendrendering-translation:
 
 Translation
 ===========
+
 
 .. _concepts-frontendrendering-translation-formdefinition:
 
@@ -1066,3 +1073,113 @@ The look-up process searches for the following translation keys for the
 
 If no translation key exists, the message 'Thank you for your inquiry.' will
 be shown.
+
+
+
+Form element translation arguments are supported
+================================================
+
+Form element property translations and finisher option translations can use
+placeholders to output translation arguments. Translations can be enriched
+with variable values by passing arguments to form element property. The feature
+was introduced with :issue:`81363`.
+
+
+Form element properties
+-----------------------
+
+Pure YAML is sufficient to add simple, static values:
+
+.. code-block:: yaml
+
+    renderables:
+      fieldWithTranslationArguments:
+        identifier: field-with-translation-arguments
+        type: Checkbox
+        label: This is a %s feature
+        renderingOptions:
+          translation:
+            translationFile: path/to/locallang.xlf
+            arguments:
+              label:
+                - useful
+
+This will produce the label: `This is a useful feature`.
+
+Alternatively, translation arguments can be set via
+:ts:`formDefinitionOverrides` in TypoScript. A common usecase is a checkbox for
+user confirmation linking to details of the topic:
+
+.. code-block:: yaml
+
+   renderables:
+     fieldWithTranslationArguments:
+       identifier: field-with-translation-arguments
+       type: Checkbox
+       label: I agree to the <a href="%s">terms and conditions</a>
+       renderingOptions:
+         translation:
+           translationFile: path/to/locallang.xlf
+
+.. code-block:: typoscript
+
+   plugin.tx_form {
+      settings {
+         formDefinitionOverrides {
+            <form-id> {
+               renderables {
+                  0 { # Page
+                     renderables {
+                        fieldWithTranslationArguments {
+                           renderingOptions {
+                              translation {
+                                 arguments {
+                                    label {
+                                       0 = TEXT
+                                       0.typolink {
+                                          # Terms and conditions page, could be
+                                          # set also via TypoScript constants
+                                          parameter = 42
+                                          returnLast = url
+                                       }
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+.. important::
+
+   There must be at least one translation file with a translation for the
+   configured form element property. Arguments are not inserted into default
+   values defined in a form definition.
+
+
+Finishers
+---------
+
+The same mechanism (YAML, YAML + TypoScript) work for finisher options:
+
+.. code-block:: yaml
+
+    finishers:
+      finisherWithTranslationArguments:
+        identifier: EmailToReceiver
+        options:
+          subject: My %s subject
+          recipientAddress: foo@example.org
+          senderAddress: bar@example.org
+          translation:
+            translationFile: path/to/locallang.xlf
+            arguments:
+              subject:
+                - awesome
+
+This will produce `My awesome subject`.
