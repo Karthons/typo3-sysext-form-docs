@@ -1081,8 +1081,8 @@ Form element translation arguments are supported
 
 Form element property translations and finisher option translations can use
 placeholders to output translation arguments. Translations can be enriched
-with variable values by passing arguments to form element property. The feature
-was introduced with :issue:`81363`.
+with variable values by passing arguments to form element properties. The
+feature was introduced with :issue:`81363`.
 
 
 Form element properties
@@ -1165,7 +1165,7 @@ user confirmation linking to details of the topic:
 Finishers
 ---------
 
-The same mechanism (YAML, YAML + TypoScript) work for finisher options:
+The same mechanism (YAML, YAML + TypoScript) works for finisher options:
 
 .. code-block:: yaml
 
