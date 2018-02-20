@@ -564,7 +564,6 @@ Signature::
 .. _apireference-frontendrendering-programmatically-apimethods-formruntime-getrendererclassname:
 .. include:: RootRenderableInterface/getRendererClassName.txt
 
-
 .. _apireference-frontendrendering-programmatically-apimethods-formruntime-getlabel:
 .. include:: RootRenderableInterface/getLabel.txt
 
@@ -1336,7 +1335,7 @@ setControllerContext()
 
 Set the controller context which should be used
 
-.. code-block:: php
+::
 
     public function setControllerContext(ControllerContext $controllerContext);
 
@@ -1348,7 +1347,7 @@ render()
 
 Renders the FormDefinition. This method is expected to call the `beforeRendering` hook on each form element.
 
-.. code-block:: php
+::
 
     public function render(): string;
 
@@ -1360,7 +1359,7 @@ setFormRuntime()
 
 Set the current `FormRuntime`.
 
-.. code-block:: php
+::
 
     public function setFormRuntime(FormRuntime $formRuntime);
 
@@ -1372,7 +1371,7 @@ getFormRuntime()
 
 Get the current `FormRuntime`.
 
-.. code-block:: php
+::
 
     public function getFormRuntime(): FormRuntime;
 
@@ -1416,13 +1415,14 @@ you do not have access to submitted form element values.
 Connect to the hook
 '''''''''''''''''''
 
-.. code-block:: php
+::
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['initializeFormElement'][<useATimestampAsKeyPlease>]
         = \VENDOR\YourNamespace\YourClass::class;
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -1432,7 +1432,7 @@ Connect to the hook
 Use the hook
 ''''''''''''
 
-.. code-block:: php
+::
 
     /**
      * @param \TYPO3\CMS\Form\Domain\Model\Renderable\RenderableInterface $renderable
@@ -1492,8 +1492,8 @@ Connect to the hook
 
 ::
 
-   $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeRemoveFromParentRenderable'][<useATimestampAsKeyPlease>]
-      = \VENDOR\YourNamespace\YourClass::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeRemoveFromParentRenderable'][<useATimestampAsKeyPlease>]
+        = \VENDOR\YourNamespace\YourClass::class;
 
 
 .. note::
@@ -1545,6 +1545,7 @@ Connect to the hook
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -1588,6 +1589,7 @@ Connect to the hook
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -1636,6 +1638,7 @@ Connect to the hook
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -1681,6 +1684,7 @@ Connect to the hook
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -2001,6 +2005,7 @@ replyToAddress
       Email address of to be used as reply-to email (use multiple addresses with an array)
 
 .. note::
+
    For the moment, the `form editor` cannot deal with multiple reply-to addresses (use multiple addresses with an array)
 
 
@@ -2022,6 +2027,7 @@ carbonCopyAddress
       Email address of the copy recipient (use multiple addresses with an array)
 
 .. note::
+
    For the moment, the `form editor` cannot deal with multiple copy recipient addresses (use multiple addresses with an array)
 
 
@@ -2043,6 +2049,7 @@ blindCarbonCopyAddress
       Email address of the blind copy recipient (use multiple addresses with an array)
 
 .. note::
+
    For the moment, the `form editor` cannot deal with multiple blind copy recipient addresses (use multiple addresses with an array)
 
 
@@ -2205,7 +2212,6 @@ FlashMessage finisher
 
 A simple finisher that adds a message to the FlashMessageContainer.
 
-
 Usage within form definition
 
 .. code-block:: yaml
@@ -2345,7 +2351,6 @@ Redirect finisher
 -----------------
 
 A simple finisher that redirects to another page.
-
 
 Usage within form definition
 
@@ -2875,6 +2880,7 @@ Connect to the hook
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -2917,6 +2923,7 @@ Connect to the hook
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -2959,6 +2966,7 @@ Connect to the hook
 
 
 .. note::
+
    Wondering what :ref:`useATimestampAsKeyPlease<useATimestampAsKeyPlease>`
    means?
 
@@ -2994,8 +3002,8 @@ Connect to the hook
 
 ::
 
-   $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormSave'][<useATimestampAsKeyPlease>]
-      = \VENDOR\YourNamespace\YourClass::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/form']['beforeFormSave'][<useATimestampAsKeyPlease>]
+        = \VENDOR\YourNamespace\YourClass::class;
 
 
 .. note::
@@ -3251,7 +3259,6 @@ render the current page of the form in the `preview view`, fails. EXT:form
 uses this event to show an error message as a flash message and to show the
 received error text in the `preview view`.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3278,7 +3285,6 @@ core/ajax/renderFormDefinitionPage/success
 This event is called if the Ajax request that is used to render the current
 page of the form in the `preview view` was successful. EXT:form uses this
 event to display the rendered form in the `preview view`.
-
 
 Subscribe to the event:
 
@@ -3307,7 +3313,6 @@ successful. EXT:form uses this event to display a success message as a flash
 message. The `form editor` is also informed that no unsaved content currently
 exists.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3334,7 +3339,6 @@ elements (validators/ finishers) is saved in an internal stack so that the
 undo/ redo function can be implemented. This event is called whenever the
 current state is added to the stack. EXT:form uses this event to reset the
 enabled/ disabled state of the undo/ redo buttons.
-
 
 Subscribe to the event:
 
@@ -3398,7 +3402,6 @@ a form element in other components (e.g. `Tree` component ) when this label
 is changed. Furthermore, any validation errors from form element properties
 are indicated by this event in the `Tree` component.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3428,7 +3431,6 @@ calls this event at the end. EXT:form uses this event to re-render the
 `Inspector` component as soon as a property collection element (validator/
 finisher) is moved.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3457,7 +3459,6 @@ The method `getFormEditorApp().getViewModel().createAndAddPropertyCollectionElem
 calls this event at the end. EXT:form uses this event to re-render the
 `Inspector` component as soon as a property collection element (validator/
 finisher) is created and added.
-
 
 Subscribe to the event:
 
@@ -3489,7 +3490,6 @@ calls this event at the end. EXT:form uses this event to re-render the
 `Inspector` component as soon as a property collection element (validator/
 finisher) is removed.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3519,7 +3519,6 @@ call this event at the end. EXT:form uses this event to set the current
 to-be-processed form element (`getFormEditorApp().setCurrentlySelectedFormElement()`)
 and to re-render the `Tree`, `Stage` and `Inspector` components.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3543,7 +3542,6 @@ view/formElement/moved
 
 The method `getFormEditorApp().getViewModel().moveFormElement()` calls this
 event at the end.
-
 
 Subscribe to the event:
 
@@ -3571,7 +3569,6 @@ event at the end. EXT:form uses this event to set the current to-be-processed
 form element (`getFormEditorApp().setCurrentlySelectedFormElement()`) and to
 re-render the `Tree`, `Stage` and `Inspector` components.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3597,7 +3594,6 @@ The onClick event of the "Close" button in the `form editor's` header section
 calls this event. EXT:form uses this event to display a warning message in case
 there are unsaved changes.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3621,7 +3617,6 @@ view/header/button/newPage/clicked
 The onClick event of the "new page" button in the `form editor's` header
 section calls this event. EXT:form uses this event to display the "new page"
 dialog box.
-
 
 Subscribe to the event:
 
@@ -3649,7 +3644,6 @@ calls this event. EXT:form uses this event either to display a dialog box with
 the element in question (if there are validation errors) or to save the `form
 definition` (if there are no validation errors).
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3673,7 +3667,6 @@ view/header/formSettings/clicked
 The onClick event of the "settings"  button in the `form editor's` header
 section calls this event. EXT:form uses this event to select the root form
 element.
-
 
 Subscribe to the event:
 
@@ -3708,7 +3701,6 @@ event :ref:`view/formElement/inserted<apireference-formeditor-basicjavascriptcon
 is called. The event `view/formElement/inserted` in `getFormEditorApp().getViewModel().createAndAddFormElement()`
 was previously deactivated.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3739,7 +3731,6 @@ EXT:form uses this event to create a new form element (`getFormEditorApp().getVi
 This element is always created as the last element of the currently selected
 page.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3768,7 +3759,6 @@ element:
 
 EXT:form uses this event to create a new form element as a child element of the
 currently selected element (`getFormEditorApp().getViewModel().createAndAddFormElement()`).
-
 
 Subscribe to the event:
 
@@ -3861,7 +3851,6 @@ addition, the `inspector editor` :ref:`RequiredValidatorEditor <typo3.cms.form.p
 calls this event when a checkbox is chosen. EXT:form uses this event to add and
 render the validator/ finisher of the `form definition` via `getFormEditorApp().getViewModel().createAndAddPropertyCollectionElement()`.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -3890,7 +3879,6 @@ the `view/inspector/collectionElements/dnd/update` event if a property
 collection element in the `Inspector` component is sorted. EXT:form uses this
 event to move the validator/ finisher in the `form definition` via the method
 `getFormEditorApp().getViewModel().movePropertyCollectionElement()`.
-
 
 Subscribe to the event:
 
@@ -3937,7 +3925,6 @@ your own `inspector editor`, you can use this event to execute in
 :ref:`your own JavaScript module <concepts-formeditor-basicjavascriptconcepts-registercustomjavascriptmodules>`.
 the corresponding JavaScript code, with the help of the property
 `templateName`.
-
 
 Subscribe to the event:
 
@@ -4152,7 +4139,6 @@ calls this event, if the checkbox is deselected. EXT:form uses this event to
 remove the configured required validator ('NotEmpty') from the `form
 definition` through the method `getFormEditorApp().getViewModel().removePropertyCollectionElement()`.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4181,7 +4167,6 @@ appears, asking whether you really wish to close it. If you confirm it, this
 event is called in the `check box` component. EXT:form uses this event to
 close the `form editor` and return to the `form manager`.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4207,7 +4192,6 @@ dialog box appears, asking you to confirm this action. If confirmed, this event
 is called in the `check box` component. EXT:form uses this event to remove
 the validator/ finisher from the `form definition` through the method
 `getFormEditorApp().getViewModel().removePropertyCollectionElement()`.
-
 
 Subscribe to the event:
 
@@ -4237,7 +4221,6 @@ appears, asking you to confirm this action. If confirmed, this event is called
 in the `check box` component. EXT:form uses this event to remove the form
 element from the `form definition` via the method `getFormEditorApp().getViewModel().removeFormElement()`.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4265,7 +4248,6 @@ form element can be clicked in this dialog box. This event is called by
 clicking a form element in the dialog box. EXT:form uses this event to select
 and show this form element.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4291,7 +4273,6 @@ This event is called if the 'pagination next' button in the `Stage`
 component's header section is clicked. EXT:form uses this event to render the
 next page of the form.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4315,7 +4296,6 @@ view/paginationPrevious/clicked
 This event is called, if the 'pagination previous' button in the `Stage`
 component's header section is clicked. EXT:form uses this event to render the
 previous page of the form.
-
 
 Subscribe to the event:
 
@@ -4341,7 +4321,6 @@ EXT:form makes it possible to load :ref:`your own JavaScript module <concepts-fo
 If all modules are loaded, the view-model method `_loadAdditionalModules`
 calls this event. EXT:form uses this event to remove the preloader icon and
 finally initialize the `form editor`.
-
 
 Subscribe to the event:
 
@@ -4369,7 +4348,6 @@ collection elements (validators/ finishers) is saved in an internal stack in
 order to reset the undo/ redo functionality. EXT:form uses this event to reset
 this stack to the previous state.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4393,7 +4371,6 @@ view/stage/abstract/button/newElement/clicked
 This event is called if the "Create new element" button at the end of the
 `Stage` component in the `abstract view` mode is clicked. EXT:form uses
 this event to display the "new element" dialog box.
-
 
 Subscribe to the event:
 
@@ -4422,7 +4399,6 @@ drop functionality. The 'change' event from 'jquery.mjs.nestedSortable' calls
 the `view/stage/abstract/dnd/change` event in the `Stage` component in the
 `abstract view` mode if form elements are sorted. EXT:form uses this event to
 set various CSS classes during the drag-and-drop process.
-
 
 Subscribe to the event:
 
@@ -4453,7 +4429,6 @@ the `view/stage/abstract/dnd/start` event in the `Stage` component in the
 `abstract view` mode if form elements are sorted. EXT:form uses this event to
 set various CSS classes at the start of the drag-and-drop process.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4483,7 +4458,6 @@ drop functionality. The 'stop' event from 'jquery.mjs.nestedSortable' calls the
 to re-render the `Tree`, `Stage` and `Inspector` components at the end of
 the drag-and-drop process and to select the moved form element.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4511,7 +4485,6 @@ the `view/stage/abstract/dnd/update` event in the `Stage` component in the
 `abstract view` mode if form elements are sorted. EXT:form uses this event
 to move the form element in the `form definition` accordingly at the end of
 the drag-and-drop process.
-
 
 Subscribe to the event:
 
@@ -4541,7 +4514,6 @@ This event is called if the "Create new element" button in the form-element
 toolbar or "Inside" or "After" in the split button is clicked. EXT:form uses
 this event to display the "New element" dialog box.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4567,7 +4539,6 @@ view/stage/abstract/render/postProcess
 This event is called after the `abstract view` of the `Stage` component has
 been rendered. EXT:form uses this event to render the undo/ redo buttons.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4590,7 +4561,6 @@ view/stage/abstract/render/preProcess
 
 This event is called before the `abstract view` of the `Stage` component is
 rendered.
-
 
 Subscribe to the event:
 
@@ -4639,7 +4609,6 @@ method delivered with EXT:form. An overview over the functionality of the
 formEditorPartials for the `<formElementTypeIdentifier>` and its JavaScript
 code is found :ref:`here <apireference-formeditor-stage-commonabstractformelementtemplates>`.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4660,7 +4629,6 @@ Subscribe to the event:
 A simple example reusing the EXT:form inline HTML template `Stage/SelectTemplate` and the EXT:form JavaScript code `renderSelectTemplates()`
 for a custom form element with `<formElementTypeIdentifier>` = 'GenderSelect'.
 In this example, 'GenderSelect' is basically a radio button form element with some predefined options.
-
 
 .. code-block:: yaml
    :emphasize-lines: 11
@@ -4850,7 +4818,6 @@ clicked. EXT:form uses this event to select this element and to display the
 form-element toolbar. In addition, the `Tree` and `Inspector` components
 are re-rendered.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4875,7 +4842,6 @@ view/stage/panel/clicked
 This event is called if the header section of the `Stage` component is
 clicked.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4898,7 +4864,6 @@ view/stage/preview/render/postProcess
 
 This event is called after the `preview view` of the `Stage` component has
 been rendered. EXT:form uses this event to render the undo/ redo buttons.
-
 
 Subscribe to the event:
 
@@ -4949,7 +4914,6 @@ This event is called from the view-model after the `Tree` component has been
 re-rendered. EXT:form uses this event to display potential validation errors
 from form elements in the `Tree` component.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -4973,7 +4937,6 @@ view/structure/root/selected
 This event is called if the root form element in the `Tree` component is
 clicked. EXT:form uses this event to re-render the `Stage`, `Inspector` and
 `Tree` components.
-
 
 Subscribe to the event:
 
@@ -5000,7 +4963,6 @@ drop functionality. The 'change' event from 'jquery.mjs.nestedSortable' calls
 the `view/tree/dnd/change` event in der `Tree` component if form elements
 are sorted. EXT:form uses this event to set various CSS classes during the drag
 -and-drop process.
-
 
 Subscribe to the event:
 
@@ -5032,7 +4994,6 @@ sorted. EXT:form uses this event to re-render `Tree`, `Stage` and
 `Inspector` components at the end of the drag-and-drop process and to select
 the moved form element.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -5059,7 +5020,6 @@ drop functionality. The 'update' event from 'jquery.mjs.nestedSortable' calls
 the `view/tree/dnd/update` event in der `Tree` component if form elements
 are sorted. EXT:form uses this event to move the form element in the `form
 definition` accordingly at the end of the drag-and-drop process.
-
 
 Subscribe to the event:
 
@@ -5089,7 +5049,6 @@ This event is called from the `Tree` component if a form element is clicked.
 EXT:form uses this event to re-render the `Stage` and `Inspector`
 components and select the form element.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -5113,7 +5072,6 @@ view/tree/render/listItemAdded
 
 This event is called by the `Tree` component for each form element as soon as
 it is added to the tree.
-
 
 Subscribe to the event:
 
@@ -5143,7 +5101,6 @@ collection elements (validators/ finishers) is stored in an internal stack to
 implement the undo / redo functionality. EXT:form uses this event to set this
 stack to the next state.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -5167,7 +5124,6 @@ view/viewModeButton/abstract/clicked
 This event is called when the abstract view button is clicked in the header
 area of the `Stage` component. EXT:form uses this event to render the
 `abstract view` in the `Stage` component.
-
 
 Subscribe to the event:
 
@@ -5193,7 +5149,6 @@ This event is called when the preview button is clicked in the header area of
 the `Stage` component. EXT:form uses this event to render the `preview
 view` in the `Stage` component.
 
-
 Subscribe to the event:
 
 .. code-block:: javascript
@@ -5207,7 +5162,6 @@ Subscribe to the event:
      */
     getPublisherSubscriber().subscribe('view/viewModeButton/preview/clicked', function(topic, args) {
     });
-
 
 
 .. _apireference-formeditor-basicjavascriptconcepts-formelementmodel:
@@ -5243,7 +5197,6 @@ Method: get()
 Each property of the `FormElement model` can be accessed by the `get()`
 method through the property path (separated by `.`). Prerequisite for this
 is that all levels up to the target property are objects.
-
 
 Example of a `FormElement model`:
 
@@ -5291,7 +5244,6 @@ Property collection are identified as form elements through the property
 their positions in the array are potentially unknown, the `getFormEditorApp().buildPropertyPath()`
 method exists. This can be used to access a property of a property collection
 item via its `identifier`.
-
 
 Example of a `FormElement model`:
 

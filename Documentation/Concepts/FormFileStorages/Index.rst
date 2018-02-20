@@ -37,6 +37,7 @@ When adding/ editing a file upload element, the backend user can select the
 desired upload storage.
 
 .. note::
+
    In principle, files in filemounts are publicly accessible. If the
    uploaded files could contain sensitive data, you should suppress any
    HTTP access to the filemount. This may, for example, be achieved by

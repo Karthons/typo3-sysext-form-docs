@@ -67,6 +67,7 @@ Next, define the additional fluid template search paths via YAML.
                       20: 'EXT:my_site_package/Resources/Private/Form/Frontend/Layouts/'
 
 .. note::
+
    The preview within the form editor (backend module) uses the frontend
    templates as well. If you want the preview to show your customized
    templates, register the new paths for the backend module as well.

@@ -58,6 +58,7 @@ regarding the integration of your YAML configuration for the backend
 module.
 
 .. hint::
+
    We recommend using a `site package <https://de.slideshare.net/benjaminkott/typo3-the-anatomy-of-sitepackages>`_.
    This will make your life easier if you want to customise EXT:form
    heavily in order to suit the customer's needs.
@@ -262,10 +263,12 @@ TypoScript:
     }
 
 .. note::
+
    Your TypoScript overrides are not interpreted by the `form editor`,
    i.e. those settings are ignored.
 
 .. note::
+
    The described process is quite handy for you. As soon as you are working
    with your :ref:`own configuration files <concepts-configuration-yamlregistration>`,
    you only have to define the differences compared to the previously
@@ -409,8 +412,8 @@ element can be used and overridden within the `form definition`.
    Open the file `typo3/sysext/form/Classes/Mvc/Configuration/ConfigurationManager.php::getConfigurationFromYamlFile()`
    and add the following code before the `return` statement::
 
-      \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($yamlSettings,
-         'form configuration', 9999);
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($yamlSettings,
+            'form configuration', 9999);
 
    Now open the `Forms` module in the backend or navigate to a page in
    the frontend which contains a form. The DebuggerUtility will print the

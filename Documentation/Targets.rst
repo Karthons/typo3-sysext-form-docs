@@ -9,4 +9,3 @@ Targets For Cross-Referencing
 =============================
 
 .. ref-targets-list::
-
