@@ -348,7 +348,8 @@ options.databaseColumnMappings.<databaseColumnName>.skipIfValueIsEmpty
       - :ref:`"Accessing form runtime values"<concepts-frontendrendering-codecomponents-customfinisherimplementations-accessingoptions-formruntimeaccessor>`
 
 :aspect:`Description`
-      Set this to true if the database column should not be written if the value from `options.databaseColumnMappings.<databaseColumnName>.value` is empty. Empty means strings without content, whitespace is valid content.
+      Set this to true if the database column should not be written if the value from `options.databaseColumnMappings.
+      <databaseColumnName>.value` is empty. Empty means strings without content, whitespace is valid content.
 
 
 .. _typo3.cms.form.prototypes.<prototypeIdentifier>.finishersdefinition.savetodatabase.options.translation.translationfile:

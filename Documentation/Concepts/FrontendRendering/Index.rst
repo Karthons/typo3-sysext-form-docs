@@ -8,7 +8,6 @@ Frontend rendering
 ==================
 
 
-
 .. _concepts-frontendrendering-basiccodecomponents:
 
 Basic code components
@@ -89,28 +88,28 @@ name and set default values.
 The :ref:`simple example <concepts-frontendrendering-basiccodecomponents-formdefinition-anatomy-example>`
 shown above should be rewritten as follows::
 
-    // we will come back to this later on
-    $prototypeConfiguration = [];
+   // we will come back to this later on
+   $prototypeConfiguration = [];
 
-    $formDefinition = $this->objectManager->get(FormDefinition::class, 'myForm', $prototypeConfiguration);
-    $page1 = $formDefinition->createPage('page1');
-    $element1 = $page1->addElement('title', 'Text');
+   $formDefinition = $this->objectManager->get(FormDefinition::class, 'myForm', $prototypeConfiguration);
+   $page1 = $formDefinition->createPage('page1');
+   $element1 = $page1->addElement('title', 'Text');
 
 You might wonder how the system knows that the element `Text` is
 implemented by using a `GenericFormElement`. This is configured in the
 `$prototypeConfiguration`. To make the example from above actually work,
 we need to add some meaningful values to `$prototypeConfiguration`::
 
-    $prototypeConfiguration = [
-        'formElementsDefinition' => [
-            'Page' => [
-                'implementationClassName' => 'TYPO3\CMS\Form\Domain\Model\FormElements\Page'
-            ],
-            'Text' => [
-                'implementationClassName' => 'TYPO3\CMS\Form\Domain\Model\FormElements\GenericFormElement'
-            ],
-        ],
-    ];
+   $prototypeConfiguration = [
+       'formElementsDefinition' => [
+           'Page' => [
+               'implementationClassName' => 'TYPO3\CMS\Form\Domain\Model\FormElements\Page'
+           ],
+           'Text' => [
+               'implementationClassName' => 'TYPO3\CMS\Form\Domain\Model\FormElements\GenericFormElement'
+           ],
+       ],
+   ];
 
 For each abstract `<formElementTypeIdentifier>` we have to add some
 configuration. In the snippet above, we only define the `implementation
@@ -118,22 +117,22 @@ class name`. Apart form that, it is always possible to set default values
 for all configuration options of such elements, as the following example
 shows::
 
-    $prototypeConfiguration = [
-        'formElementsDefinition' => [
-            'Page' => [
-                'implementationClassName' => 'TYPO3\CMS\Form\Domain\Model\FormElements\Page',
-                'label' => 'This is the label of the page if nothing else is specified'
-            ],
-            'Text' => [
-                'implementationClassName' => 'TYPO3\CMS\Form\Domain\Model\FormElements\GenericFormElement',
-                'label' = >'Default Label',
-                'defaultValue' => 'Default form element value',
-                'properties' => [
-                    'placeholder' => 'Text that is shown if element is empty'
-                ],
-            ],
-        ],
-    ];
+   $prototypeConfiguration = [
+       'formElementsDefinition' => [
+           'Page' => [
+               'implementationClassName' => 'TYPO3\CMS\Form\Domain\Model\FormElements\Page',
+               'label' => 'This is the label of the page if nothing else is specified'
+           ],
+           'Text' => [
+               'implementationClassName' => 'TYPO3\CMS\Form\Domain\Model\FormElements\GenericFormElement',
+               'label' = >'Default Label',
+               'defaultValue' => 'Default form element value',
+               'properties' => [
+                   'placeholder' => 'Text that is shown if element is empty'
+               ],
+           ],
+       ],
+   ];
 
 
 .. _concepts-frontendrendering-basiccodecomponents-formdefinition-preconfiguredconfiguration:
@@ -158,10 +157,10 @@ To trigger the rendering of a `FormDefinition` domain model, the current
 object which contains the `Runtime State` of the form. Among other things,
 this object includes the currently inserted values::
 
-    // $currentRequest and $currentResponse need to be available
-    // inside a controller, you would use $this->request and $this->response;
-    $form = $formDefinition->bind($currentRequest, $currentResponse);
-    // now, you can use the $form object to get information about the currently entered values, etc.
+   // $currentRequest and $currentResponse need to be available
+   // inside a controller, you would use $this->request and $this->response;
+   $form = $formDefinition->bind($currentRequest, $currentResponse);
+   // now, you can use the $form object to get information about the currently entered values, etc.
 
 
 .. _concepts-frontendrendering-basiccodecomponents-formruntime:
@@ -185,8 +184,8 @@ Rendering a form
 
 Rendering a form is easy. Just call `render()` on the `FormRuntime`::
 
-    $form = $formDefinition->bind($request, $response);
-    $renderedForm = $form->render();
+   $form = $formDefinition->bind($request, $response);
+   $renderedForm = $form->render();
 
 
 .. _concepts-frontendrendering-basiccodecomponents-formruntime-accessingformvalues:
@@ -424,21 +423,21 @@ transferring a finisher context to each finisher. Given the finisher is
 derived from `TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher` the
 finisher context will be available via::
 
-    $this->finisherContext
+   $this->finisherContext
 
 The method `cancel` prevents the execution of successive finishers::
 
-    $this->finisherContext->cancel();
+   $this->finisherContext->cancel();
 
 The method `getFormValues` returns all of the submitted form values.
 
 `getFormValues`::
 
-    $this->finisherContext->getFormValues();
+   $this->finisherContext->getFormValues();
 
 The method `getFormRuntime` returns the `FormRuntime`::
 
-    $this->finisherContext->getFormRuntime();
+   $this->finisherContext->getFormRuntime();
 
 
 .. _concepts-frontendrendering-codecomponents-customfinisherimplementations-finishercontext-sharedatabetweenfinishers:
@@ -450,7 +449,7 @@ The method `getFinisherVariableProvider` returns an object (`TYPO3\CMS\Form\Doma
 which allows you to store data and transfer it to other finishers. The data
 can be easily accessed programmatically or within your configuration::
 
-    $this->finisherContext->getFinisherVariableProvider();
+   $this->finisherContext->getFinisherVariableProvider();
 
 The data is stored within the `FinisherVariableProvider` and is addressed
 by a user-defined 'finisher identifier' and a custom option value path. The
@@ -459,7 +458,7 @@ without the potential 'Finisher' appendix. If your finisher is derived from
 the class `TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher`, the name of
 this construct is stored in the following variable::
 
-    $this->shortFinisherIdentifier
+   $this->shortFinisherIdentifier
 
 For example, if the name of your finisher class is 'CustomFinisher', the
 mentioned variable will contain the value 'Custom'.
@@ -502,11 +501,11 @@ stores the values within the `FinisherVariableProvider`.
 
 Assuming that a finisher called 'Custom' sets data as follows::
 
-    $this->finisherContext->getFinisherVariableProvider()->add(
-        $this->shortFinisherIdentifier,
-        'unique.value.identifier',
-        'Wouter'
-    );
+   $this->finisherContext->getFinisherVariableProvider()->add(
+       $this->shortFinisherIdentifier,
+       'unique.value.identifier',
+       'Wouter'
+   );
 
 ... you are now able to access the value 'Wouter' via `{Custom.unique.value.identifier}`
 in any other finisher.
@@ -644,7 +643,7 @@ done:
 
 .. code-block:: html
 
-    <formvh:render persistenceIdentifier="EXT:my_site_package/Resources/Private/Forms/MyForm.yaml"/>
+   <formvh:render persistenceIdentifier="EXT:my_site_package/Resources/Private/Forms/MyForm.yaml"/>
 
 Point the property `controllerAction` to the desired action name and
 provide values for the other parameters displayed below (you might need
@@ -666,7 +665,6 @@ those).
      ...
 
 
-
 .. _concepts-frontendrendering-programmatically:
 
 Build forms programmatically
@@ -674,7 +672,6 @@ Build forms programmatically
 
 To learn more about this topic, head to the chapter ':ref:`Build forms programmatically<apireference-frontendrendering-programmatically>`'
 which is part of the API reference section.
-
 
 
 .. _concepts-frontendrendering-runtimemanipulation:
@@ -719,25 +716,24 @@ form elements using the above-mentioned concept of :ref:`hooks<concepts-frontend
 
 .. code-block:: typoscript
 
-    plugin.tx_form {
-        settings {
-            formDefinitionOverrides {
-                <formDefinitionIdentifier> {
-                    renderables {
-                        0 {
-                            renderables {
-                                0 {
-                                    label = TEXT
-                                    label.value = Overridden label
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+   plugin.tx_form {
+       settings {
+           formDefinitionOverrides {
+               <formDefinitionIdentifier> {
+                   renderables {
+                       0 {
+                           renderables {
+                               0 {
+                                   label = TEXT
+                                   label.value = Overridden label
+                               }
+                           }
+                       }
+                   }
+               }
+           }
+       }
+   }
 
 
 .. _concepts-frontendrendering-templates:
@@ -785,7 +781,6 @@ form element `Text` must be stored within the `partialRootPaths` folder
 named `Text.html`. In contrast, the template of the `Form` element must
 reside within the `templateRootPaths` folder. According to the introduced
 logic, the template name must be `Form.html`.
-
 
 
 .. _concepts-frontendrendering-translation:
@@ -1047,7 +1042,8 @@ files based on the following order:
 - `finisher.<finisherIdentifier>.<optionName>`
 
 
-Example:
+Example
+"""""""
 
 .. code-block:: yaml
 
@@ -1073,7 +1069,6 @@ The look-up process searches for the following translation keys for the
 
 If no translation key exists, the message 'Thank you for your inquiry.' will
 be shown.
-
 
 
 Form element translation arguments are supported
